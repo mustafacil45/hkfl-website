@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import type { CityData } from './HaritaClient';
+import type { CityData } from './citiesData';
 
 interface Props {
   locations: CityData[];

@@ -1,4 +1,18 @@
-import { CityData } from './HaritaClient';
+export interface CityData {
+  id: string;
+  city: string;
+  country: string;
+  flag: string;
+  count: number;
+  lat: number;
+  lng: number;
+  sectors: {
+    name: string;
+    pct: number;
+    color: string;
+  }[];
+  roles: string[];
+}
 
 export const citiesData: CityData[] = [
   {

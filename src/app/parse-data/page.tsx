@@ -312,7 +312,23 @@ export default function ParsePage() {
   
   // Write the structured file
   const outputTsPath = path.join(process.cwd(), 'src/app/harita/citiesData.ts');
-  const codeContent = `import { CityData } from './HaritaClient';\n\nexport const citiesData: CityData[] = ${JSON.stringify(citiesDataList, null, 2)};\n`;
+  const codeContent = `export interface CityData {
+  id: string;
+  city: string;
+  country: string;
+  flag: string;
+  count: number;
+  lat: number;
+  lng: number;
+  sectors: {
+    name: string;
+    pct: number;
+    color: string;
+  }[];
+  roles: string[];
+}
+
+export const citiesData: CityData[] = ${JSON.stringify(citiesDataList, null, 2)};\n`;
   fs.writeFileSync(outputTsPath, codeContent, 'utf-8');
   
   return (
