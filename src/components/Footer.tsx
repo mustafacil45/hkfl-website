@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 
 const SocialLinks = [
@@ -120,13 +120,6 @@ export default function Footer() {
             <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors">
               Gizlilik Politikası
             </Link>
-            <span>•</span>
-            <div className="flex items-center gap-2">
-              <ExternalLink size={12} />
-              <a href="https://halilkalefenliler.org" className="hover:text-white transition-colors">
-                halilkalefenliler.org
-              </a>
-            </div>
           </div>
         </div>
       </div>
