@@ -10,20 +10,20 @@ const contactInfo = [
     icon: MapPin,
     title: 'Adres',
     lines: ['Subaşı, Seyfi Demirsoy Sk. No:45', '45400 Turgutlu/Manisa'],
-    color: '#0284c7',
+    color: '#db1a22',
   },
   {
     icon: Phone,
     title: 'Telefon',
     lines: ['+90 (539) 245 94 54'],
-    color: '#38bdf8',
+    color: '#c5a059',
     href: 'tel:+905392459454',
   },
   {
     icon: Mail,
     title: 'E-posta',
     lines: ['iletisim@hkmed.org'],
-    color: '#1d4ed8',
+    color: '#db1a22',
     href: 'mailto:iletisim@hkmed.org',
   },
 ];
@@ -102,7 +102,7 @@ export default function IletisimClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center justify-center gap-2 bg-[#0284c7]/10 text-[#0284c7] border border-[#0284c7]/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6 max-w-full text-center">
+            <div className="inline-flex items-center justify-center gap-2 bg-[#db1a22]/10 text-[#db1a22] border border-[#db1a22]/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6 max-w-full text-center">
               <span>✉️</span> İletişim
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
@@ -152,7 +152,7 @@ export default function IletisimClient() {
                       <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">{item.title}</div>
                       {item.lines.map((line, i) => (
                         item.href ? (
-                          <a key={i} href={item.href} className="block text-sm text-gray-700 hover:text-[#0284c7] transition-colors font-medium">{line}</a>
+                          <a key={i} href={item.href} className="block text-sm text-gray-700 hover:text-[#db1a22] transition-colors font-medium">{line}</a>
                         ) : (
                           <div key={i} className="text-sm text-gray-700 font-medium">{line}</div>
                         )
@@ -165,7 +165,7 @@ export default function IletisimClient() {
               {/* Google Maps Embed */}
               <div
                 className="rounded-2xl overflow-hidden shadow-sm"
-                style={{ border: '1px solid rgba(2,132,199,0.15)' }}
+                style={{ border: '1px solid rgba(219,26,34,0.15)' }}
               >
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1556.2!2d27.6974471!3d38.489059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b9a78418be83e9%3A0xe69d5ca7a0973dfd!2sHalil%20Kale%20Fen%20Lisesi!5e0!3m2!1str!2str!4v1720620000000!5m2!1str!2str"
@@ -213,7 +213,7 @@ export default function IletisimClient() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-                          Ad Soyad <span style={{ color: '#0284c7' }}>*</span>
+                          Ad Soyad <span style={{ color: '#db1a22' }}>*</span>
                         </label>
                         <input
                           id="name"
@@ -228,7 +228,7 @@ export default function IletisimClient() {
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
-                          E-posta <span style={{ color: '#0284c7' }}>*</span>
+                          E-posta <span style={{ color: '#db1a22' }}>*</span>
                         </label>
                         <input
                           id="email"
@@ -245,7 +245,7 @@ export default function IletisimClient() {
 
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Konu <span style={{ color: '#0284c7' }}>*</span>
+                        Konu <span style={{ color: '#db1a22' }}>*</span>
                       </label>
                       <select
                         id="subject"
@@ -264,7 +264,7 @@ export default function IletisimClient() {
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Mesaj <span style={{ color: '#0284c7' }}>*</span>
+                        Mesaj <span style={{ color: '#db1a22' }}>*</span>
                       </label>
                       <textarea
                         id="message"

@@ -55,11 +55,11 @@ export default function HakkimizdaClient() {
               transition={{ duration: 0.7 }}
               className="text-left"
             >
-              <div className="text-[#38bdf8] font-bold text-xs uppercase mb-3">
+              <div className="text-[#c5a059] font-bold text-xs uppercase mb-3">
                 HAKKIMIZDA
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                <span className="text-[#38bdf8]">Halil Kale Fen Lisesi</span>
+                <span className="text-[#c5a059]">Halil Kale Fen Lisesi</span>
                 <br />
                 <span className="text-white">Mezunlar Derneği</span>
               </h1>
@@ -76,14 +76,14 @@ export default function HakkimizdaClient() {
               className="flex justify-center lg:justify-end"
             >
               <div className="bg-black/45 backdrop-blur-md border border-white/10 rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden flex flex-col justify-center items-center text-center min-h-[320px] lg:min-h-[350px] w-full max-w-lg">
-                <div className="text-[#38bdf8] font-semibold text-xs uppercase mb-2">
+                <div className="text-[#c5a059] font-semibold text-xs uppercase mb-2">
                   1996&apos;DAN BUGÜNE
                 </div>
                 <h3 className="text-white font-display text-xl sm:text-2xl font-bold mb-4">30 Yıllık Başarı ve Bağ</h3>
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                   Fen Liseleri ailesinin 26. halkası olarak kurulan okulumuzun değerli mezunları olarak, aramızdaki bağı güçlendirmek ve geleceğe birlikte yürümek için bir aradayız.
                 </p>
-                <div className="flex items-center justify-center gap-6 text-[#38bdf8] text-sm font-semibold min-w-0">
+                <div className="flex items-center justify-center gap-6 text-[#c5a059] text-sm font-semibold min-w-0">
                   <span className="flex items-center gap-1.5">👥 1500+ Mezun</span>
                   <span className="flex items-center gap-1.5">🌍 20+ Ülke</span>
                 </div>
@@ -248,30 +248,30 @@ export default function HakkimizdaClient() {
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-800/20 rounded-full blur-2xl" />
                 <h3 className="font-display text-2xl font-black mb-6 flex items-center gap-2">
-                  <Award className="text-[#38bdf8]" /> Akademik Dereceler
+                  <Award className="text-[#c5a059]" /> Akademik Dereceler
                 </h3>
                 
                 <div className="space-y-6 divide-y divide-white/10">
                   <div className="pt-0">
-                    <span className="text-[#38bdf8] text-xs font-bold uppercase tracking-wider">1999 ÖSS</span>
+                    <span className="text-[#c5a059] text-xs font-bold uppercase tracking-wider">1999 ÖSS</span>
                     <h4 className="font-bold text-lg mt-1">%100 Başarı Oranı</h4>
                     <p className="text-gray-400 text-xs mt-1">169 sayısal puan ortalamasıyla Türkiye 32&apos;ncisi</p>
                   </div>
                   
                   <div className="pt-4">
-                    <span className="text-[#38bdf8] text-xs font-bold uppercase tracking-wider">2001 ÖSS</span>
+                    <span className="text-[#c5a059] text-xs font-bold uppercase tracking-wider">2001 ÖSS</span>
                     <h4 className="font-bold text-lg mt-1">Türkiye İkinciliği</h4>
                     <p className="text-gray-400 text-xs mt-1">181 sayısal puan ortalamasıyla tarihi derece</p>
                   </div>
 
                   <div className="pt-4">
-                    <span className="text-[#38bdf8] text-xs font-bold uppercase tracking-wider">2004 ÖSS</span>
+                    <span className="text-[#c5a059] text-xs font-bold uppercase tracking-wider">2004 ÖSS</span>
                     <h4 className="font-bold text-lg mt-1">Türkiye Birinciliği & İkinciliği</h4>
                     <p className="text-gray-400 text-xs mt-1">Yerleştirme bazında %96.6 ile TR birincisi; 283.142 ortalamayla TR ikincisi. Matematik alanında TR birincisi.</p>
                   </div>
 
                   <div className="pt-4">
-                    <span className="text-[#38bdf8] text-xs font-bold uppercase tracking-wider">2005 ÖSS</span>
+                    <span className="text-[#c5a059] text-xs font-bold uppercase tracking-wider">2005 ÖSS</span>
                     <h4 className="font-bold text-lg mt-1">Sürdürülebilir Başarı</h4>
                     <p className="text-gray-400 text-xs mt-1">47 öğrenciyle katılım, 282.672 yüksek sayısal puan ortalaması</p>
                   </div>
@@ -388,7 +388,7 @@ export default function HakkimizdaClient() {
           >
             <div
               className="section-label mx-auto w-fit"
-              style={{ background: 'rgba(56,189,248,0.15)', color: '#38bdf8' }}
+              style={{ background: 'rgba(197,160,89,0.15)', color: '#c5a059' }}
             >
               <Users size={14} />
               Kurucularımız
@@ -415,13 +415,13 @@ export default function HakkimizdaClient() {
                 style={{
                   background: 'rgba(255,255,255,0.03)',
                   border: '1px solid rgba(255,255,255,0.06)',
-                  borderLeft: '4px solid #38bdf8',
+                  borderLeft: '4px solid #c5a059',
                 }}
               >
                 <h3 className="font-semibold text-white mb-2 leading-snug text-base sm:text-lg">{member.name}</h3>
                 <span 
                   className="inline-block text-xs font-bold tracking-wider px-2.5 py-0.5 rounded-full"
-                  style={{ background: 'rgba(56,189,248,0.15)', color: '#38bdf8' }}
+                  style={{ background: 'rgba(197,160,89,0.15)', color: '#c5a059' }}
                 >
                   {member.year}
                 </span>
