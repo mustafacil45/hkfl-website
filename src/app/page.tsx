@@ -160,7 +160,7 @@ export default function Home() {
                 Misyonumuz
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Mezunları bir araya<br />
+                Mezunlarımızı bir araya<br />
                 <span className="text-gradient">getiriyoruz</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">

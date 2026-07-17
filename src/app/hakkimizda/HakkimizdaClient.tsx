@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Target, Eye, Users, Heart, Star, Briefcase, Award } from 'lucide-react';
+import { Users } from 'lucide-react';
 
 const boardMembers = [
   { name: 'Haktan Badalı', year: "HKFL '22", initials: 'HB', color: '#0284c7' },
@@ -154,7 +154,7 @@ export default function HakkimizdaClient() {
               🎖️ DEĞERLERİMİZ
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
-              Bizi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0f2342] to-slate-400">Yapan</span> Değerler
+              Bizi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0f2342] to-slate-400">Biz Yapan</span> Değerler
             </h2>
           </motion.div>
 
@@ -193,12 +193,12 @@ export default function HakkimizdaClient() {
         </div>
       </section>
 
-      {/* ── Tarihçe & Başarılarımız ── */}
+      {/* ── Tarihçe ── */}
       <section className="bg-white py-24 border-t border-gray-100">
         <div className="container-custom max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            {/* Sol Taraf: Tarihçe ve Kampüs Bilgileri */}
-            <div className="lg:col-span-7 space-y-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            {/* Sol Taraf: Tarihçe */}
+            <div className="lg:col-span-7 space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -211,11 +211,14 @@ export default function HakkimizdaClient() {
                 <h2 className="font-display text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">
                   Turgutlu Halil Kale <span className="text-gradient">Fen Lisesi</span>
                 </h2>
-                <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
+                <p className="text-gray-600 text-base md:text-lg leading-relaxed">
                   İlçe bazında ilk Fen Lisesi olma özelliğini taşıyan Turgutlu Halil Kale Fen Lisesi, Fen Liseleri ailesinin 26. halkası olarak, Turgutlulu hayırsever Halil Kale tarafından yaptırılarak Millî Eğitim Bakanlığına bağışlanmış ve 1996–1997 eğitim-öğretim yılında hizmete açılmıştır.
                 </p>
               </motion.div>
+            </div>
 
+            {/* Sağ Taraf: Kampüs Bilgileri */}
+            <div className="lg:col-span-5">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -233,94 +236,6 @@ export default function HakkimizdaClient() {
                   <p>
                     Temiz, güvenli ve düzenli yaşam alanlarının yanı sıra; fizik, kimya ve biyoloji dersleri için donatılmış laboratuvarlar, okulumuzun eğitim kalitesini destekleyen önemli imkânlar arasında yer almaktadır. Ayrıca okul bahçesinde bulunan iki basketbol, iki voleybol ve bir halı saha, öğrencilerin ders dışı zamanlarını verimli ve sosyal bir şekilde değerlendirebilmelerine olanak sağlamaktadır.
                   </p>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Sağ Taraf: Başarı Tablosu ve Dereceler */}
-            <div className="lg:col-span-5 space-y-8">
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="bg-slate-950 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-                <h3 className="font-display text-2xl font-black mb-6 flex items-center gap-2">
-                  <Award className="text-white" /> Akademik Dereceler
-                </h3>
-                
-                <div className="space-y-6 divide-y divide-white/10">
-                  <div className="pt-0">
-                    <span className="text-white/80 text-xs font-bold uppercase tracking-wider">1999 ÖSS</span>
-                    <h4 className="font-bold text-lg mt-1">%100 Başarı Oranı</h4>
-                    <p className="text-gray-400 text-xs mt-1">169 sayısal puan ortalamasıyla Türkiye 32&apos;ncisi</p>
-                  </div>
-                  
-                  <div className="pt-4">
-                    <span className="text-white/80 text-xs font-bold uppercase tracking-wider">2001 ÖSS</span>
-                    <h4 className="font-bold text-lg mt-1">Türkiye İkinciliği</h4>
-                    <p className="text-gray-400 text-xs mt-1">181 sayısal puan ortalamasıyla tarihi derece</p>
-                  </div>
-
-                  <div className="pt-4">
-                    <span className="text-white/80 text-xs font-bold uppercase tracking-wider">2004 ÖSS</span>
-                    <h4 className="font-bold text-lg mt-1">Türkiye Birinciliği & İkinciliği</h4>
-                    <p className="text-gray-400 text-xs mt-1">Yerleştirme bazında %96.6 ile TR birincisi; 283.142 ortalamayla TR ikincisi. Matematik alanında TR birincisi.</p>
-                  </div>
-
-                  <div className="pt-4">
-                    <span className="text-white/80 text-xs font-bold uppercase tracking-wider">2005 ÖSS</span>
-                    <h4 className="font-bold text-lg mt-1">Sürdürülebilir Başarı</h4>
-                    <p className="text-gray-400 text-xs mt-1">47 öğrenciyle katılım, 282.672 yüksek sayısal puan ortalaması</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl"
-              >
-                <h3 className="font-display text-2xl font-black mb-6 flex items-center gap-2">
-                  <Star className="text-amber-400 animate-pulse" /> Proje Başarıları
-                </h3>
-                
-                <div className="space-y-6">
-                  <div className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center flex-shrink-0 text-amber-400 font-bold">01</div>
-                    <div>
-                      <h4 className="font-bold text-sm">2001–2002 Öğretim Yılı</h4>
-                      <p className="text-gray-400 text-xs mt-1">MEK Fizik Projesi Türkiye birincisi & Kimya Projesi Jüri Özel Ödülü</p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center flex-shrink-0 text-amber-400 font-bold">02</div>
-                    <div>
-                      <h4 className="font-bold text-sm">2002–2003 Öğretim Yılı</h4>
-                      <p className="text-gray-400 text-xs mt-1">MEK Fizik Projesi Türkiye birincisi & Biyoloji Projesi Türkiye üçüncüsü</p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center flex-shrink-0 text-amber-400 font-bold">03</div>
-                    <div>
-                      <h4 className="font-bold text-sm">2003–2004 Öğretim Yılı</h4>
-                      <p className="text-gray-400 text-xs mt-1">MEK Fizik Türkiye üçüncülüğü. Fizik alanında üst üste üç yıl derece alan tek okul unvanı.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center flex-shrink-0 text-amber-400 font-bold">05</div>
-                    <div>
-                      <h4 className="font-bold text-sm">2005 TÜBİTAK Proje Yarışması</h4>
-                      <p className="text-gray-400 text-xs mt-1">Matematik projesi Ege Bölgesi finalisti & Türkiye ikincisi</p>
-                    </div>
-                  </div>
                 </div>
               </motion.div>
             </div>
