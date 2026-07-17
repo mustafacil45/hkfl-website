@@ -10,10 +10,10 @@ import {
 import AnimatedCounter from '@/components/AnimatedCounter';
 
 const stats = [
-  { value: 2000, suffix: '+', label: 'Mezun', icon: GraduationCap },
+  { value: 1500, suffix: '+', label: 'Mezun', icon: GraduationCap },
   { value: 30, suffix: '+', label: 'Yıllık Gelenek', icon: Star },
 
-  { value: 30, suffix: '+', label: "Ülkede Mezun", icon: MapPin },
+  { value: 20, suffix: '+', label: "Ülkede Mezun", icon: MapPin },
 ];
 
 
@@ -91,7 +91,7 @@ export default function Home() {
           >
             Geçmişimizin gücüyle geleceği birlikte inşa ediyoruz.
             <br className="hidden md:block" />
-            30+ ülkede 2000+ mezunuyla güçlü bir topluluk.
+            20+ ülkede 1500+ mezunuyla güçlü bir topluluk.
           </motion.p>
 
           <motion.div
@@ -175,7 +175,7 @@ export default function Home() {
                 <span className="text-gradient">getiriyoruz</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Halil Kale Fen Liseliler Derneği olarak amacımız, mezunlarımız arasındaki dayanışmayı güçlendirmek,
+                Halil Kale Fen Lisesi Mezunlar Derneği olarak amacımız, mezunlarımız arasındaki dayanışmayı güçlendirmek,
                 öğrencilerimize destek olmak ve kurumumuzun köklü geleneğini yaşatmaktır.
               </p>
               <p className="text-gray-600 leading-relaxed" style={{ marginBottom: '2.5rem' }}>
@@ -278,12 +278,17 @@ export default function Home() {
               Topluluğumuza Katılın
             </h2>
             <p className="text-white/80 text-lg max-w-xl mx-auto mb-8">
-              2000&apos;den fazla mezunumuzla güçlü bir ağın parçası olun.
+              1500&apos;den fazla mezunumuzla güçlü bir ağın parçası olun.
             </p>
-            <Link href="/iletisim" className="btn-outline">
-              <Mail size={18} />
-              Bize Ulaşın
-            </Link>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdUXscqyML17OXnwAQktTBO6M0wHADs3okxPQWW-Wm9P602YA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline inline-flex items-center gap-2"
+            >
+              Topluluğa Katılın
+              <ArrowRight size={18} />
+            </a>
           </motion.div>
         </div>
       </section>

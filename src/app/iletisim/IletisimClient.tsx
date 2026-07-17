@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const contactInfo = [
@@ -22,15 +22,9 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'E-posta',
-    lines: ['mcil4945@gmail.com'],
+    lines: ['iletisim@hkmed.org'],
     color: '#1d4ed8',
-    href: 'mailto:mcil4945@gmail.com',
-  },
-  {
-    icon: Clock,
-    title: 'Çalışma Saatleri',
-    lines: ['Hafta içi: 09:00 – 18:00', 'Hafta sonu: Kapalı'],
-    color: '#059669',
+    href: 'mailto:iletisim@hkmed.org',
   },
 ];
 
@@ -63,7 +57,7 @@ export default function IletisimClient() {
 
     if (!serviceId || !templateId || !publicKey) {
       console.warn("EmailJS credentials are not configured. Falling back to email link opening.");
-      const mailtoUrl = `mailto:mcil4945@gmail.com?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(`Ad Soyad: ${form.name}\nE-posta: ${form.email}\n\nMesaj:\n${form.message}`)}`;
+      const mailtoUrl = `mailto:iletisim@hkmed.org?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(`Ad Soyad: ${form.name}\nE-posta: ${form.email}\n\nMesaj:\n${form.message}`)}`;
       window.location.href = mailtoUrl;
       setStatus('success');
       setForm({ name: '', email: '', subject: '', message: '' });
@@ -80,7 +74,7 @@ export default function IletisimClient() {
           reply_to: form.email,
           subject: form.subject,
           message: form.message,
-          to_email: 'mcil4945@gmail.com'
+          to_email: 'iletisim@hkmed.org'
         },
         publicKey
       );

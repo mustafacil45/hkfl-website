@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Search, ShieldAlert, Award, Briefcase, Globe, Compass, ChevronRight, Users } from 'lucide-react';
+import { MapPin, Search, ShieldAlert, Briefcase, Globe, Compass, ChevronRight, Users } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 import { CityData, citiesData } from './citiesData';
@@ -156,14 +156,6 @@ export default function HaritaClient() {
                                                 <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
                                                   <motion.div initial={{ width:0 }} animate={{ width:`${s.pct}%` }} transition={{ duration:0.8 }} className="h-full rounded-full" style={{ background:s.color }} />
                                                 </div>
-                                              </div>
-                                            ))}
-                                          </div>
-                                          <div className="space-y-1.5">
-                                            <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1"><Award size={9} /> Pozisyonlar</div>
-                                            {city.roles.map((r,i) => (
-                                              <div key={i} className="flex items-start gap-1.5 text-[10px] text-slate-400 leading-relaxed">
-                                                <ChevronRight size={9} className="text-sky-500 flex-shrink-0 mt-0.5" /><span>{r}</span>
                                               </div>
                                             ))}
                                           </div>

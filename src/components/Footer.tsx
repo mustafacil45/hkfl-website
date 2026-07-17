@@ -15,17 +15,8 @@ const SocialLinks = [
     ),
   },
   {
-    label: 'Twitter / X',
-    href: '#',
-    svg: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-      </svg>
-    ),
-  },
-  {
     label: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/groups/16196087/',
     svg: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
@@ -112,8 +103,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-[#0284c7] flex-shrink-0" />
-                <a href="mailto:mcil4945@gmail.com" className="text-gray-400 text-sm hover:text-white transition-colors">
-                  mcil4945@gmail.com
+                <a href="mailto:iletisim@hkmed.org" className="text-gray-400 text-sm hover:text-white transition-colors">
+                  iletisim@hkmed.org
                 </a>
               </li>
             </ul>
@@ -123,7 +114,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
           <p className="text-gray-500 text-sm">
-            © 2026 Halil Kale Fen Liseliler Derneği. Tüm hakları saklıdır.
+            © 2026 Halil Kale Fen Lisesi Mezunlar Derneği. Tüm hakları saklıdır.
           </p>
           <div className="flex items-center gap-4 text-gray-500 text-sm">
             <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors">

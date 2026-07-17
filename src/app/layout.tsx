@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Halil Kale Fen Liseliler Derneği",
+  title: "Halil Kale Fen Lisesi Mezunlar Derneği",
   description:
-    "Halil Kale Fen Liseliler Derneği resmi web sitesi. Mezunlarımızı bir araya getiren etkinlikler, duyurular ve topluluk ağı.",
+    "Halil Kale Fen Lisesi Mezunlar Derneği resmi web sitesi. Mezunlarımızı bir araya getiren etkinlikler, duyurular ve topluluk ağı.",
   keywords: [
     "Halil Kale Fen Lisesi",
     "mezun derneği",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Manisa",
   ],
   openGraph: {
-    title: "Halil Kale Fen Liseliler Derneği",
+    title: "Halil Kale Fen Lisesi Mezunlar Derneği",
     description:
       "Geçmişimizin gücüyle geleceği birlikte inşa ediyoruz. Halil Kale Fen Lisesi mezun topluluğuna katılın.",
     type: "website",

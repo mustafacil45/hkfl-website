@@ -4,11 +4,13 @@ import { motion } from 'framer-motion';
 import { Target, Eye, Users, Heart, Star, Briefcase, Award } from 'lucide-react';
 
 const boardMembers = [
-  { name: 'Haktan Badalı', role: 'Dernek Başkanı', year: 'HKFL Mezunu', initials: 'HB', color: '#0284c7' },
-  { name: 'Arif Burhan Kahya', role: 'Başkan Yardımcısı', year: 'HKFL Mezunu', initials: 'AK', color: '#38bdf8' },
-  { name: 'Hafız', role: 'Sayman', year: 'HKFL Mezunu', initials: 'HF', color: '#1d4ed8' },
-  { name: 'Mustafa Sayar', role: 'Yönetim Kurulu Üyesi', year: 'HKFL Mezunu', initials: 'MS', color: '#059669' },
-  { name: 'Mustafa Çil', role: 'Yönetim Kurulu Üyesi', year: 'HKFL Mezunu', initials: 'MÇ', color: '#7c3aed' },
+  { name: 'Haktan Badalı', year: "HKFL '22", initials: 'HB', color: '#0284c7' },
+  { name: 'Arif Burhan Kahya', year: "HKFL '22", initials: 'AK', color: '#38bdf8' },
+  { name: 'Mustafa Çil', year: "HKFL '22", initials: 'MÇ', color: '#7c3aed' },
+  { name: 'Berke Yardımcı', year: "HKFL '22", initials: 'BY', color: '#ec4899' },
+  { name: 'Oğuzhan Yazar', year: "HKFL '24", initials: 'OY', color: '#eab308' },
+  { name: 'Mustafa Sayar', year: "HKFL '24", initials: 'MS', color: '#059669' },
+  { name: 'Bahadır Yılmaz', year: "HKFL '24", initials: 'BY', color: '#f97316' },
 ];
 
 
@@ -82,8 +84,8 @@ export default function HakkimizdaClient() {
                   Fen Liseleri ailesinin 26. halkası olarak kurulan okulumuzun değerli mezunları olarak, aramızdaki bağı güçlendirmek ve geleceğe birlikte yürümek için bir aradayız.
                 </p>
                 <div className="flex items-center justify-center gap-6 text-[#38bdf8] text-sm font-semibold min-w-0">
-                  <span className="flex items-center gap-1.5">👥 2000+ Mezun</span>
-                  <span className="flex items-center gap-1.5">🌍 30+ Ülke</span>
+                  <span className="flex items-center gap-1.5">👥 1500+ Mezun</span>
+                  <span className="flex items-center gap-1.5">🌍 20+ Ülke</span>
                 </div>
               </div>
             </motion.div>
@@ -226,30 +228,10 @@ export default function HakkimizdaClient() {
                 </h3>
                 <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
                   <p>
-                    Modern ve çağdaş bir eğitim anlayışını yansıtan okul kampüsü; iki pansiyon binası, bir idare binası ve bir konferans salonu binası olmak üzere toplam dört yapıdan oluşmaktadır. Kız ve erkek öğrenciler için ayrı olarak düzenlenen pansiyon binalarında yatakhaneler, yemekhane, çamaşırhane ve revir bulunmaktadır.
+                    Modern ve çağdaş bir eğitim anlayışını yansıtan okul kampüsü; bir pansiyon binası, bir idare binası ve bir konferans salonu binası olmak üzere toplam üç yapıdan oluşmaktadır. Pansiyon binasında yatakhaneler, yemekhane, çamaşırhane ve revir bulunmaktadır.
                   </p>
                   <p>
-                    Temiz, güvenli ve düzenli yaşam alanlarının yanı sıra; fizik, kimya ve biyoloji dersleri için donatılmış laboratuvarlar, okulumuzun eğitim kalitesini destekleyen önemli imkânlar arasında yer almaktadır. Ayrıca okul bahçesinde bulunan iki basketbol ve iki voleybol sahası, öğrencilerin ders dışı zamanlarını verimli ve sosyal bir şekilde değerlendirebilmelerine olanak sağlamaktadır.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="space-y-6"
-              >
-                <h3 className="font-display text-xl font-bold text-gray-900 flex items-center gap-2">
-                  <span>🔬</span> Bilimsel İş Birlikleri ve Araştırmalar
-                </h3>
-                <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
-                  <p>
-                    Ortaöğretim Kurumları Öğrenci Seçme Sınavı sonuçlarına göre sürekli olarak ilk beş içerisinde yer alan okulumuz; Ege Üniversitesi, Dokuz Eylül Üniversitesi, Celal Bayar Üniversitesi, Yüksek Teknoloji Enstitüsü ve PETKİM gibi çeşitli kurumlarla gerçekleştirilen iş birlikleri kapsamında, bilim kurulunun rehberliğinde düzenli proje çalışmaları yürütmektedir.
-                  </p>
-                  <p>
-                    Ayrıca her yıl TÜBİTAK Bilim Olimpiyatları ile TÜBİTAK, MEF, Mucitler ve Araştırmacılar Derneği ve Enerji Bakanlığı tarafından düzenlenen araştırma projeleri yarışmalarına aktif olarak katılım sağlamaktadır.
+                    Temiz, güvenli ve düzenli yaşam alanlarının yanı sıra; fizik, kimya ve biyoloji dersleri için donatılmış laboratuvarlar, okulumuzun eğitim kalitesini destekleyen önemli imkânlar arasında yer almaktadır. Ayrıca okul bahçesinde bulunan iki basketbol, iki voleybol ve bir halı saha, öğrencilerin ders dışı zamanlarını verimli ve sosyal bir şekilde değerlendirebilmelerine olanak sağlamaktadır.
                   </p>
                 </div>
               </motion.div>
@@ -395,7 +377,7 @@ export default function HakkimizdaClient() {
         </div>
       </section>
 
-      {/* ── Yönetim Kurulu ── */}
+      {/* ── Kurucular ── */}
       <section className="section-padding" style={{ background: '#0f1117' }}>
         <div className="container-custom">
           <motion.div
@@ -409,13 +391,13 @@ export default function HakkimizdaClient() {
               style={{ background: 'rgba(56,189,248,0.15)', color: '#38bdf8' }}
             >
               <Users size={14} />
-              Ekibimiz
+              Kurucularımız
             </div>
             <h2 className="font-display text-4xl font-bold text-white mt-2">
-              Yönetim <span style={{ color: '#38bdf8' }}>Kurulu</span>
+              Kurucular
             </h2>
             <p className="text-gray-400 mt-3 max-w-xl mx-auto">
-              Derneğimizi yöneten, deneyimli ve kararlı mezun liderlerimiz.
+              Derneğimizin kuruluşuna öncülük eden kurucu üyelerimiz.
             </p>
           </motion.div>
           <motion.div
@@ -423,29 +405,26 @@ export default function HakkimizdaClient() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="grid sm:grid-cols-2 md:grid-cols-3 gap-6"
+            className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           >
             {boardMembers.map((member) => (
               <motion.div
                 key={member.name}
                 variants={itemVariants}
-                className="rounded-2xl p-6 text-center transition-transform hover:-translate-y-1"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
+                className="rounded-xl p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-black/10"
+                style={{
+                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(255,255,255,0.06)',
+                  borderLeft: '4px solid #38bdf8',
+                }}
               >
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4"
-                  style={{ background: `linear-gradient(135deg, ${member.color}, ${member.color}99)` }}
+                <h3 className="font-semibold text-white mb-2 leading-snug text-base sm:text-lg">{member.name}</h3>
+                <span 
+                  className="inline-block text-xs font-bold tracking-wider px-2.5 py-0.5 rounded-full"
+                  style={{ background: 'rgba(56,189,248,0.15)', color: '#38bdf8' }}
                 >
-                  {member.initials}
-                </div>
-                <h3 className="font-semibold text-white mb-1 leading-snug">{member.name}</h3>
-                <div
-                  className="inline-block text-xs font-medium px-3 py-1 rounded-full mb-2"
-                  style={{ background: `${member.color}22`, color: member.color }}
-                >
-                  {member.role}
-                </div>
-                <p className="text-gray-500 text-xs">{member.year}</p>
+                  {member.year}
+                </span>
               </motion.div>
             ))}
           </motion.div>

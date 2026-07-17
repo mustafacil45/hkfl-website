@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[calc(100%-2rem)] md:w-auto ${scrolled ? 'top-2' : 'top-4'}`}>
+      <div className={`fixed left-1/2 -translate-x-1/2 z-[1050] transition-all duration-300 w-[calc(100%-2rem)] md:w-auto ${scrolled ? 'top-2' : 'top-4'}`}>
         <nav className="bg-white/90 backdrop-blur-md shadow-lg rounded-full border border-white/20 px-6 md:px-8 py-3 relative flex items-center justify-center min-h-[72px] w-full">
 
           {/* ORTA ALAN: TAM ORTALANMIŞ MENÜ */}
@@ -73,7 +73,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-4 top-24 z-40 bg-white/95 backdrop-blur-md shadow-2xl rounded-3xl border border-gray-100 p-6 md:hidden"
+            className="fixed inset-x-4 top-24 z-[1040] bg-white/95 backdrop-blur-md shadow-2xl rounded-3xl border border-gray-100 p-6 md:hidden"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
