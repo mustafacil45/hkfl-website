@@ -19,7 +19,7 @@ export default function GizlilikPolitikasiClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center justify-center gap-2 bg-[#0284c7]/10 text-[#0284c7] border border-[#0284c7]/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6 max-w-full text-center">
+            <div className="inline-flex items-center justify-center gap-2 bg-[#0f2342]/10 text-[#0f2342] border border-[#0f2342]/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6 max-w-full text-center">
               <Shield size={14} /> GİZLİLİK VE POLİTİKALAR
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
@@ -43,7 +43,7 @@ export default function GizlilikPolitikasiClient() {
           >
             {/* Card 1: Bilgilendirme ve Tanıtım */}
             <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-start shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center flex-shrink-0 text-blue-500">
+              <div className="w-12 h-12 rounded-2xl bg-[#0f2342]/10 flex items-center justify-center flex-shrink-0 text-[#0f2342]">
                 <Eye size={22} />
               </div>
               <div className="space-y-3">
@@ -59,7 +59,7 @@ export default function GizlilikPolitikasiClient() {
 
             {/* Card 2: Fikri Mülkiyet ve İçerik Kullanımı */}
             <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-start shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-sky-50 flex items-center justify-center flex-shrink-0 text-sky-500">
+              <div className="w-12 h-12 rounded-2xl bg-[#0f2342]/10 flex items-center justify-center flex-shrink-0 text-[#0f2342]">
                 <Lock size={22} />
               </div>
               <div className="space-y-3">
@@ -72,7 +72,7 @@ export default function GizlilikPolitikasiClient() {
 
             {/* Card 3: Politika Değişiklikleri */}
             <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-start shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center flex-shrink-0 text-emerald-500">
+              <div className="w-12 h-12 rounded-2xl bg-[#0f2342]/10 flex items-center justify-center flex-shrink-0 text-[#0f2342]">
                 <RefreshCw size={22} />
               </div>
               <div className="space-y-3">

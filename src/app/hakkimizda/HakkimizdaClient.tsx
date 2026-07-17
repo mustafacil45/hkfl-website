@@ -103,10 +103,10 @@ export default function HakkimizdaClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="rounded-3xl p-8 md:p-10 flex flex-col justify-center items-start border border-sky-100/70 shadow-sm min-h-[260px] relative overflow-hidden group hover:shadow-md transition-shadow"
+              className="rounded-3xl p-8 md:p-10 flex flex-col justify-center items-start border border-slate-100 shadow-sm min-h-[260px] relative overflow-hidden group hover:shadow-md transition-shadow"
               style={{ background: 'linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)' }}
             >
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-5 flex-shrink-0 text-blue-500">
+              <div className="w-12 h-12 rounded-2xl bg-[#0f2342]/10 flex items-center justify-center mb-5 flex-shrink-0 text-[#0f2342]">
                 <span className="text-xl">🎯</span>
               </div>
               <h3 className="font-display text-2xl font-bold text-gray-950 mb-3 text-left">
@@ -123,10 +123,10 @@ export default function HakkimizdaClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="rounded-3xl p-8 md:p-10 flex flex-col justify-center items-start border border-sky-100/70 shadow-sm min-h-[260px] relative overflow-hidden group hover:shadow-md transition-shadow"
+              className="rounded-3xl p-8 md:p-10 flex flex-col justify-center items-start border border-slate-100 shadow-sm min-h-[260px] relative overflow-hidden group hover:shadow-md transition-shadow"
               style={{ background: 'linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)' }}
             >
-              <div className="w-12 h-12 rounded-2xl bg-sky-50 flex items-center justify-center mb-5 flex-shrink-0 text-sky-500">
+              <div className="w-12 h-12 rounded-2xl bg-[#0f2342]/10 flex items-center justify-center mb-5 flex-shrink-0 text-[#0f2342]">
                 <span className="text-xl">👁️</span>
               </div>
               <h3 className="font-display text-2xl font-bold text-gray-900 mb-3 text-left">
@@ -150,11 +150,11 @@ export default function HakkimizdaClient() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-bold tracking-wide uppercase mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f2342]/10 text-[#0f2342] text-xs font-bold tracking-wide uppercase mb-3">
               🎖️ DEĞERLERİMİZ
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
-              Bizi <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">Yapan</span> Değerler
+              Bizi <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0f2342] to-slate-400">Yapan</span> Değerler
             </h2>
           </motion.div>
 
@@ -205,7 +205,7 @@ export default function HakkimizdaClient() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-bold tracking-wide uppercase mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f2342]/10 text-[#0f2342] text-xs font-bold tracking-wide uppercase mb-4">
                   🏫 TARİHÇEMİZ
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">
@@ -246,7 +246,7 @@ export default function HakkimizdaClient() {
                 transition={{ duration: 0.6 }}
                 className="bg-slate-950 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-800/20 rounded-full blur-2xl" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
                 <h3 className="font-display text-2xl font-black mb-6 flex items-center gap-2">
                   <Award className="text-white" /> Akademik Dereceler
                 </h3>
