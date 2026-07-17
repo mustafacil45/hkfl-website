@@ -2058,30 +2058,5 @@ export const citiesData: CityData[] = [
     "roles": [
       "Tıp"
     ]
-  },
-  {
-    "id": "sehir",
-    "city": "Şehir",
-    "country": "Türkiye",
-    "flag": "🇹🇷",
-    "count": 5,
-    "lat": 38.49,
-    "lng": 27.7,
-    "sectors": [
-      {
-        "name": "İdari & İktisadi Bilimler",
-        "pct": 60,
-        "color": "#dc2626"
-      },
-      {
-        "name": "Sağlık & Tıp",
-        "pct": 40,
-        "color": "#059669"
-      }
-    ],
-    "roles": [
-      "Ekonomi (3)",
-      "Tıp (2)"
-    ]
   }
 ];

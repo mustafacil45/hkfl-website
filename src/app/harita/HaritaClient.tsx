@@ -177,11 +177,19 @@ export default function HaritaClient() {
           </div>
 
           {/* KVKK */}
-          <div className="mt-8 bg-amber-500/5 border border-amber-500/10 rounded-2xl p-4 flex gap-3 items-start backdrop-blur-sm">
-            <ShieldAlert size={16} className="text-amber-500 flex-shrink-0 mt-0.5" />
-            <p className="text-[11px] text-amber-200/70 leading-relaxed font-medium">
-              KVKK kapsamında mezunlarımızın isim ve bireysel kurum bilgileri gösterilmeden yalnızca istatistiksel dağılım paylaşılmaktadır.
-            </p>
+          <div className="mt-8 bg-amber-500/5 border border-amber-500/10 rounded-2xl p-4 flex flex-col gap-3 backdrop-blur-sm">
+            <div className="flex gap-3 items-start">
+              <ShieldAlert size={16} className="text-amber-500 flex-shrink-0 mt-0.5" />
+              <p className="text-[11px] text-amber-200/70 leading-relaxed font-medium">
+                KVKK kapsamında mezunlarımızın isim ve bireysel kurum bilgileri gösterilmeden yalnızca istatistiksel dağılım paylaşılmaktadır.
+              </p>
+            </div>
+            <div className="flex gap-3 items-start border-t border-amber-500/10 pt-3">
+              <ShieldAlert size={16} className="text-amber-500 flex-shrink-0 mt-0.5" />
+              <p className="text-[11px] text-amber-200/70 leading-relaxed font-medium">
+                Haritada yalnızca topluluk formumuzu dolduran mezunlarımız gösterilmektedir.
+              </p>
+            </div>
           </div>
         </div>
       </section>
