@@ -36,12 +36,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-[#0284c7] flex items-center justify-center font-bold text-sm">
-                HKFL
+              <div className="w-10 h-10 rounded-full overflow-hidden bg-white flex items-center justify-center">
+                <img src="/logo.jpg" alt="HKFL Mezunlar Derneği" className="w-full h-full object-cover" />
               </div>
               <div>
-                <div className="font-bold text-sm leading-tight">HKFL Derneği</div>
-                <div className="text-xs text-gray-400">Halil Kale Fen Liseliler</div>
+                <div className="font-bold text-sm leading-tight">HKFL Mezunlar Derneği</div>
+                <div className="text-xs text-gray-400">Halil Kale Fen Lisesi</div>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
