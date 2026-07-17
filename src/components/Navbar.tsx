@@ -35,14 +35,14 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-semibold relative py-2 transition-all duration-300 text-gray-700 hover:text-[#db1a22] whitespace-nowrap ${pathname === link.href ? 'text-[#db1a22]' : ''
+                className={`text-sm font-semibold relative py-2 transition-all duration-300 text-gray-700 hover:text-[#0f2342] whitespace-nowrap ${pathname === link.href ? 'text-[#0f2342]' : ''
                   }`}
               >
                 {link.label}
                 {pathname === link.href && (
                   <motion.span
                     layoutId="activeNavIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#db1a22] rounded-full"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0f2342] rounded-full"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -81,7 +81,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-base font-semibold py-2 border-b border-gray-50 text-gray-700 hover:text-[#db1a22] transition-colors ${pathname === link.href ? 'text-[#db1a22]' : ''
+                  className={`text-base font-semibold py-2 border-b border-gray-50 text-gray-700 hover:text-[#0f2342] transition-colors ${pathname === link.href ? 'text-[#0f2342]' : ''
                     }`}
                 >
                   {link.label}

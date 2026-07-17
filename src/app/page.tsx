@@ -73,7 +73,7 @@ export default function Home() {
             style={{ textShadow: '0 4px 30px rgba(0,0,0,0.5)' }}
           >
             Halil Kale<br />
-            <span style={{ color: '#c5a059' }}>Fen Lisesi</span><br />
+            <span style={{ color: '#ffffff' }}>Fen Lisesi</span><br />
             Mezunlar Derneği
           </motion.h1>
 
@@ -141,9 +141,9 @@ export default function Home() {
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3"
-                  style={{ background: 'rgba(219,26,34,0.08)' }}
+                  style={{ background: 'rgba(15,35,66,0.08)' }}
                 >
-                  <stat.icon size={22} style={{ color: '#db1a22' }} />
+                  <stat.icon size={22} style={{ color: '#0f2342' }} />
                 </div>
                 <div className="stat-number">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} />
@@ -192,9 +192,9 @@ export default function Home() {
                   <div key={item.text} className="flex items-center gap-4 p-5 rounded-xl bg-gray-50">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'rgba(219,26,34,0.08)' }}
+                      style={{ background: 'rgba(15,35,66,0.08)' }}
                     >
-                      <item.icon size={20} style={{ color: '#db1a22' }} />
+                      <item.icon size={20} style={{ color: '#0f2342' }} />
                     </div>
                     <span className="text-base font-semibold text-gray-800 leading-snug">{item.text}</span>
                   </div>
@@ -213,7 +213,7 @@ export default function Home() {
               <div
                 className="rounded-3xl overflow-hidden min-h-[420px] sm:aspect-square relative flex flex-col justify-center p-6 md:p-12"
                 style={{
-                  background: 'linear-gradient(135deg, #db1a22 0%, #c5a059 100%)',
+                  background: 'linear-gradient(135deg, #0f2342 0%, #1e3a8a 100%)',
                 }}
               >
                 {/* Arka plandaki büyük '30' sayısı (absolute olarak sağ üste sabitlendi ve opaklığı düşürüldü) */}
@@ -243,11 +243,11 @@ export default function Home() {
               {/* Dekoratif dış halkalar */}
               <div
                 className="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-20 pointer-events-none"
-                style={{ background: '#db1a22' }}
+                style={{ background: '#0f2342' }}
               />
               <div
                 className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full opacity-10 pointer-events-none"
-                style={{ background: '#c5a059' }}
+                style={{ background: '#ffffff' }}
               />
             </motion.div>
           </div>

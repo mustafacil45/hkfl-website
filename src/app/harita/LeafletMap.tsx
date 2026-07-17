@@ -40,14 +40,14 @@ export default function LeafletMap({ locations, selectedId, onSelect }: Props) {
         .leaflet-container { background:#0f172a !important; font-family:inherit; }
         .leaflet-control-zoom { border:1px solid rgba(255,255,255,0.1) !important; border-radius:12px !important; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.4) !important; }
         .leaflet-control-zoom a { background:rgba(15,23,42,0.9) !important; color:#94a3b8 !important; border:none !important; border-bottom:1px solid rgba(255,255,255,0.06) !important; width:36px !important; height:36px !important; line-height:36px !important; font-size:16px !important; transition:all 0.2s; }
-        .leaflet-control-zoom a:hover { background:rgba(219,26,34,0.3) !important; color:#c5a059 !important; }
+        .leaflet-control-zoom a:hover { background:rgba(15,35,66,0.3) !important; color:#ffffff !important; }
         .leaflet-control-attribution { background:rgba(15,23,42,0.8) !important; color:#475569 !important; font-size:9px !important; border-radius:8px 0 0 0 !important; padding:2px 8px !important; }
         .leaflet-control-attribution a { color:#64748b !important; }
-        .leaflet-popup-content-wrapper { background:rgba(15,23,42,0.95) !important; color:#e2e8f0 !important; border-radius:16px !important; border:1px solid rgba(197,160,89,0.2) !important; box-shadow:0 8px 32px rgba(0,0,0,0.5) !important; backdrop-filter:blur(12px); padding:0 !important; }
+        .leaflet-popup-content-wrapper { background:rgba(15,23,42,0.95) !important; color:#e2e8f0 !important; border-radius:16px !important; border:1px solid rgba(255,255,255,0.2) !important; box-shadow:0 8px 32px rgba(0,0,0,0.5) !important; backdrop-filter:blur(12px); padding:0 !important; }
         .leaflet-popup-content { margin:0 !important; min-width:200px; }
-        .leaflet-popup-tip { background:rgba(15,23,42,0.95) !important; border:1px solid rgba(197,160,89,0.15) !important; }
+        .leaflet-popup-tip { background:rgba(15,23,42,0.95) !important; border:1px solid rgba(255,255,255,0.15) !important; }
         .leaflet-popup-close-button { color:#64748b !important; font-size:18px !important; top:8px !important; right:10px !important; }
-        .leaflet-popup-close-button:hover { color:#c5a059 !important; }
+        .leaflet-popup-close-button:hover { color:#ffffff !important; }
       `}</style>
 
       <MapContainer center={[30,20]} zoom={2} minZoom={2} maxZoom={10} scrollWheelZoom={true} zoomControl={true} style={{ height:'100%', width:'100%' }} ref={mapRef}>
@@ -59,7 +59,7 @@ export default function LeafletMap({ locations, selectedId, onSelect }: Props) {
           const radius = getRadius(loc.count);
           return (
             <CircleMarker key={loc.id} center={[loc.lat, loc.lng]} radius={isSelected ? radius + 3 : radius}
-              pathOptions={{ fillColor: isSelected ? '#db1a22' : '#c5a059', fillOpacity: isSelected ? 0.85 : 0.6, color: isSelected ? '#fff' : 'rgba(197,160,89,0.4)', weight: isSelected ? 2.5 : 1.5 }}
+              pathOptions={{ fillColor: isSelected ? '#0f2342' : '#94a3b8', fillOpacity: isSelected ? 0.85 : 0.6, color: isSelected ? '#fff' : 'rgba(255,255,255,0.4)', weight: isSelected ? 2.5 : 1.5 }}
               eventHandlers={{ click: () => onSelect(loc.id) }}>
               <Popup>
                 <div style={{ padding:'14px 16px', minWidth:'190px' }}>
@@ -70,8 +70,8 @@ export default function LeafletMap({ locations, selectedId, onSelect }: Props) {
                       <div style={{ fontSize:'10px', color:'#64748b', fontWeight:500 }}>{loc.country}</div>
                     </div>
                   </div>
-                  <div style={{ background:'rgba(197,160,89,0.08)', borderRadius:'10px', padding:'8px 12px', marginBottom:'10px', border:'1px solid rgba(197,160,89,0.12)' }}>
-                    <div style={{ fontSize:'20px', fontWeight:900, color:'#c5a059', lineHeight:1 }}>{loc.count}</div>
+                  <div style={{ background:'rgba(255,255,255,0.08)', borderRadius:'10px', padding:'8px 12px', marginBottom:'10px', border:'1px solid rgba(255,255,255,0.12)' }}>
+                    <div style={{ fontSize:'20px', fontWeight:900, color:'#ffffff', lineHeight:1 }}>{loc.count}</div>
                     <div style={{ fontSize:'9px', color:'#64748b', fontWeight:600, marginTop:'2px', textTransform:'uppercase', letterSpacing:'0.5px' }}>Mezun</div>
                   </div>
                   <div style={{ fontSize:'9px', color:'#94a3b8', fontWeight:700, textTransform:'uppercase', letterSpacing:'1px', marginBottom:'6px' }}>Sektörler</div>

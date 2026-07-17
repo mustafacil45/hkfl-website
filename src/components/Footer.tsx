@@ -29,7 +29,7 @@ export default function Footer() {
   return (
     <footer style={{ background: '#0f1117' }} className="text-white">
       {/* Top border gradient */}
-      <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, #db1a22, #c5a059, #db1a22)' }} />
+      <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, #0f2342, #ffffff, #0f2342)' }} />
 
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -55,7 +55,7 @@ export default function Footer() {
                   aria-label={s.label}
                   className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300"
                   style={{ background: 'rgba(255,255,255,0.07)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = '#db1a22')}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = '#0f2342')}
                   onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.07)')}
                 >
                   {s.svg}
@@ -79,7 +79,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2 group"
                   >
-                    <span className="w-1 h-1 rounded-full bg-[#db1a22] group-hover:w-2 transition-all" />
+                    <span className="w-1 h-1 rounded-full bg-[#ffffff] group-hover:w-2 transition-all" />
                     {link.label}
                   </Link>
                 </li>
@@ -92,17 +92,17 @@ export default function Footer() {
             <h4 className="font-semibold text-sm mb-5 text-gray-200 uppercase tracking-wider">İletişim</h4>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-[#db1a22] mt-0.5 flex-shrink-0" />
+                <MapPin size={16} className="text-white mt-0.5 flex-shrink-0" />
                 <span className="text-gray-400 text-sm">Subaşı, Seyfi Demirsoy Sk. No:45,<br />45400 Turgutlu/Manisa</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={16} className="text-[#db1a22] flex-shrink-0" />
+                <Phone size={16} className="text-white flex-shrink-0" />
                 <a href="tel:+905392459454" className="text-gray-400 text-sm hover:text-white transition-colors">
                   +90 (539) 245 94 54
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={16} className="text-[#db1a22] flex-shrink-0" />
+                <Mail size={16} className="text-white flex-shrink-0" />
                 <a href="mailto:iletisim@hkmed.org" className="text-gray-400 text-sm hover:text-white transition-colors">
                   iletisim@hkmed.org
                 </a>

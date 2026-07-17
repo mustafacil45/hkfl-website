@@ -47,16 +47,16 @@ export default function HaritaClient() {
       {/* Hero */}
       <section className="relative pt-36 sm:pt-44 lg:pt-52 pb-14 sm:pb-16 overflow-hidden" style={{ background:'linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0f172a 100%)' }}>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-[600px] h-[600px] rounded-full opacity-15 blur-3xl" style={{ background:'radial-gradient(circle,#db1a22,transparent 70%)', top:'-15%', left:'-10%' }} />
-          <div className="absolute w-[400px] h-[400px] rounded-full opacity-10 blur-3xl" style={{ background:'radial-gradient(circle,#c5a059,transparent 70%)', bottom:'-10%', right:'-5%' }} />
+          <div className="absolute w-[600px] h-[600px] rounded-full opacity-15 blur-3xl" style={{ background:'radial-gradient(circle,#0f2342,transparent 70%)', top:'-15%', left:'-10%' }} />
+          <div className="absolute w-[400px] h-[400px] rounded-full opacity-10 blur-3xl" style={{ background:'radial-gradient(circle,#ffffff,transparent 70%)', bottom:'-10%', right:'-5%' }} />
         </div>
         <div className="container-custom relative z-10 w-full">
           <motion.div initial={{ opacity:0, y:30 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7 }} className="text-center">
-            <div className="inline-flex items-center justify-center gap-2 bg-white/5 text-[#c5a059] border border-[#c5a059]/20 px-5 py-2 rounded-full text-xs font-bold uppercase mb-6 backdrop-blur-sm">
+            <div className="inline-flex items-center justify-center gap-2 bg-white/5 text-white border border-white/20 px-5 py-2 rounded-full text-xs font-bold uppercase mb-6 backdrop-blur-sm">
               <Globe size={14} /> KÜRESEL MEZUN AĞI
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 text-white">
-              Mezun <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#db1a22] to-[#c5a059]">Haritası</span>
+              Mezun <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Haritası</span>
             </h1>
             <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
               Halil Kale Fen Lisesi mezunlarının dünya genelindeki şehir bazlı dağılımı ve çalıştıkları sektörler.
@@ -70,7 +70,7 @@ export default function HaritaClient() {
               ].map((s,i) => (
                 <motion.div key={i} initial={{ opacity:0, y:15 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.3+i*0.1 }} className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <s.icon size={18} className="text-[#c5a059]" />
+                    <s.icon size={18} className="text-white" />
                   </div>
                   <div className="text-left">
                     <div className="text-xl font-bold text-white">{s.value}</div>
@@ -90,7 +90,7 @@ export default function HaritaClient() {
             <div className="relative">
               <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
               <input type="text" placeholder="Ülke veya şehir ara..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#db1a22]/30 focus:bg-white/[0.07] transition-all backdrop-blur-sm" />
+                className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0f2342]/30 focus:bg-white/[0.07] transition-all backdrop-blur-sm" />
             </div>
           </motion.div>
 
@@ -110,14 +110,14 @@ export default function HaritaClient() {
                   <div key={country} className="rounded-2xl border border-white/[0.06] overflow-hidden">
                     {/* Country header */}
                     <button onClick={() => setExpandedCountry(isExpanded ? null : country)}
-                      className={`w-full flex items-center justify-between p-4 transition-all ${isExpanded ? 'bg-[#db1a22]/10' : 'bg-white/[0.03] hover:bg-white/[0.06]'}`}>
+                      className={`w-full flex items-center justify-between p-4 transition-all ${isExpanded ? 'bg-[#0f2342]/50' : 'bg-white/[0.03] hover:bg-white/[0.06]'}`}>
                       <div className="flex items-center gap-2.5">
                         <span className="text-lg">{group.flag}</span>
                         <span className="font-bold text-sm text-white">{country}</span>
                         <span className="text-[10px] text-slate-500">({group.cities.length} şehir)</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className={`text-xs font-extrabold px-2.5 py-1 rounded-full ${isExpanded ? 'bg-[#db1a22] text-white' : 'bg-white/10 text-slate-300'}`}>{group.total}</span>
+                        <span className={`text-xs font-extrabold px-2.5 py-1 rounded-full ${isExpanded ? 'bg-[#0f2342] text-white border border-white/10' : 'bg-white/10 text-slate-300'}`}>{group.total}</span>
                         <ChevronRight size={14} className={`text-slate-500 transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
                       </div>
                     </button>
@@ -131,9 +131,9 @@ export default function HaritaClient() {
                               const isActive = selectedCity?.id === city.id;
                               return (
                                 <button key={city.id} onClick={() => setSelectedCity(isActive ? null : city)}
-                                  className={`w-full text-left p-3 rounded-xl border transition-all ${isActive ? 'bg-[#db1a22]/10 border-[#db1a22]/30' : 'bg-white/[0.02] border-white/[0.04] hover:bg-white/[0.05]'}`}>
+                                  className={`w-full text-left p-3 rounded-xl border transition-all ${isActive ? 'bg-[#0f2342]/30 border-[#0f2342]/50' : 'bg-white/[0.02] border-white/[0.04] hover:bg-white/[0.05]'}`}>
                                   <div className="flex items-center justify-between mb-1.5">
-                                    <span className={`font-semibold text-xs ${isActive ? 'text-[#c5a059]' : 'text-slate-300'}`}>{city.city}</span>
+                                    <span className={`font-semibold text-xs ${isActive ? 'text-white' : 'text-slate-300'}`}>{city.city}</span>
                                     <span className="text-[10px] font-bold text-slate-400 bg-white/5 px-2 py-0.5 rounded-full">{city.count} mezun</span>
                                   </div>
                                   {/* Mini sector bar */}

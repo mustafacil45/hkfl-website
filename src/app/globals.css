@@ -2,13 +2,13 @@
 @import "tailwindcss";
 
 :root {
-  --bordo: #db1a22;
-  --bordo-dark: #b91c1c;
-  --bordo-light: #ef4444;
-  --gold: #c5a059;
-  --gold-light: #dfc593;
-  --dark: #0c101d;
-  --dark-2: #121b2d;
+  --bordo: #0f2342;
+  --bordo-dark: #0a172c;
+  --bordo-light: #1d3557;
+  --gold: #ffffff;
+  --gold-light: #f8fafc;
+  --dark: #070f1a;
+  --dark-2: #0f2342;
   --dark-3: #1e293b;
   --light-bg: #F8F9FA;
   --gray: #6B7280;
@@ -94,8 +94,8 @@ select {
 
 .custom-scrollbar::-webkit-scrollbar { width: 4px; }
 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(197,160,89,0.15); border-radius: 4px; }
-.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(197,160,89,0.3); }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
 
 /* ── Utility Classes ── */
 .font-display { font-family: 'Playfair Display', serif; }
@@ -169,7 +169,7 @@ select {
 .btn-primary:hover {
   background: var(--bordo-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(219, 26, 34, 0.4);
+  box-shadow: 0 10px 30px rgba(15, 35, 66, 0.4);
 }
 
 .btn-outline {
@@ -206,7 +206,7 @@ select {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: rgba(219, 26, 34, 0.08);
+  background: rgba(15, 35, 66, 0.08);
   color: var(--bordo);
   padding: 0.35rem 1rem;
   border-radius: 50px;
@@ -260,7 +260,7 @@ select {
 }
 
 .gradient-animate {
-  background: linear-gradient(-45deg, #db1a22, #b91c1c, #ef4444, #c5a059);
+  background: linear-gradient(-45deg, #0f2342, #0a172c, #1d3557, #475569);
   background-size: 400% 400%;
   animation: gradient-shift 8s ease infinite;
 }
@@ -301,7 +301,7 @@ select {
 }
 .form-input:focus {
   border-color: var(--bordo);
-  box-shadow: 0 0 0 4px rgba(219, 26, 34, 0.08);
+  box-shadow: 0 0 0 4px rgba(15, 35, 66, 0.08);
 }
 .form-input::placeholder { color: #9CA3AF; }
 
