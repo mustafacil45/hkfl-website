@@ -20,54 +20,58 @@ export const citiesData: CityData[] = [
     "city": "İstanbul",
     "country": "Türkiye",
     "flag": "🇹🇷",
-    "count": 141,
+    "count": 238,
     "lat": 41.01,
     "lng": 28.97,
     "sectors": [
       {
-        "name": "Mühendislik & Tasarım",
-        "pct": 38,
-        "color": "#7c3aed"
-      },
-      {
-        "name": "Diğer",
-        "pct": 20,
-        "color": "#6b7280"
-      },
-      {
-        "name": "Yazılım & Teknoloji",
-        "pct": 16,
-        "color": "#0284c7"
-      },
-      {
         "name": "Sağlık & Tıp",
-        "pct": 15,
+        "pct": 74,
         "color": "#059669"
       },
       {
-        "name": "Eğitim & Temel Bilimler",
-        "pct": 6,
-        "color": "#d97706"
+        "name": "Diğer",
+        "pct": 13,
+        "color": "#6b7280"
       },
       {
         "name": "İdari & İktisadi Bilimler",
         "pct": 5,
         "color": "#dc2626"
+      },
+      {
+        "name": "Eğitim & Temel Bilimler",
+        "pct": 4,
+        "color": "#d97706"
+      },
+      {
+        "name": "Mühendislik & Tasarım",
+        "pct": 3,
+        "color": "#7c3aed"
+      },
+      {
+        "name": "Yazılım & Teknoloji",
+        "pct": 1,
+        "color": "#0284c7"
       }
     ],
     "roles": [
+      "Tıp (31)",
+      "Endüstri Mühendisliği (31)",
+      "Makine Mühendisliği (30)",
+      "Yazılım Mühendisliği (17)",
       "Bilgisayar Mühendisliği (14)",
-      "Endüstri Mühendisliği (14)",
-      "Tıp (10)",
+      "Hukuk (10)",
+      "Ekonomi (6)",
       "Elektrik Elektronik Mühendisliği (5)",
       "İşletme (5)",
       "Tıp Fakültesi (5)",
-      "Hukuk (5)",
       "Elektronik Ve Haberleşme Mühendisliği (5)",
       "İşletme Mühendisliği (4)",
       "Elektrik Mühendisliği (4)",
+      "Eğitim (4)",
       "Makina Mühendisliği (3)",
-      "Ekonomi (3)",
+      "Maliye (3)",
       "Elektrik-elektronik Mühendisliği (2)",
       "İktisat (2)",
       "Yönetim Bilişim Sistemleri (2)",
@@ -75,7 +79,6 @@ export const citiesData: CityData[] = [
       "İstanbul Tıp Fakültesi (2)",
       "Matematik (2)",
       "Diş Hekimliği (2)",
-      "Makine Mühendisliği (2)",
       "Endüstri Mühendisi",
       "Elektrik Mühendisligi",
       "Şehir Ve Bölge Planlama",
@@ -112,7 +115,6 @@ export const citiesData: CityData[] = [
       "Psikoloji",
       "Bilgisayar Mühendisliği + Endüstri",
       "Endüstriyel Tasarım",
-      "Yazılım Mühendisliği",
       "Beslenme Ve Diyetetik",
       "Dijital Oyun Tasarımı",
       "Elektronik Mühendisliği",
@@ -131,33 +133,33 @@ export const citiesData: CityData[] = [
     "city": "İzmir",
     "country": "Türkiye",
     "flag": "🇹🇷",
-    "count": 130,
+    "count": 169,
     "lat": 38.42,
     "lng": 27.14,
     "sectors": [
       {
         "name": "Sağlık & Tıp",
-        "pct": 62,
+        "pct": 88,
         "color": "#059669"
       },
       {
-        "name": "Mühendislik & Tasarım",
-        "pct": 16,
-        "color": "#7c3aed"
-      },
-      {
         "name": "Diğer",
-        "pct": 10,
+        "pct": 5,
         "color": "#6b7280"
       },
       {
         "name": "Eğitim & Temel Bilimler",
-        "pct": 5,
+        "pct": 3,
         "color": "#d97706"
       },
       {
+        "name": "Mühendislik & Tasarım",
+        "pct": 2,
+        "color": "#7c3aed"
+      },
+      {
         "name": "Yazılım & Teknoloji",
-        "pct": 5,
+        "pct": 1,
         "color": "#0284c7"
       },
       {
@@ -167,11 +169,12 @@ export const citiesData: CityData[] = [
       }
     ],
     "roles": [
-      "Tıp (42)",
+      "Tıp (59)",
       "Tıp Fakültesi (23)",
+      "Elektrik Elektronik Mühendisliği (18)",
       "Diş Hekimliği (10)",
+      "Bilgisayar Mühendisliği (10)",
       "Makine Mühendisliği (8)",
-      "Bilgisayar Mühendisliği (4)",
       "Eczacılık (3)",
       "İsletme (2)",
       "Mimarlık (2)",
@@ -179,7 +182,6 @@ export const citiesData: CityData[] = [
       "Moleküler Biyoloji Ve Genetik (2)",
       "Tip (2)",
       "Kimya Mühendisliği (2)",
-      "Elektrik Elektronik Mühendisliği (2)",
       "İktisat",
       "İnşaat Mühendisliği",
       "İşletme",
@@ -213,43 +215,39 @@ export const citiesData: CityData[] = [
     "city": "Ankara",
     "country": "Türkiye",
     "flag": "🇹🇷",
-    "count": 77,
+    "count": 104,
     "lat": 39.93,
     "lng": 32.86,
     "sectors": [
       {
-        "name": "Mühendislik & Tasarım",
-        "pct": 40,
-        "color": "#7c3aed"
-      },
-      {
         "name": "Sağlık & Tıp",
-        "pct": 35,
+        "pct": 80,
         "color": "#059669"
       },
       {
         "name": "Diğer",
-        "pct": 12,
+        "pct": 10,
         "color": "#6b7280"
       },
       {
-        "name": "Yazılım & Teknoloji",
-        "pct": 6,
-        "color": "#0284c7"
+        "name": "Eğitim & Temel Bilimler",
+        "pct": 8,
+        "color": "#d97706"
       },
       {
-        "name": "Eğitim & Temel Bilimler",
-        "pct": 6,
-        "color": "#d97706"
+        "name": "Mühendislik & Tasarım",
+        "pct": 2,
+        "color": "#7c3aed"
       }
     ],
     "roles": [
-      "Tıp (10)",
-      "Makine Mühendisliği (8)",
+      "Tıp (22)",
+      "Bilgisayar Mühendisliği (12)",
+      "Elektrik Elektronik Mühendisliği (9)",
+      "Makine Mühendisliği (9)",
       "Tıp Fakültesi (8)",
-      "Elektrik Elektronik Mühendisliği (7)",
-      "Bilgisayar Mühendisliği (5)",
-      "Endüstri Mühendisliği (3)",
+      "Eğitim (4)",
+      "Endüstri Mühendisliği (4)",
       "Eczacılık (3)",
       "Kimya Mühendisliği (2)",
       "Makina Mühendisliği (2)",
@@ -288,23 +286,18 @@ export const citiesData: CityData[] = [
     "city": "Manisa",
     "country": "Türkiye",
     "flag": "🇹🇷",
-    "count": 45,
+    "count": 52,
     "lat": 38.61,
     "lng": 27.43,
     "sectors": [
       {
         "name": "Sağlık & Tıp",
-        "pct": 67,
+        "pct": 82,
         "color": "#059669"
       },
       {
-        "name": "Yazılım & Teknoloji",
-        "pct": 11,
-        "color": "#0284c7"
-      },
-      {
         "name": "Diğer",
-        "pct": 9,
+        "pct": 6,
         "color": "#6b7280"
       },
       {
@@ -318,13 +311,18 @@ export const citiesData: CityData[] = [
         "color": "#dc2626"
       },
       {
+        "name": "Yazılım & Teknoloji",
+        "pct": 2,
+        "color": "#0284c7"
+      },
+      {
         "name": "Mühendislik & Tasarım",
-        "pct": 4,
+        "pct": 2,
         "color": "#7c3aed"
       }
     ],
     "roles": [
-      "Tıp (16)",
+      "Tıp (23)",
       "Tıp Fakültesi (10)",
       "Bilgisayar Mühendisliği (2)",
       "Matematik Öğretmenliği",
@@ -2059,6 +2057,31 @@ export const citiesData: CityData[] = [
     ],
     "roles": [
       "Tıp"
+    ]
+  },
+  {
+    "id": "sehir",
+    "city": "Şehir",
+    "country": "Türkiye",
+    "flag": "🇹🇷",
+    "count": 5,
+    "lat": 38.49,
+    "lng": 27.7,
+    "sectors": [
+      {
+        "name": "İdari & İktisadi Bilimler",
+        "pct": 60,
+        "color": "#dc2626"
+      },
+      {
+        "name": "Sağlık & Tıp",
+        "pct": 40,
+        "color": "#059669"
+      }
+    ],
+    "roles": [
+      "Ekonomi (3)",
+      "Tıp (2)"
     ]
   }
 ];
