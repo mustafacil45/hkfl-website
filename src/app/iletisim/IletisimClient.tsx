@@ -93,7 +93,7 @@ export default function IletisimClient() {
       <section
         className="relative pt-36 sm:pt-44 lg:pt-60 pb-20 sm:pb-28 lg:pb-32 overflow-hidden flex items-center min-h-[460px]"
         style={{
-          background: 'linear-gradient(rgba(255, 255, 255, 0.88), rgba(248, 249, 250, 0.96)), url("/archive-bg.png") center/cover no-repeat',
+          background: 'linear-gradient(rgba(255, 255, 255, 0.88), rgba(248, 249, 250, 0.96)), url("/students-bg.jpeg") center/cover no-repeat',
         }}
       >
         <div className="container-custom relative z-10 text-center w-full">

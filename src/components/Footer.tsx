@@ -16,7 +16,7 @@ const SocialLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/groups/16196087/',
+    href: 'https://www.linkedin.com/company/halil-kale-fen-lisesi-mezunlar%C4%B1-toplulu%C4%9Fu/',
     svg: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>

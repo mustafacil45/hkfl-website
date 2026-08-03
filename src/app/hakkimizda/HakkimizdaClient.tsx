@@ -3,14 +3,15 @@
 import { motion } from 'framer-motion';
 import { Users } from 'lucide-react';
 
+// Sıralama, yönetim kurulu listesindeki üye numaralarını (01–07) izler.
 const boardMembers = [
-  { name: 'Haktan Badalı', year: "HKFL '22", initials: 'HB', color: '#0284c7' },
-  { name: 'Arif Burhan Kahya', year: "HKFL '22", initials: 'AK', color: '#38bdf8' },
-  { name: 'Mustafa Çil', year: "HKFL '22", initials: 'MÇ', color: '#7c3aed' },
-  { name: 'Berke Yardımcı', year: "HKFL '22", initials: 'BY', color: '#ec4899' },
-  { name: 'Oğuzhan Yazar', year: "HKFL '24", initials: 'OY', color: '#eab308' },
-  { name: 'Mustafa Sayar', year: "HKFL '24", initials: 'MS', color: '#059669' },
-  { name: 'Bahadır Yılmaz', year: "HKFL '24", initials: 'BY', color: '#f97316' },
+  { name: 'Haktan Badalı', role: 'Başkan', year: "HKFL '22", initials: 'HB', color: '#0284c7' },
+  { name: 'Arif Burhan Kahya', role: 'Başkan Vekili (Organizasyondan Sorumlu)', year: "HKFL '22", initials: 'AK', color: '#38bdf8' },
+  { name: 'Oğuzhan Yazar', role: 'Başkan Vekili (Mali İşlerden Sorumlu)', year: "HKFL '24", initials: 'OY', color: '#eab308' },
+  { name: 'Mustafa Sayar', role: 'Genel Sekreter', year: "HKFL '24", initials: 'MS', color: '#059669' },
+  { name: 'Mustafa Çil', role: 'Mezun İlişkileri Sorumlusu', year: "HKFL '22", initials: 'MÇ', color: '#7c3aed' },
+  { name: 'Berke Yardımcı', role: 'Medya ve Tanıtım Sorumlusu', year: "HKFL '22", initials: 'BY', color: '#ec4899' },
+  { name: 'Bahadır Yılmaz', role: 'Öğrenci İlişkileri Sorumlusu', year: "HKFL '24", initials: 'BY', color: '#f97316' },
 ];
 
 
@@ -81,7 +82,7 @@ export default function HakkimizdaClient() {
                 </div>
                 <h3 className="text-white font-display text-xl sm:text-2xl font-bold mb-4">30 Yıllık Başarı ve Bağ</h3>
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
-                  Fen Liseleri ailesinin 26. halkası olarak kurulan okulumuzun değerli mezunları olarak, aramızdaki bağı güçlendirmek ve geleceğe birlikte yürümek için bir aradayız.
+                  Manisa&apos;nın ilk Fen Lisesi olarak kurulan okulumuzun değerli mezunları olarak, aramızdaki bağı güçlendirmek ve geleceğe birlikte yürümek için bir aradayız.
                 </p>
                 <div className="flex items-center justify-center gap-6 text-slate-300 text-sm font-semibold min-w-0">
                   <span className="flex items-center gap-1.5">👥 1500+ Mezun</span>
@@ -326,16 +327,18 @@ export default function HakkimizdaClient() {
               <motion.div
                 key={member.name}
                 variants={itemVariants}
-                className="rounded-xl p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-black/10"
+                className="rounded-xl p-5 text-left flex flex-col transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.06] hover:shadow-xl hover:shadow-black/10"
                 style={{
                   background: 'rgba(255,255,255,0.03)',
                   border: '1px solid rgba(255,255,255,0.06)',
                   borderLeft: '4px solid #ffffff',
                 }}
               >
-                <h3 className="font-semibold text-white mb-2 leading-snug text-base sm:text-lg">{member.name}</h3>
-                <span 
-                  className="inline-block text-xs font-bold tracking-wider px-2.5 py-0.5 rounded-full"
+                <h3 className="font-semibold text-white mb-1.5 leading-snug text-base sm:text-lg">{member.name}</h3>
+                <p className="text-gray-400 text-sm leading-snug mb-4">{member.role}</p>
+                {/* mt-auto: gorevler farkli uzunlukta, rozetler yine de ayni hizada dursun */}
+                <span
+                  className="inline-block self-start mt-auto text-xs font-bold tracking-wider px-2.5 py-0.5 rounded-full"
                   style={{ background: 'rgba(255,255,255,0.08)', color: '#ffffff' }}
                 >
                   {member.year}

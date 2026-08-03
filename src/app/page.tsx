@@ -39,7 +39,8 @@ export default function Home() {
             src="/hero-bg.png"
             alt="Halil Kale Fen Lisesi"
             fill
-            className="object-cover"
+            /* scale-105: blur kenarlarda saydamlık birakmasin diye tasirilir */
+            className="object-cover blur-[3px] scale-105"
             priority
             quality={90}
           />
@@ -47,7 +48,7 @@ export default function Home() {
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 50%, rgba(15,17,23,0.85) 100%)',
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.42) 50%, rgba(15,17,23,0.87) 100%)',
             }}
           />
         </div>
@@ -160,8 +161,8 @@ export default function Home() {
                 Misyonumuz
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Mezunlarımızı bir araya<br />
-                <span className="text-gradient">getiriyoruz</span>
+                Birlikte güçlü bir<br />
+                <span className="text-gradient">mezun ağı inşa ediyoruz</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 Halil Kale Fen Lisesi Mezunlar Derneği olarak amacımız, mezunlarımız arasındaki dayanışmayı güçlendirmek,
