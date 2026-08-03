@@ -6,8 +6,8 @@ import { Users } from 'lucide-react';
 // Sıralama, yönetim kurulu listesindeki üye numaralarını (01–07) izler.
 const boardMembers = [
   { name: 'Haktan Badalı', role: 'Başkan', year: "HKFL '22", initials: 'HB', color: '#0284c7' },
-  { name: 'Arif Burhan Kahya', role: 'Başkan Vekili (Organizasyondan Sorumlu)', year: "HKFL '22", initials: 'AK', color: '#38bdf8' },
-  { name: 'Oğuzhan Yazar', role: 'Başkan Vekili (Mali İşlerden Sorumlu)', year: "HKFL '24", initials: 'OY', color: '#eab308' },
+  { name: 'Arif Burhan Kahya', role: 'Başkanvekili- Organizasyon Sorumlusu', year: "HKFL '22", initials: 'AK', color: '#38bdf8' },
+  { name: 'Oğuzhan Yazar', role: 'Başkanvekili- Mali İşler Sorumlusu', year: "HKFL '24", initials: 'OY', color: '#eab308' },
   { name: 'Mustafa Sayar', role: 'Genel Sekreter', year: "HKFL '24", initials: 'MS', color: '#059669' },
   { name: 'Mustafa Çil', role: 'Mezun İlişkileri Sorumlusu', year: "HKFL '22", initials: 'MÇ', color: '#7c3aed' },
   { name: 'Berke Yardımcı', role: 'Medya ve Tanıtım Sorumlusu', year: "HKFL '22", initials: 'BY', color: '#ec4899' },
