@@ -51,7 +51,8 @@ export default function LeafletMap({ locations, selectedId, onSelect }: Props) {
       `}</style>
 
       <MapContainer center={[30,20]} zoom={2} minZoom={2} maxZoom={10} scrollWheelZoom={true} zoomControl={true} style={{ height:'100%', width:'100%' }} ref={mapRef}>
-        <TileLayer attribution='&copy; <a href="https://carto.com/">CARTO</a>' url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" />
+        <TileLayer attribution='Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors' url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}" />
+        <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}" />
         <FlyToSelected locations={locations} selectedId={selectedId} />
 
         {locations.map(loc => {
