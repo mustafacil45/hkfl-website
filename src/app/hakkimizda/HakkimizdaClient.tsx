@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Users } from 'lucide-react';
 
@@ -15,6 +16,26 @@ const boardMembers = [
 ];
 
 
+const campusPhotos = [
+  {
+    src: '/images/okul-ana-bina.jpeg',
+    alt: 'Turgutlu Halil Kale Fen Lisesi ana binasının ön cephesi',
+    title: 'Ana Bina',
+    caption: 'Okulumuzun ön cephesi',
+  },
+  {
+    src: '/images/pansiyon-hali-saha.jpeg',
+    alt: 'Halı saha ve arkasında yer alan kız ve erkek öğrenci pansiyonu binası',
+    title: 'Öğrenci Pansiyonu',
+    caption: 'Halı saha ve kız–erkek pansiyon blokları',
+  },
+  {
+    src: '/images/okul-cephe.jpeg',
+    alt: 'Ana bina ve okul girişinin yakın plan görünümü',
+    title: 'Kampüs Girişi',
+    caption: 'Ana bina ve okul girişi',
+  },
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -241,6 +262,38 @@ export default function HakkimizdaClient() {
               </motion.div>
             </div>
           </div>
+
+          {/* Kampüs Fotoğrafları */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {campusPhotos.map(photo => (
+              <motion.figure
+                key={photo.src}
+                variants={itemVariants}
+                className="group relative overflow-hidden rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <div className="relative aspect-[4/3] bg-slate-100">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+                </div>
+                <figcaption className="absolute inset-x-0 bottom-0 p-5">
+                  <div className="font-display text-base font-bold text-white">{photo.title}</div>
+                  <div className="mt-0.5 text-xs text-white/75">{photo.caption}</div>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </motion.div>
         </div>
       </section>
 
