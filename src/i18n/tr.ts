@@ -43,6 +43,41 @@ export const tr = {
     address: ['Subaşı, Seyfi Demirsoy Sk. No:45,', '45400 Turgutlu/Manisa'],
   },
 
+  faq: {
+    anchor: 'sss',
+    label: 'SSS',
+    title: 'Sıkça Sorulan Sorular',
+    subtitle: 'Derneğimiz ve üyelik hakkında en çok merak edilenler.',
+    items: [
+      {
+        q: 'Derneğe kimler üye olabilir?',
+        a: 'Halil Kale Fen Lisesi mezunları ile okulumuzda en az bir eğitim-öğretim yılı okumuş olanlar derneğimize üye olabilir. Üyelik koşullarına ilişkin ayrıntılar, başvurular açıldığında bu sayfada paylaşılacaktır.',
+      },
+      {
+        q: 'Üyelik başvurusu nasıl yapılır?',
+        a: 'Dernek üyelik başvuruları çok yakında web sitemiz üzerinden alınmaya başlanacak. Gelişmelerden haberdar olmak için sosyal medya hesaplarımızı takip edebilirsiniz.',
+      },
+      {
+        q: "Mezun Haritası'nda nasıl yer alabilirim?",
+        a: 'Haritada yalnızca mezun bilgi formumuzu dolduran mezunlarımız gösterilmektedir. Formu doldurarak siz de haritada yerinizi alabilirsiniz.',
+        link: { label: 'Mezun Bilgi Formu', href: GOOGLE_FORM_URL },
+      },
+      {
+        q: 'Kişisel bilgilerim haritada görünür mü?',
+        a: 'Hayır. KVKK kapsamında isim ve bireysel kurum bilgileri gösterilmez; yalnızca şehir bazlı istatistiksel dağılım paylaşılır.',
+      },
+      {
+        q: 'Dernekle nasıl iletişime geçebilirim?',
+        a: 'İletişim sayfamızdaki formu kullanabilir, iletisim@hkmed.org adresine e-posta gönderebilir ya da telefonla bize ulaşabilirsiniz.',
+        link: { label: 'İletişim Sayfası', route: 'contact' },
+      },
+      {
+        q: 'Etkinlik ve duyurulardan nasıl haberdar olabilirim?',
+        a: 'Instagram ve LinkedIn hesaplarımızı takip ederek etkinlik ve duyurularımızı ilk siz öğrenebilirsiniz.',
+      },
+    ] as FaqItem[],
+  },
+
   home: {
     hero: {
       imageAlt: 'Halil Kale Fen Lisesi',
@@ -64,45 +99,9 @@ export const tr = {
       text: 'Halil Kale Fen Lisesi Mezunlar Derneği olarak misyonumuz; mezunlarımıza ne kadar büyük bir ailenin parçası olduklarını hatırlatmak ve kurumumuzun geleceğini hep birlikte inşa etmek.',
       features: ['Güçlü Mezun Ağı', 'Öğrenci Mentorlüğü', 'Kariyer Fırsatları', 'Toplumsal Sorumluluk'],
     },
-    faq: {
-      anchor: 'sss',
-      label: 'SSS',
-      title: 'Sıkça Sorulan Sorular',
-      subtitle: 'Derneğimiz ve üyelik hakkında en çok merak edilenler.',
-      items: [
-        {
-          q: 'Derneğe kimler üye olabilir?',
-          a: 'Halil Kale Fen Lisesi mezunları ile okulumuzda en az bir eğitim-öğretim yılı okumuş olanlar derneğimize üye olabilir. Üyelik koşullarına ilişkin ayrıntılar, başvurular açıldığında bu sayfada paylaşılacaktır.',
-        },
-        {
-          q: 'Üyelik başvurusu nasıl yapılır?',
-          a: 'Dernek üyelik başvuruları çok yakında web sitemiz üzerinden alınmaya başlanacak. Gelişmelerden haberdar olmak için sosyal medya hesaplarımızı takip edebilirsiniz.',
-        },
-        {
-          q: "Mezun Haritası'nda nasıl yer alabilirim?",
-          a: 'Haritada yalnızca mezun bilgi formumuzu dolduran mezunlarımız gösterilmektedir. Formu doldurarak siz de haritada yerinizi alabilirsiniz.',
-          link: { label: 'Mezun Bilgi Formu', href: GOOGLE_FORM_URL },
-        },
-        {
-          q: 'Kişisel bilgilerim haritada görünür mü?',
-          a: 'Hayır. KVKK kapsamında isim ve bireysel kurum bilgileri gösterilmez; yalnızca şehir bazlı istatistiksel dağılım paylaşılır.',
-        },
-        {
-          q: 'Dernekle nasıl iletişime geçebilirim?',
-          a: 'İletişim sayfamızdaki formu kullanabilir, iletisim@hkmed.org adresine e-posta gönderebilir ya da telefonla bize ulaşabilirsiniz.',
-          link: { label: 'İletişim Sayfası', route: 'contact' },
-        },
-        {
-          q: 'Etkinlik ve duyurulardan nasıl haberdar olabilirim?',
-          a: 'Instagram ve LinkedIn hesaplarımızı takip ederek etkinlik ve duyurularımızı ilk siz öğrenebilirsiniz.',
-        },
-      ] as FaqItem[],
-    },
     cta: {
       soon: 'Çok Yakında',
       title: 'Dernek Üyelik Başvurusu',
-      text: "Dernek üyelik başvuruları çok yakında bu sayfadan alınmaya başlanacak. 1500'den fazla mezunumuzla güçlü bir ağın parçası olun.",
-      button: 'Üyelik Başvurusu',
     },
   },
 

@@ -32,7 +32,7 @@ export default function Footer() {
 
   const pageLinks = [
     ...PAGE_KEYS.map((key) => ({ href: href(key), label: t.nav[key] })),
-    { href: `${href('home')}#${t.home.faq.anchor}`, label: t.footer.faq },
+    { href: `${href('contact')}#${t.faq.anchor}`, label: t.footer.faq },
   ];
 
   return (
@@ -63,7 +63,7 @@ export default function Footer() {
                   aria-label={s.label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300"
+                  className="w-9 h-9 rounded-md flex items-center justify-center transition-all duration-300"
                   style={{ background: 'rgba(255,255,255,0.07)' }}
                   onMouseEnter={(e) => (e.currentTarget.style.background = '#0f2342')}
                   onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.07)')}

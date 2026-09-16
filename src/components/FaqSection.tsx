@@ -27,7 +27,7 @@ function FaqLink({ link }: { link: NonNullable<FaqItem['link']> }) {
 export default function FaqSection() {
   const { t } = useLang();
   const [open, setOpen] = useState<number | null>(0);
-  const faq = t.home.faq;
+  const faq = t.faq;
 
   return (
     <section id={faq.anchor} className="section-padding bg-slate-50/60 border-y border-slate-100 scroll-mt-24">

@@ -56,7 +56,7 @@ export default function HaritaClient() {
       <section className="relative pt-36 sm:pt-44 lg:pt-52 pb-14 sm:pb-16 overflow-hidden" style={{ background:'#0f172a' }}>
         <div className="container-custom relative z-10 w-full">
           <motion.div initial={{ opacity:0, y:30 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7 }} className="text-center">
-            <div className="inline-flex items-center justify-center gap-2 bg-white/5 text-white border border-white/20 px-5 py-2 rounded-full text-xs font-bold uppercase mb-6 backdrop-blur-sm">
+            <div className="inline-flex items-center justify-center gap-2 bg-white/5 text-white border border-white/20 px-5 py-2 rounded-md text-xs font-bold uppercase mb-6 backdrop-blur-sm">
               <Globe size={14} /> {m.hero.label}
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 text-white">
@@ -121,7 +121,7 @@ export default function HaritaClient() {
                         <span className="text-[10px] text-slate-500">({m.cityCount(group.cities.length)})</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className={`text-xs font-extrabold px-2.5 py-1 rounded-full ${isExpanded ? 'bg-[#0f2342] text-white border border-white/10' : 'bg-white/10 text-slate-300'}`}>{group.total}</span>
+                        <span className={`text-xs font-extrabold px-2.5 py-1 rounded-md ${isExpanded ? 'bg-[#0f2342] text-white border border-white/10' : 'bg-white/10 text-slate-300'}`}>{group.total}</span>
                         <ChevronRight size={14} className={`text-slate-500 transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
                       </div>
                     </button>
@@ -138,7 +138,7 @@ export default function HaritaClient() {
                                   className={`w-full text-left p-3 rounded-xl border transition-all ${isActive ? 'bg-[#0f2342]/30 border-[#0f2342]/50' : 'bg-white/[0.02] border-white/[0.04] hover:bg-white/[0.05]'}`}>
                                   <div className="flex items-center justify-between mb-1.5">
                                     <span className={`font-semibold text-xs ${isActive ? 'text-white' : 'text-slate-300'}`}>{city.city}</span>
-                                    <span className="text-[10px] font-bold text-slate-400 bg-white/5 px-2 py-0.5 rounded-full">{m.alumniCount(city.count)}</span>
+                                    <span className="text-[10px] font-bold text-slate-400 bg-white/5 px-2 py-0.5 rounded-md">{m.alumniCount(city.count)}</span>
                                   </div>
                                   {/* Mini sector bar */}
                                   <div className="flex gap-0.5 h-1 w-full rounded-full overflow-hidden bg-white/5">

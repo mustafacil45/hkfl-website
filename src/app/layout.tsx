@@ -3,8 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HtmlLang from "@/components/HtmlLang";
-
-const SITE_URL = "https://hkmed.org";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -40,15 +39,6 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: `${SITE_URL}/`,
-      name: "HKMED",
-      alternateName: ["Halil Kale Fen Lisesi Mezunlar Derneği", "HKFL Mezunlar Derneği"],
-      inLanguage: ["tr", "en"],
-      publisher: { "@id": `${SITE_URL}/#organization` },
-    },
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,

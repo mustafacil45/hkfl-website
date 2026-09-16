@@ -25,7 +25,7 @@ export default function GizlilikPolitikasiClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/25 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6 max-w-full text-center backdrop-blur-sm">
+            <div className="inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/25 px-4 py-1.5 rounded-md text-xs font-bold uppercase mb-6 max-w-full text-center backdrop-blur-sm">
               <Shield size={14} /> {p.label}
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>

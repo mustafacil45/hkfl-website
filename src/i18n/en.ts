@@ -30,6 +30,41 @@ export const en: Dict = {
     address: ['Subaşı, Seyfi Demirsoy Sk. No:45,', '45400 Turgutlu/Manisa, Türkiye'],
   },
 
+  faq: {
+    anchor: 'faq',
+    label: 'FAQ',
+    title: 'Frequently Asked Questions',
+    subtitle: 'The most common questions about our association and membership.',
+    items: [
+      {
+        q: 'Who can become a member?',
+        a: 'Graduates of Halil Kale Science High School, as well as anyone who studied at the school for at least one academic year, are eligible to join the association. Full membership terms will be published on this page once applications open.',
+      },
+      {
+        q: 'How do I apply for membership?',
+        a: 'Membership applications will open on our website very soon. Follow our social media accounts to be notified.',
+      },
+      {
+        q: 'How can I appear on the Alumni Map?',
+        a: 'The map only shows alumni who have filled in our alumni information form. Complete the form to claim your place on the map.',
+        link: { label: 'Alumni Information Form', href: GOOGLE_FORM_URL },
+      },
+      {
+        q: 'Is my personal information visible on the map?',
+        a: 'No. In line with Turkish data protection law (KVKK), names and individual employer details are never shown; only city-level statistics are shared.',
+      },
+      {
+        q: 'How can I get in touch with the association?',
+        a: 'Use the form on our contact page, e-mail us at iletisim@hkmed.org, or give us a call.',
+        link: { label: 'Contact Page', route: 'contact' },
+      },
+      {
+        q: 'How can I keep up with events and announcements?',
+        a: 'Follow us on Instagram and LinkedIn to be the first to hear about our events and announcements.',
+      },
+    ],
+  },
+
   home: {
     hero: {
       imageAlt: 'Halil Kale Science High School',
@@ -51,45 +86,9 @@ export const en: Dict = {
       text: 'As the Halil Kale Science High School Alumni Association, our mission is to remind our alumni how large a family they belong to and to build the future of our school together.',
       features: ['Strong Alumni Network', 'Student Mentoring', 'Career Opportunities', 'Social Responsibility'],
     },
-    faq: {
-      anchor: 'faq',
-      label: 'FAQ',
-      title: 'Frequently Asked Questions',
-      subtitle: 'The most common questions about our association and membership.',
-      items: [
-        {
-          q: 'Who can become a member?',
-          a: 'Graduates of Halil Kale Science High School, as well as anyone who studied at the school for at least one academic year, are eligible to join the association. Full membership terms will be published on this page once applications open.',
-        },
-        {
-          q: 'How do I apply for membership?',
-          a: 'Membership applications will open on our website very soon. Follow our social media accounts to be notified.',
-        },
-        {
-          q: 'How can I appear on the Alumni Map?',
-          a: 'The map only shows alumni who have filled in our alumni information form. Complete the form to claim your place on the map.',
-          link: { label: 'Alumni Information Form', href: GOOGLE_FORM_URL },
-        },
-        {
-          q: 'Is my personal information visible on the map?',
-          a: 'No. In line with Turkish data protection law (KVKK), names and individual employer details are never shown; only city-level statistics are shared.',
-        },
-        {
-          q: 'How can I get in touch with the association?',
-          a: 'Use the form on our contact page, e-mail us at iletisim@hkmed.org, or give us a call.',
-          link: { label: 'Contact Page', route: 'contact' },
-        },
-        {
-          q: 'How can I keep up with events and announcements?',
-          a: 'Follow us on Instagram and LinkedIn to be the first to hear about our events and announcements.',
-        },
-      ],
-    },
     cta: {
       soon: 'Coming Soon',
       title: 'Membership Application',
-      text: 'Membership applications will open on this page very soon. Become part of a strong network of more than 1,500 alumni.',
-      button: 'Apply for Membership',
     },
   },
 

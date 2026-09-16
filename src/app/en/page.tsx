@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import HomeClient from '../HomeClient';
+import WebSiteJsonLd from '@/components/WebSiteJsonLd';
 
 export const metadata: Metadata = {
   title: { absolute: 'HKMED | Halil Kale Science High School Alumni Association' },
@@ -13,5 +14,10 @@ export const metadata: Metadata = {
 };
 
 export default function HomeEn() {
-  return <HomeClient />;
+  return (
+    <>
+      <WebSiteJsonLd />
+      <HomeClient />
+    </>
+  );
 }

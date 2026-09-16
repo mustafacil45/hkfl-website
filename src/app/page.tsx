@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import HomeClient from './HomeClient';
+import WebSiteJsonLd from '@/components/WebSiteJsonLd';
 
 export const metadata: Metadata = {
   alternates: {
@@ -9,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomeClient />;
+  return (
+    <>
+      <WebSiteJsonLd />
+      <HomeClient />
+    </>
+  );
 }

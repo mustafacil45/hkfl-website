@@ -24,7 +24,7 @@ export default function Navbar() {
 
   const isActive = (key: NavKey) => pathname === href(key);
 
-  // Sayfa bağlantıları + ana sayfadaki SSS bölümüne giden çapa (İletişim'den önce).
+  // Sayfa bağlantıları + İletişim sayfasındaki SSS bölümüne giden çapa (İletişim'den önce).
   const navItems: { key: string; label: string; href: string; active: boolean }[] = NAV_KEYS.map((key) => ({
     key,
     label: t.nav[key],
@@ -34,7 +34,7 @@ export default function Navbar() {
   navItems.splice(3, 0, {
     key: 'faq',
     label: t.nav.faq,
-    href: `${href('home')}#${t.home.faq.anchor}`,
+    href: `${href('contact')}#${t.faq.anchor}`,
     active: false,
   });
 

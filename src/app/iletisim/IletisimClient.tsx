@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import FaqSection from '@/components/FaqSection';
 import { useLang } from '@/i18n/useLang';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
@@ -96,7 +97,7 @@ export default function IletisimClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center justify-center gap-2 bg-[#0f2342]/10 text-[#0f2342] border border-[#0f2342]/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6 max-w-full text-center">
+            <div className="inline-flex items-center justify-center gap-2 bg-[#0f2342]/10 text-[#0f2342] border border-[#0f2342]/20 px-4 py-1.5 rounded-md text-xs font-bold uppercase mb-6 max-w-full text-center">
               <Mail size={14} /> {c.hero.label}
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
@@ -304,6 +305,9 @@ export default function IletisimClient() {
           </div>
         </div>
       </section>
+
+      {/* ── SSS ── */}
+      <FaqSection />
     </>
   );
 }

@@ -5,10 +5,9 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   ArrowRight, MapPin, Mail, Users, Star,
-  Briefcase, GraduationCap, Heart, Clock,
+  Briefcase, GraduationCap, Heart,
 } from 'lucide-react';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import FaqSection from '@/components/FaqSection';
 import { useLang } from '@/i18n/useLang';
 
 const containerVariants = {
@@ -187,9 +186,6 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════ SSS ═══════════════════════════════════════ */}
-      <FaqSection />
-
       {/* ═══════════════════════════════════════ CTA ═══════════════════════════════════════ */}
       <section className="section-padding relative overflow-hidden" style={{ background: '#0f2342' }}>
         <div className="container-custom relative z-10 text-center text-white">
@@ -198,26 +194,15 @@ export default function HomeClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5"
-              style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}
-            >
-              <Clock size={14} />
-              {t.home.cta.soon}
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">
               {t.home.cta.title}
             </h2>
-            <p className="text-white/80 text-lg max-w-xl mx-auto mb-8">
-              {t.home.cta.text}
-            </p>
             {/* Başvurular açılana kadar düğme tıklanamaz. */}
             <span
               aria-disabled="true"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 min-h-12 rounded-full border-2 border-white/40 text-white/75 font-semibold text-[0.95rem] cursor-not-allowed select-none"
+              className="inline-flex items-center justify-center px-8 py-3.5 min-h-12 rounded-md border-2 border-white/40 text-white/75 font-semibold text-[0.95rem] cursor-not-allowed select-none"
             >
-              {t.home.cta.button}
-              <span className="text-white/50 text-sm font-medium">· {t.home.cta.soon}</span>
+              {t.home.cta.soon}
             </span>
           </motion.div>
         </div>

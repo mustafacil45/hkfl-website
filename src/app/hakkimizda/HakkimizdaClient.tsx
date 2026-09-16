@@ -149,7 +149,7 @@ export default function HakkimizdaClient() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f2342]/10 text-[#0f2342] text-xs font-bold tracking-wide uppercase mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#0f2342]/10 text-[#0f2342] text-xs font-bold tracking-wide uppercase mb-3">
               <Award size={14} /> {a.values.label}
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
@@ -202,7 +202,7 @@ export default function HakkimizdaClient() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f2342]/10 text-[#0f2342] text-xs font-bold tracking-wide uppercase mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#0f2342]/10 text-[#0f2342] text-xs font-bold tracking-wide uppercase mb-4">
                   <Landmark size={14} /> {a.history.label}
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">
@@ -338,7 +338,7 @@ export default function HakkimizdaClient() {
                 <p className="text-gray-400 text-sm leading-snug mb-4">{a.founders.roles[member.role]}</p>
                 {/* mt-auto: gorevler farkli uzunlukta, rozetler yine de ayni hizada dursun */}
                 <span
-                  className="inline-block self-start mt-auto text-xs font-bold tracking-wider px-2.5 py-0.5 rounded-full"
+                  className="inline-block self-start mt-auto text-xs font-bold tracking-wider px-2.5 py-0.5 rounded-md"
                   style={{ background: 'rgba(255,255,255,0.08)', color: '#ffffff' }}
                 >
                   {member.year}
