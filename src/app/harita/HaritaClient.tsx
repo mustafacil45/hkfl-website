@@ -53,18 +53,14 @@ export default function HaritaClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-36 sm:pt-44 lg:pt-52 pb-14 sm:pb-16 overflow-hidden" style={{ background:'linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0f172a 100%)' }}>
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-[600px] h-[600px] rounded-full opacity-15 blur-3xl" style={{ background:'radial-gradient(circle,#0f2342,transparent 70%)', top:'-15%', left:'-10%' }} />
-          <div className="absolute w-[400px] h-[400px] rounded-full opacity-10 blur-3xl" style={{ background:'radial-gradient(circle,#ffffff,transparent 70%)', bottom:'-10%', right:'-5%' }} />
-        </div>
+      <section className="relative pt-36 sm:pt-44 lg:pt-52 pb-14 sm:pb-16 overflow-hidden" style={{ background:'#0f172a' }}>
         <div className="container-custom relative z-10 w-full">
           <motion.div initial={{ opacity:0, y:30 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7 }} className="text-center">
             <div className="inline-flex items-center justify-center gap-2 bg-white/5 text-white border border-white/20 px-5 py-2 rounded-full text-xs font-bold uppercase mb-6 backdrop-blur-sm">
               <Globe size={14} /> {m.hero.label}
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 text-white">
-              {m.hero.titlePre}<span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">{m.hero.titleHighlight}</span>
+              {m.hero.titlePre}<span className="text-slate-300">{m.hero.titleHighlight}</span>
             </h1>
             <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
               {m.hero.text}

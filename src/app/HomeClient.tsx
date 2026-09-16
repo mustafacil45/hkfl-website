@@ -48,12 +48,7 @@ export default function HomeClient() {
             quality={90}
           />
           {/* Overlay */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.42) 50%, rgba(15,17,23,0.87) 100%)',
-            }}
-          />
+          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.58)' }} />
         </div>
 
         {/* Content */}
@@ -154,7 +149,7 @@ export default function HomeClient() {
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 {t.home.mission.title1}<br />
-                <span className="text-gradient">{t.home.mission.title2}</span>
+                <span className="text-accent">{t.home.mission.title2}</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 {t.home.mission.text}
@@ -196,17 +191,7 @@ export default function HomeClient() {
       <FaqSection />
 
       {/* ═══════════════════════════════════════ CTA ═══════════════════════════════════════ */}
-      <section className="section-padding gradient-animate relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute top-0 right-0 w-96 h-96 rounded-full"
-            style={{ background: 'radial-gradient(circle, white, transparent)', transform: 'translate(30%, -30%)' }}
-          />
-          <div
-            className="absolute bottom-0 left-0 w-64 h-64 rounded-full"
-            style={{ background: 'radial-gradient(circle, white, transparent)', transform: 'translate(-30%, 30%)' }}
-          />
-        </div>
+      <section className="section-padding relative overflow-hidden" style={{ background: '#0f2342' }}>
         <div className="container-custom relative z-10 text-center text-white">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -24,6 +24,20 @@ export default function Navbar() {
 
   const isActive = (key: NavKey) => pathname === href(key);
 
+  // Sayfa bağlantıları + ana sayfadaki SSS bölümüne giden çapa (İletişim'den önce).
+  const navItems: { key: string; label: string; href: string; active: boolean }[] = NAV_KEYS.map((key) => ({
+    key,
+    label: t.nav[key],
+    href: href(key),
+    active: isActive(key),
+  }));
+  navItems.splice(3, 0, {
+    key: 'faq',
+    label: t.nav.faq,
+    href: `${href('home')}#${t.home.faq.anchor}`,
+    active: false,
+  });
+
   return (
     <header
       className={`fixed top-0 inset-x-0 z-[1050] backdrop-blur-md border-b transition-all duration-300 ${
@@ -47,18 +61,17 @@ export default function Navbar() {
 
         {/* Masaüstü menü */}
         <nav className="hidden md:flex items-center gap-7 lg:gap-9" aria-label="Ana menü">
-          {NAV_KEYS.map((key) => {
-            const active = isActive(key);
+          {navItems.map(({ key, label, href: to, active }) => {
             return (
               <Link
                 key={key}
-                href={href(key)}
+                href={to}
                 aria-current={active ? 'page' : undefined}
                 className={`relative py-2 text-sm font-semibold whitespace-nowrap transition-colors hover:text-[#0f2342] ${
                   active ? 'text-[#0f2342]' : 'text-gray-700'
                 }`}
               >
-                {t.nav[key]}
+                {label}
                 {active && (
                   <motion.span
                     layoutId="activeNavIndicator"
@@ -101,19 +114,18 @@ export default function Navbar() {
             aria-label="Mobil menü"
           >
             <div className="container-custom py-3 flex flex-col">
-              {NAV_KEYS.map((key) => {
-                const active = isActive(key);
+              {navItems.map(({ key, label, href: to, active }) => {
                 return (
                   <Link
                     key={key}
-                    href={href(key)}
+                    href={to}
                     onClick={() => setMobileOpen(false)}
                     aria-current={active ? 'page' : undefined}
                     className={`py-3 border-b border-gray-50 last:border-0 text-base font-semibold transition-colors hover:text-[#0f2342] ${
                       active ? 'text-[#0f2342]' : 'text-gray-700'
                     }`}
                   >
-                    {t.nav[key]}
+                    {label}
                   </Link>
                 );
               })}

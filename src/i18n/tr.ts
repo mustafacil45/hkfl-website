@@ -28,6 +28,7 @@ export const tr = {
     about: 'Hakkımızda',
     map: 'Mezun Haritası',
     contact: 'İletişim',
+    faq: 'SSS',
     menuToggle: 'Menüyü aç/kapat',
     language: 'Dil',
   },
@@ -71,7 +72,7 @@ export const tr = {
       items: [
         {
           q: 'Derneğe kimler üye olabilir?',
-          a: 'Halil Kale Fen Lisesi mezunları derneğimize üye olabilir. Üyelik koşullarına ilişkin ayrıntılar, başvurular açıldığında bu sayfada paylaşılacaktır.',
+          a: 'Halil Kale Fen Lisesi mezunları ile okulumuzda en az bir eğitim-öğretim yılı okumuş olanlar derneğimize üye olabilir. Üyelik koşullarına ilişkin ayrıntılar, başvurular açıldığında bu sayfada paylaşılacaktır.',
         },
         {
           q: 'Üyelik başvurusu nasıl yapılır?',

@@ -11,7 +11,7 @@ export default function NotFound() {
   return (
     <section
       className="min-h-screen flex items-center justify-center"
-      style={{ background: 'linear-gradient(135deg, #0f1117, #1F2937)' }}
+      style={{ background: '#0f1117' }}
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -21,7 +21,7 @@ export default function NotFound() {
       >
         <div
           className="font-display font-black mb-4 opacity-10 select-none"
-          style={{ fontSize: '180px', lineHeight: 1, color: '#0284c7' }}
+          style={{ fontSize: '180px', lineHeight: 1, color: '#ffffff' }}
         >
           404
         </div>

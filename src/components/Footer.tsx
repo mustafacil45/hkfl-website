@@ -37,8 +37,8 @@ export default function Footer() {
 
   return (
     <footer style={{ background: '#0f1117' }} className="text-white">
-      {/* Top border gradient */}
-      <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, #0f2342, #ffffff, #0f2342)' }} />
+      {/* Üst çizgi */}
+      <div className="h-1 w-full" style={{ background: '#1d3557' }} />
 
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

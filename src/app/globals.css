@@ -5,8 +5,7 @@
   --bordo: #0f2342;
   --bordo-dark: #0a172c;
   --bordo-light: #1d3557;
-  --bordo-accent: #1e3a8a;
-  --watermark-opacity: 0.06;
+  --watermark-opacity: 0.08;
   --watermark-blur: 1.5px;
   --gold: #ffffff;
   --gold-light: #f8fafc;
@@ -103,13 +102,8 @@ select {
 /* ── Utility Classes ── */
 .font-display { font-family: 'Playfair Display', serif; }
 
-.text-gradient {
-  /* Uç renk beyaz olunca yazının sonu saydamlaşıyordu; açık laciverte gidiyor. */
-  background: linear-gradient(135deg, var(--bordo) 0%, var(--bordo-accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+/* Başlık içindeki vurgulu kelime: renk geçişi yok, tek renk lacivert. */
+.text-accent { color: var(--bordo); }
 
 .section-padding { padding: clamp(5rem, 8vw, 7rem) 0; }
 
@@ -134,14 +128,9 @@ select {
   pointer-events: none;
   user-select: none;
 }
-.site-watermark span {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: clamp(3.25rem, 11vw, 10rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: var(--bordo);
+.site-watermark img {
+  width: clamp(18rem, 42vw, 36rem);
+  height: auto;
   opacity: var(--watermark-opacity);
   filter: blur(var(--watermark-blur));
   transform: translateZ(0);
@@ -285,19 +274,6 @@ select {
   line-height: 1;
 }
 
-/* ── Animated gradient bg ── */
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.gradient-animate {
-  background: linear-gradient(-45deg, #0f2342, #0a172c, #1d3557, #475569);
-  background-size: 400% 400%;
-  animation: gradient-shift 8s ease infinite;
-}
-
 /* ── Noise texture overlay ── */
 .noise-overlay::before {
   content: '';
@@ -306,17 +282,6 @@ select {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
-}
-
-/* ── Timeline ── */
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -1px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--bordo), transparent);
 }
 
 /* ── Form ── */

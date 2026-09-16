@@ -15,6 +15,7 @@ export const en: Dict = {
     about: 'About Us',
     map: 'Alumni Map',
     contact: 'Contact',
+    faq: 'FAQ',
     menuToggle: 'Toggle menu',
     language: 'Language',
   },
@@ -58,7 +59,7 @@ export const en: Dict = {
       items: [
         {
           q: 'Who can become a member?',
-          a: 'Graduates of Halil Kale Science High School are eligible to join the association. Full membership terms will be published on this page once applications open.',
+          a: 'Graduates of Halil Kale Science High School, as well as anyone who studied at the school for at least one academic year, are eligible to join the association. Full membership terms will be published on this page once applications open.',
         },
         {
           q: 'How do I apply for membership?',

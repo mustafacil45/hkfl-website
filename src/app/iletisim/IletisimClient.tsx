@@ -87,10 +87,9 @@ export default function IletisimClient() {
     <>
       <section
         className="relative pt-36 sm:pt-44 lg:pt-60 pb-20 sm:pb-28 lg:pb-32 overflow-hidden flex items-center min-h-[460px]"
-        style={{
-          background: 'linear-gradient(rgba(255, 255, 255, 0.88), rgba(248, 249, 250, 0.96)), url("/students-bg.jpeg") center/cover no-repeat',
-        }}
+        style={{ background: 'url("/students-bg.jpeg") center/cover no-repeat' }}
       >
+        <div className="absolute inset-0" style={{ background: 'rgba(255, 255, 255, 0.92)' }} />
         <div className="container-custom relative z-10 text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -124,7 +123,7 @@ export default function IletisimClient() {
               <div>
                 <div className="section-label"><Mail size={14} />{c.info.label}</div>
                 <h2 className="font-display text-3xl font-bold text-gray-900 mt-2 mb-2">
-                  {c.info.titlePre}<span className="text-gradient">{c.info.titleHighlight}</span>
+                  {c.info.titlePre}<span className="text-accent">{c.info.titleHighlight}</span>
                 </h2>
                 <p className="text-gray-500 leading-relaxed">
                   {c.info.text}

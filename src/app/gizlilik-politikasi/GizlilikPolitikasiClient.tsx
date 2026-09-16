@@ -14,24 +14,24 @@ export default function GizlilikPolitikasiClient() {
     <>
       {/* ── Page Hero ── */}
       <section
-        className="relative pt-36 sm:pt-44 lg:pt-60 pb-20 sm:pb-28 lg:pb-32 overflow-hidden flex items-center min-h-[400px]"
-        style={{
-          background: 'linear-gradient(rgba(255, 255, 255, 0.88), rgba(248, 249, 250, 0.96)), url("/archive-bg.png") center/cover no-repeat',
-        }}
+        className="relative pt-36 sm:pt-44 lg:pt-60 pb-20 sm:pb-28 lg:pb-32 overflow-hidden flex items-center min-h-[460px] bg-slate-950"
+        style={{ background: 'url("/images/okul-bayrak.jpeg") center/cover no-repeat' }}
       >
-        <div className="container-custom relative z-10 text-center w-full">
+        {/* Fotoğraf görünür kalsın diye tek renkli koyu örtü, üstünde beyaz yazı */}
+        <div className="absolute inset-0" style={{ background: 'rgba(15, 23, 42, 0.62)' }} />
+        <div className="container-custom relative z-10 text-center w-full text-white">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center justify-center gap-2 bg-[#0f2342]/10 text-[#0f2342] border border-[#0f2342]/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6 max-w-full text-center">
+            <div className="inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/25 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6 max-w-full text-center backdrop-blur-sm">
               <Shield size={14} /> {p.label}
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
               {p.title}
             </h1>
-            <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
               {p.text}
             </p>
           </motion.div>

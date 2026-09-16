@@ -57,13 +57,8 @@ export default function HakkimizdaClient() {
             alt={t.brand.school}
             className="w-full h-full object-cover opacity-25"
           />
-          {/* Gradient Overlay */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(2, 132, 199, 0.45) 100%)',
-            }}
-          />
+          {/* Overlay */}
+          <div className="absolute inset-0" style={{ background: 'rgba(15, 23, 42, 0.85)' }} />
         </div>
 
         <div className="container-custom relative z-10 text-white w-full">
@@ -127,8 +122,7 @@ export default function HakkimizdaClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.15 }}
-                className="rounded-3xl p-8 md:p-10 flex flex-col justify-center items-start border border-slate-100 shadow-sm min-h-[260px] relative overflow-hidden group hover:shadow-md transition-shadow"
-                style={{ background: 'linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)' }}
+                className="rounded-3xl p-8 md:p-10 flex flex-col justify-center items-start bg-slate-50 border border-slate-100 shadow-sm min-h-[260px] relative overflow-hidden group hover:shadow-md transition-shadow"
               >
                 <div className="w-12 h-12 rounded-2xl bg-[#0f2342]/10 flex items-center justify-center mb-5 flex-shrink-0 text-[#0f2342]">
                   <card.icon size={22} />
@@ -159,7 +153,7 @@ export default function HakkimizdaClient() {
               <Award size={14} /> {a.values.label}
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
-              {a.values.titlePre}<span className="text-gradient">{a.values.titleHighlight}</span>{a.values.titlePost}
+              {a.values.titlePre}<span className="text-accent">{a.values.titleHighlight}</span>{a.values.titlePost}
             </h2>
           </motion.div>
 
@@ -212,7 +206,7 @@ export default function HakkimizdaClient() {
                   <Landmark size={14} /> {a.history.label}
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">
-                  {a.history.titlePre}<span className="text-gradient">{a.history.titleHighlight}</span>
+                  {a.history.titlePre}<span className="text-accent">{a.history.titleHighlight}</span>
                 </h2>
                 <p className="text-gray-600 text-base md:text-lg leading-relaxed">
                   {a.history.text}
@@ -267,9 +261,8 @@ export default function HakkimizdaClient() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
                   </div>
-                  <figcaption className="absolute inset-x-0 bottom-0 p-5">
+                  <figcaption className="absolute inset-x-0 bottom-0 p-5" style={{ background: 'rgba(15, 23, 42, 0.78)' }}>
                     <div className="font-display text-base font-bold text-white">{photo.title}</div>
                     <div className="mt-0.5 text-xs text-white/75">{photo.caption}</div>
                   </figcaption>

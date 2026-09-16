@@ -87,13 +87,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
         <HtmlLang />
-        {/* Kaydırırken sabit duran, yarı saydam arka plan filigranı; açık zeminli bölümlerin arasından görünür. */}
+        {/* Kaydırırken sabit duran, yarı saydam logo filigranı; açık zeminli bölümlerin arasından görünür. */}
         <div className="site-watermark" aria-hidden="true">
-          <span>
-            Halil Kale
-            <br />
-            Mezunlar Derneği
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-watermark.png" alt="" />
         </div>
         <Navbar />
         <main>{children}</main>
