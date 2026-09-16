@@ -8,9 +8,11 @@ interface CounterProps {
   suffix?: string;
   prefix?: string;
   duration?: number;
+  /** Binlik ayracı için BCP 47 dil kodu (tr-TR → 1.500, en-US → 1,500). */
+  locale?: string;
 }
 
-export default function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2 }: CounterProps) {
+export default function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2, locale = 'tr-TR' }: CounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true });
@@ -39,7 +41,7 @@ export default function AnimatedCounter({ end, suffix = '', prefix = '', duratio
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
     >
-      {prefix}{count.toLocaleString()}{suffix}
+      {prefix}{count.toLocaleString(locale)}{suffix}
     </motion.span>
   );
 }

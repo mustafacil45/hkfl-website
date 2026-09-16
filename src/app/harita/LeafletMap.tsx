@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaf
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { CityData } from './citiesData';
+import { useLang } from '@/i18n/useLang';
 
 interface Props {
   locations: CityData[];
@@ -25,6 +26,9 @@ function FlyToSelected({ locations, selectedId }: { locations: CityData[]; selec
 
 export default function LeafletMap({ locations, selectedId, onSelect }: Props) {
   const mapRef = useRef<L.Map | null>(null);
+  const { t } = useLang();
+  const countryName = (name: string) => t.map.countryNames[name] ?? name;
+  const sectorName = (name: string) => t.map.sectorNames[name] ?? name;
 
   const getRadius = (count: number) => {
     if (count > 300) return 16;
@@ -68,18 +72,18 @@ export default function LeafletMap({ locations, selectedId, onSelect }: Props) {
                     <span style={{ fontSize:'20px' }}>{loc.flag}</span>
                     <div>
                       <div style={{ fontWeight:800, fontSize:'13px', color:'#f1f5f9' }}>{loc.city}</div>
-                      <div style={{ fontSize:'10px', color:'#64748b', fontWeight:500 }}>{loc.country}</div>
+                      <div style={{ fontSize:'10px', color:'#64748b', fontWeight:500 }}>{countryName(loc.country)}</div>
                     </div>
                   </div>
                   <div style={{ background:'rgba(255,255,255,0.08)', borderRadius:'10px', padding:'8px 12px', marginBottom:'10px', border:'1px solid rgba(255,255,255,0.12)' }}>
                     <div style={{ fontSize:'20px', fontWeight:900, color:'#ffffff', lineHeight:1 }}>{loc.count}</div>
-                    <div style={{ fontSize:'9px', color:'#64748b', fontWeight:600, marginTop:'2px', textTransform:'uppercase', letterSpacing:'0.5px' }}>Mezun</div>
+                    <div style={{ fontSize:'9px', color:'#64748b', fontWeight:600, marginTop:'2px', textTransform:'uppercase', letterSpacing:'0.5px' }}>{t.map.alumni}</div>
                   </div>
-                  <div style={{ fontSize:'9px', color:'#94a3b8', fontWeight:700, textTransform:'uppercase', letterSpacing:'1px', marginBottom:'6px' }}>Sektörler</div>
+                  <div style={{ fontSize:'9px', color:'#94a3b8', fontWeight:700, textTransform:'uppercase', letterSpacing:'1px', marginBottom:'6px' }}>{t.map.sectors}</div>
                   {loc.sectors.slice(0,3).map(s => (
                     <div key={s.name} style={{ marginBottom:'5px' }}>
                       <div style={{ display:'flex', justifyContent:'space-between', fontSize:'10px', marginBottom:'2px' }}>
-                        <span style={{ color:'#cbd5e1', fontWeight:500 }}>{s.name}</span>
+                        <span style={{ color:'#cbd5e1', fontWeight:500 }}>{sectorName(s.name)}</span>
                         <span style={{ color:'#f1f5f9', fontWeight:700 }}>%{s.pct}</span>
                       </div>
                       <div style={{ height:'3px', borderRadius:'4px', background:'rgba(255,255,255,0.06)', overflow:'hidden' }}>

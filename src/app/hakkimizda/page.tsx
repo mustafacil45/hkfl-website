@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
+import HakkimizdaClient from './HakkimizdaClient';
 
 export const metadata: Metadata = {
-  title: 'Hakkımızda | Halil Kale Fen Lisesi Mezunlar Derneği',
-  description: 'Halil Kale Fen Lisesi Mezunlar Derneği hakkında bilgi alın. Misyonumuz, vizyonumuz, yönetim kurulumuz ve derneğimizin hikayesi.',
+  title: 'Hakkımızda',
+  description: 'Halil Kale Fen Lisesi Mezunlar Derneği (HKMED) hakkında bilgi alın. Misyonumuz, vizyonumuz, kurucularımız ve derneğimizin hikayesi.',
+  alternates: {
+    canonical: '/hakkimizda',
+    languages: { tr: '/hakkimizda', en: '/en/about' },
+  },
 };
-
-import HakkimizdaClient from './HakkimizdaClient';
 
 export default function HakkimizdaPage() {
   return <HakkimizdaClient />;

@@ -4,44 +4,39 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-
-const contactInfo = [
-  {
-    icon: MapPin,
-    title: 'Adres',
-    lines: ['Subaşı, Seyfi Demirsoy Sk. No:45', '45400 Turgutlu/Manisa'],
-    color: '#0f2342',
-  },
-  {
-    icon: Phone,
-    title: 'Telefon',
-    lines: ['+90 (539) 245 94 54'],
-    color: '#1d3557',
-    href: 'tel:+905392459454',
-  },
-  {
-    icon: Mail,
-    title: 'E-posta',
-    lines: ['iletisim@hkmed.org'],
-    color: '#0f2342',
-    href: 'mailto:iletisim@hkmed.org',
-  },
-];
-
-const subjects = [
-  'Etkinlik Hakkında Bilgi',
-  'Üyelik Başvurusu',
-  'Sponsorluk Teklifi',
-  'Mezun Kaydı',
-  'Basın & Medya',
-  'Diğer',
-];
+import { useLang } from '@/i18n/useLang';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
 export default function IletisimClient() {
+  const { t } = useLang();
+  const c = t.contact;
+
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<Status>('idle');
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: c.info.address,
+      lines: c.info.addressLines,
+      color: '#0f2342',
+    },
+    {
+      icon: Phone,
+      title: c.info.phone,
+      lines: ['+90 (539) 245 94 54'],
+      color: '#1d3557',
+      href: 'tel:+905392459454',
+    },
+    {
+      icon: Mail,
+      title: c.info.email,
+      lines: ['iletisim@hkmed.org'],
+      color: '#0f2342',
+      href: 'mailto:iletisim@hkmed.org',
+    },
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -57,7 +52,7 @@ export default function IletisimClient() {
 
     if (!serviceId || !templateId || !publicKey) {
       console.warn("EmailJS credentials are not configured. Falling back to email link opening.");
-      const mailtoUrl = `mailto:iletisim@hkmed.org?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(`Ad Soyad: ${form.name}\nE-posta: ${form.email}\n\nMesaj:\n${form.message}`)}`;
+      const mailtoUrl = `mailto:iletisim@hkmed.org?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(`${c.form.name}: ${form.name}\n${c.form.email}: ${form.email}\n\n${c.form.message}:\n${form.message}`)}`;
       window.location.href = mailtoUrl;
       setStatus('success');
       setForm({ name: '', email: '', subject: '', message: '' });
@@ -103,13 +98,13 @@ export default function IletisimClient() {
             transition={{ duration: 0.7 }}
           >
             <div className="inline-flex items-center justify-center gap-2 bg-[#0f2342]/10 text-[#0f2342] border border-[#0f2342]/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6 max-w-full text-center">
-              <span>✉️</span> İletişim
+              <Mail size={14} /> {c.hero.label}
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-              Bize Ulaşın
+              {c.hero.title}
             </h1>
             <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-              Üyelik ve sponsorluk ile ilgili tüm sorularınız için buradayız. Formu doldurun veya doğrudan e-posta ve telefonla iletişime geçin.
+              {c.hero.text}
             </p>
           </motion.div>
         </div>
@@ -127,12 +122,12 @@ export default function IletisimClient() {
               className="lg:col-span-2 flex flex-col gap-6"
             >
               <div>
-                <div className="section-label"><Mail size={14} />İletişim Bilgileri</div>
+                <div className="section-label"><Mail size={14} />{c.info.label}</div>
                 <h2 className="font-display text-3xl font-bold text-gray-900 mt-2 mb-2">
-                  Bize <span className="text-gradient">Ulaşın</span>
+                  {c.info.titlePre}<span className="text-gradient">{c.info.titleHighlight}</span>
                 </h2>
                 <p className="text-gray-500 leading-relaxed">
-                  Aşağıdaki iletişim bilgilerinden veya formu doldurarak bizimle iletişime geçebilirsiniz.
+                  {c.info.text}
                 </p>
               </div>
 
@@ -175,7 +170,7 @@ export default function IletisimClient() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Halil Kale Fen Lisesi Konum"
+                  title={c.info.mapTitle}
                 />
               </div>
             </motion.div>
@@ -188,9 +183,9 @@ export default function IletisimClient() {
               className="lg:col-span-3"
             >
               <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-8 md:p-10">
-                <h3 className="font-display text-2xl font-bold text-gray-900 mb-2">Mesaj Gönder</h3>
+                <h3 className="font-display text-2xl font-bold text-gray-900 mb-2">{c.form.title}</h3>
                 <p className="text-gray-500 text-sm mb-8">
-                  Tüm alanları doldurun, en kısa sürede dönüş yapacağız.
+                  {c.form.subtitle}
                 </p>
 
                 {status === 'success' ? (
@@ -205,15 +200,15 @@ export default function IletisimClient() {
                     >
                       <CheckCircle size={32} style={{ color: '#059669' }} />
                     </div>
-                    <h4 className="font-bold text-gray-900 text-xl">Mesajınız İletildi!</h4>
-                    <p className="text-gray-500">En kısa sürede sizinle iletişime geçeceğiz.</p>
+                    <h4 className="font-bold text-gray-900 text-xl">{c.form.successTitle}</h4>
+                    <p className="text-gray-500">{c.form.successText}</p>
                   </motion.div>
                 ) : (
                   <form id="contact-form" onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-                          Ad Soyad <span style={{ color: '#0f2342' }}>*</span>
+                          {c.form.name} <span style={{ color: '#0f2342' }}>*</span>
                         </label>
                         <input
                           id="name"
@@ -222,13 +217,13 @@ export default function IletisimClient() {
                           required
                           value={form.name}
                           onChange={handleChange}
-                          placeholder="Adınız Soyadınız"
+                          placeholder={c.form.namePlaceholder}
                           className="form-input"
                         />
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
-                          E-posta <span style={{ color: '#0f2342' }}>*</span>
+                          {c.form.email} <span style={{ color: '#0f2342' }}>*</span>
                         </label>
                         <input
                           id="email"
@@ -237,7 +232,7 @@ export default function IletisimClient() {
                           required
                           value={form.email}
                           onChange={handleChange}
-                          placeholder="ornek@email.com"
+                          placeholder={c.form.emailPlaceholder}
                           className="form-input"
                         />
                       </div>
@@ -245,7 +240,7 @@ export default function IletisimClient() {
 
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Konu <span style={{ color: '#0f2342' }}>*</span>
+                        {c.form.subject} <span style={{ color: '#0f2342' }}>*</span>
                       </label>
                       <select
                         id="subject"
@@ -255,8 +250,8 @@ export default function IletisimClient() {
                         onChange={handleChange}
                         className="form-input"
                       >
-                        <option value="">Bir konu seçin...</option>
-                        {subjects.map((s) => (
+                        <option value="">{c.form.subjectPlaceholder}</option>
+                        {c.form.subjects.map((s) => (
                           <option key={s} value={s}>{s}</option>
                         ))}
                       </select>
@@ -264,7 +259,7 @@ export default function IletisimClient() {
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Mesaj <span style={{ color: '#0f2342' }}>*</span>
+                        {c.form.message} <span style={{ color: '#0f2342' }}>*</span>
                       </label>
                       <textarea
                         id="message"
@@ -273,7 +268,7 @@ export default function IletisimClient() {
                         rows={6}
                         value={form.message}
                         onChange={handleChange}
-                        placeholder="Mesajınızı buraya yazın..."
+                        placeholder={c.form.messagePlaceholder}
                         className="form-input resize-none"
                       />
                     </div>
@@ -281,7 +276,7 @@ export default function IletisimClient() {
                     {status === 'error' && (
                       <div className="flex items-center gap-2 text-red-600 text-sm">
                         <AlertCircle size={16} />
-                        Bir hata oluştu. Lütfen tekrar deneyin.
+                        {c.form.error}
                       </div>
                     )}
 
@@ -294,12 +289,12 @@ export default function IletisimClient() {
                       {status === 'sending' ? (
                         <>
                           <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          Gönderiliyor...
+                          {c.form.sending}
                         </>
                       ) : (
                         <>
                           <Send size={17} />
-                          Mesajı Gönder
+                          {c.form.submit}
                         </>
                       )}
                     </button>

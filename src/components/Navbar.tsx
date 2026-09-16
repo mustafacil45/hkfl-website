@@ -2,95 +2,125 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLang } from '@/i18n/useLang';
+import LangSwitch from './LangSwitch';
 
-const navLinks = [
-  { href: '/', label: 'Ana Sayfa' },
-  { href: '/hakkimizda', label: 'Hakkımızda' },
-  { href: '/harita', label: 'Mezun Haritası' },
-  { href: '/iletisim', label: 'İletişim' },
-];
+const NAV_KEYS = ['home', 'about', 'map', 'contact'] as const;
+type NavKey = (typeof NAV_KEYS)[number];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const pathname = usePathname();
+  const { t, href, pathname } = useLang();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  return (
-    <>
-      <div className={`fixed left-1/2 -translate-x-1/2 z-[1050] transition-all duration-300 w-[calc(100%-2rem)] md:w-auto ${scrolled ? 'top-2' : 'top-4'}`}>
-        <nav className="bg-white/90 backdrop-blur-md shadow-lg rounded-full border border-white/20 px-6 md:px-8 py-3 relative flex items-center justify-center min-h-[72px] w-full">
+  const isActive = (key: NavKey) => pathname === href(key);
 
-          {/* ORTA ALAN: TAM ORTALANMIŞ MENÜ */}
-          <div className="hidden md:flex items-center justify-center gap-8 z-20">
-            {navLinks.map((link) => (
+  return (
+    <header
+      className={`fixed top-0 inset-x-0 z-[1050] backdrop-blur-md border-b transition-all duration-300 ${
+        scrolled || mobileOpen
+          ? 'bg-white/95 border-gray-200 shadow-md'
+          : 'bg-white/85 border-gray-100'
+      }`}
+    >
+      <div className="container-custom flex items-center justify-between gap-4 min-h-[72px]">
+        {/* Marka */}
+        <Link href={href('home')} className="flex items-center gap-3 min-w-0 group" aria-label={t.brand.full}>
+          <span className="w-10 h-10 rounded-full overflow-hidden bg-white ring-1 ring-gray-200 flex-shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.jpg" alt="" className="w-full h-full object-cover" />
+          </span>
+          <span className="min-w-0 leading-tight">
+            <span className="block font-bold text-sm tracking-wider text-[#0f2342]">{t.brand.short}</span>
+            <span className="hidden sm:block text-[11px] text-gray-500 truncate">{t.brand.full}</span>
+          </span>
+        </Link>
+
+        {/* Masaüstü menü */}
+        <nav className="hidden md:flex items-center gap-7 lg:gap-9" aria-label="Ana menü">
+          {NAV_KEYS.map((key) => {
+            const active = isActive(key);
+            return (
               <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-semibold relative py-2 transition-all duration-300 text-gray-700 hover:text-[#0f2342] whitespace-nowrap ${pathname === link.href ? 'text-[#0f2342]' : ''
-                  }`}
+                key={key}
+                href={href(key)}
+                aria-current={active ? 'page' : undefined}
+                className={`relative py-2 text-sm font-semibold whitespace-nowrap transition-colors hover:text-[#0f2342] ${
+                  active ? 'text-[#0f2342]' : 'text-gray-700'
+                }`}
               >
-                {link.label}
-                {pathname === link.href && (
+                {t.nav[key]}
+                {active && (
                   <motion.span
                     layoutId="activeNavIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0f2342] rounded-full"
+                    className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-[#0f2342] rounded-full"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
               </Link>
-            ))}
-          </div>
-
-          {/* SAĞ ALAN: Mobil Menü Butonu (absolute ile hizalandı) */}
-          <div className="absolute right-6 top-1/2 -translate-y-1/2 z-10 md:hidden">
-            <button
-              id="mobile-menu-btn"
-              className="p-2 text-gray-600 hover:text-gray-900 transition-colors"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Menüyü aç/kapat"
-            >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-
+            );
+          })}
         </nav>
+
+        {/* Sağ: dil + mobil menü düğmesi */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <LangSwitch />
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            className="md:hidden p-2 -mr-2 text-gray-700 hover:text-[#0f2342] transition-colors"
+            onClick={() => setMobileOpen((open) => !open)}
+            aria-label={t.nav.menuToggle}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobil Menü Alanı (Aynen Korundu) */}
+      {/* Mobil menü: çubuğun altında tam genişlikte açılır */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+          <motion.nav
+            id="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-4 top-24 z-[1040] bg-white/95 backdrop-blur-md shadow-2xl rounded-3xl border border-gray-100 p-6 md:hidden"
+            className="md:hidden overflow-hidden border-t border-gray-100"
+            aria-label="Mobil menü"
           >
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={`text-base font-semibold py-2 border-b border-gray-50 text-gray-700 hover:text-[#0f2342] transition-colors ${pathname === link.href ? 'text-[#0f2342]' : ''
+            <div className="container-custom py-3 flex flex-col">
+              {NAV_KEYS.map((key) => {
+                const active = isActive(key);
+                return (
+                  <Link
+                    key={key}
+                    href={href(key)}
+                    onClick={() => setMobileOpen(false)}
+                    aria-current={active ? 'page' : undefined}
+                    className={`py-3 border-b border-gray-50 last:border-0 text-base font-semibold transition-colors hover:text-[#0f2342] ${
+                      active ? 'text-[#0f2342]' : 'text-gray-700'
                     }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+                  >
+                    {t.nav[key]}
+                  </Link>
+                );
+              })}
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
-    </>
+    </header>
   );
 }

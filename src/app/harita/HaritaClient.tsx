@@ -1,27 +1,35 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Search, ShieldAlert, Briefcase, Globe, Compass, ChevronRight, Users } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 import { CityData, citiesData } from './citiesData';
+import { useLang } from '@/i18n/useLang';
 
 const LeafletMap = dynamic(() => import('./LeafletMap'), { ssr: false });
 
 export default function HaritaClient() {
+  const { t } = useLang();
+  const m = t.map;
+  // Veri dosyasındaki adlar Türkçe; İngilizce sayfada sözlükteki karşılığı gösterilir.
+  const countryName = (name: string) => m.countryNames[name] ?? name;
+  const sectorName = (name: string) => m.sectorNames[name] ?? name;
+
   const [selectedCity, setSelectedCity] = useState<CityData | null>(null);
   const [expandedCountry, setExpandedCountry] = useState<string | null>('Türkiye');
   const [searchQuery, setSearchQuery] = useState('');
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => setIsMounted(true), []);
 
   const filtered = useMemo(() => {
     if (!searchQuery.trim()) return citiesData;
     const q = searchQuery.toLowerCase();
-    return citiesData.filter(c => c.city.toLowerCase().includes(q) || c.country.toLowerCase().includes(q));
-  }, [searchQuery]);
+    return citiesData.filter(c =>
+      c.city.toLowerCase().includes(q) ||
+      c.country.toLowerCase().includes(q) ||
+      (m.countryNames[c.country] ?? c.country).toLowerCase().includes(q)
+    );
+  }, [searchQuery, m]);
 
   // Group by country
   const grouped = useMemo(() => {
@@ -53,20 +61,20 @@ export default function HaritaClient() {
         <div className="container-custom relative z-10 w-full">
           <motion.div initial={{ opacity:0, y:30 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7 }} className="text-center">
             <div className="inline-flex items-center justify-center gap-2 bg-white/5 text-white border border-white/20 px-5 py-2 rounded-full text-xs font-bold uppercase mb-6 backdrop-blur-sm">
-              <Globe size={14} /> KÜRESEL MEZUN AĞI
+              <Globe size={14} /> {m.hero.label}
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 text-white">
-              Mezun <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Haritası</span>
+              {m.hero.titlePre}<span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">{m.hero.titleHighlight}</span>
             </h1>
             <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-              Halil Kale Fen Lisesi mezunlarının dünya genelindeki şehir bazlı dağılımı ve çalıştıkları sektörler.
+              {m.hero.text}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-8 mt-10">
               {[
-                { label:'Toplam Mezun', value:totalStats.total, icon:Users },
-                { label:'Yurt Dışı', value:totalStats.abroad, icon:Globe },
-                { label:'Ülke', value:totalStats.countries, icon:Compass },
-                { label:'Şehir', value:totalStats.cities, icon:MapPin },
+                { label:m.hero.statTotal, value:totalStats.total, icon:Users },
+                { label:m.hero.statAbroad, value:totalStats.abroad, icon:Globe },
+                { label:m.hero.statCountries, value:totalStats.countries, icon:Compass },
+                { label:m.hero.statCities, value:totalStats.cities, icon:MapPin },
               ].map((s,i) => (
                 <motion.div key={i} initial={{ opacity:0, y:15 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.3+i*0.1 }} className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
@@ -89,7 +97,7 @@ export default function HaritaClient() {
           <motion.div initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.2 }} className="mb-6">
             <div className="relative">
               <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
-              <input type="text" placeholder="Ülke veya şehir ara..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
+              <input type="text" placeholder={m.searchPlaceholder} value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
                 className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0f2342]/30 focus:bg-white/[0.07] transition-all backdrop-blur-sm" />
             </div>
           </motion.div>
@@ -98,7 +106,7 @@ export default function HaritaClient() {
             {/* Map */}
             <div className="lg:col-span-8">
               <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/30" style={{ height:'560px' }}>
-                {isMounted && <LeafletMap locations={filtered} selectedId={selectedCity?.id ?? null} onSelect={id => { const c = citiesData.find(x => x.id === id) ?? null; setSelectedCity(c); if (c) setExpandedCountry(c.country); }} />}
+                <LeafletMap locations={filtered} selectedId={selectedCity?.id ?? null} onSelect={id => { const c = citiesData.find(x => x.id === id) ?? null; setSelectedCity(c); if (c) setExpandedCountry(c.country); }} />
               </div>
             </div>
 
@@ -113,8 +121,8 @@ export default function HaritaClient() {
                       className={`w-full flex items-center justify-between p-4 transition-all ${isExpanded ? 'bg-[#0f2342]/50' : 'bg-white/[0.03] hover:bg-white/[0.06]'}`}>
                       <div className="flex items-center gap-2.5">
                         <span className="text-lg">{group.flag}</span>
-                        <span className="font-bold text-sm text-white">{country}</span>
-                        <span className="text-[10px] text-slate-500">({group.cities.length} şehir)</span>
+                        <span className="font-bold text-sm text-white">{countryName(country)}</span>
+                        <span className="text-[10px] text-slate-500">({m.cityCount(group.cities.length)})</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span className={`text-xs font-extrabold px-2.5 py-1 rounded-full ${isExpanded ? 'bg-[#0f2342] text-white border border-white/10' : 'bg-white/10 text-slate-300'}`}>{group.total}</span>
@@ -134,7 +142,7 @@ export default function HaritaClient() {
                                   className={`w-full text-left p-3 rounded-xl border transition-all ${isActive ? 'bg-[#0f2342]/30 border-[#0f2342]/50' : 'bg-white/[0.02] border-white/[0.04] hover:bg-white/[0.05]'}`}>
                                   <div className="flex items-center justify-between mb-1.5">
                                     <span className={`font-semibold text-xs ${isActive ? 'text-white' : 'text-slate-300'}`}>{city.city}</span>
-                                    <span className="text-[10px] font-bold text-slate-400 bg-white/5 px-2 py-0.5 rounded-full">{city.count} mezun</span>
+                                    <span className="text-[10px] font-bold text-slate-400 bg-white/5 px-2 py-0.5 rounded-full">{m.alumniCount(city.count)}</span>
                                   </div>
                                   {/* Mini sector bar */}
                                   <div className="flex gap-0.5 h-1 w-full rounded-full overflow-hidden bg-white/5">
@@ -146,11 +154,11 @@ export default function HaritaClient() {
                                       <motion.div initial={{ height:0, opacity:0 }} animate={{ height:'auto', opacity:1 }} exit={{ height:0, opacity:0 }} transition={{ duration:0.25 }} className="overflow-hidden">
                                         <div className="mt-3 pt-3 border-t border-white/[0.06] space-y-3">
                                           <div className="space-y-2">
-                                            <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1"><Briefcase size={9} /> Sektörler</div>
+                                            <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1"><Briefcase size={9} /> {m.sectors}</div>
                                             {city.sectors.map(s => (
                                               <div key={s.name} className="space-y-0.5">
                                                 <div className="flex justify-between text-[10px]">
-                                                  <span className="text-slate-400">{s.name}</span>
+                                                  <span className="text-slate-400">{sectorName(s.name)}</span>
                                                   <span className="text-white font-bold">%{s.pct}</span>
                                                 </div>
                                                 <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
@@ -181,13 +189,13 @@ export default function HaritaClient() {
             <div className="flex gap-3 items-start">
               <ShieldAlert size={16} className="text-amber-500 flex-shrink-0 mt-0.5" />
               <p className="text-[11px] text-amber-200/70 leading-relaxed font-medium">
-                KVKK kapsamında mezunlarımızın isim ve bireysel kurum bilgileri gösterilmeden yalnızca istatistiksel dağılım paylaşılmaktadır.
+                {m.kvkk1}
               </p>
             </div>
             <div className="flex gap-3 items-start border-t border-amber-500/10 pt-3">
               <ShieldAlert size={16} className="text-amber-500 flex-shrink-0 mt-0.5" />
               <p className="text-[11px] text-amber-200/70 leading-relaxed font-medium">
-                Haritada yalnızca topluluk formumuzu dolduran mezunlarımız gösterilmektedir.
+                {m.kvkk2}
               </p>
             </div>
           </div>

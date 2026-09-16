@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { MapPin, Phone, Mail } from 'lucide-react';
-
+import { useLang } from '@/i18n/useLang';
 
 const SocialLinks = [
   {
@@ -25,7 +25,16 @@ const SocialLinks = [
   },
 ];
 
+const PAGE_KEYS = ['home', 'about', 'map', 'contact'] as const;
+
 export default function Footer() {
+  const { t, href } = useLang();
+
+  const pageLinks = [
+    ...PAGE_KEYS.map((key) => ({ href: href(key), label: t.nav[key] })),
+    { href: `${href('home')}#${t.home.faq.anchor}`, label: t.footer.faq },
+  ];
+
   return (
     <footer style={{ background: '#0f1117' }} className="text-white">
       {/* Top border gradient */}
@@ -37,22 +46,23 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full overflow-hidden bg-white flex items-center justify-center">
-                <img src="/logo.jpg" alt="HKMED - Halil Kale Fen Lisesi Mezunlar Derneği" className="w-full h-full object-cover" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logo.jpg" alt={`${t.brand.short} - ${t.brand.full}`} className="w-full h-full object-cover" />
               </div>
               <div>
-                <div className="font-bold text-sm leading-tight tracking-wide">HKMED</div>
-                <div className="text-[11px] text-gray-400">Halil Kale Fen Lisesi Mezunlar Derneği</div>
+                <div className="font-bold text-sm leading-tight tracking-wide">{t.brand.short}</div>
+                <div className="text-[11px] text-gray-400">{t.brand.full}</div>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Geçmişimizin gücüyle geleceği birlikte inşa ediyoruz. Mezunlarımız dünyayı değiştiriyor.
-            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">{t.footer.tagline}</p>
             <div className="flex gap-3 mt-5">
               {SocialLinks.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300"
                   style={{ background: 'rgba(255,255,255,0.07)' }}
                   onMouseEnter={(e) => (e.currentTarget.style.background = '#0f2342')}
@@ -66,14 +76,9 @@ export default function Footer() {
 
           {/* Hızlı Bağlantılar */}
           <div>
-            <h4 className="font-semibold text-sm mb-5 text-gray-200 uppercase tracking-wider">Sayfalar</h4>
+            <h4 className="font-semibold text-sm mb-5 text-gray-200 uppercase tracking-wider">{t.footer.pages}</h4>
             <ul className="flex flex-col gap-3">
-              {[
-                { href: '/', label: 'Ana Sayfa' },
-                { href: '/hakkimizda', label: 'Hakkımızda' },
-                { href: '/harita', label: 'Mezun Haritası' },
-                { href: '/iletisim', label: 'İletişim' },
-              ].map((link) => (
+              {pageLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -89,11 +94,11 @@ export default function Footer() {
 
           {/* İletişim */}
           <div>
-            <h4 className="font-semibold text-sm mb-5 text-gray-200 uppercase tracking-wider">İletişim</h4>
+            <h4 className="font-semibold text-sm mb-5 text-gray-200 uppercase tracking-wider">{t.footer.contact}</h4>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-white mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">Subaşı, Seyfi Demirsoy Sk. No:45,<br />45400 Turgutlu/Manisa</span>
+                <span className="text-gray-400 text-sm">{t.footer.address[0]}<br />{t.footer.address[1]}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-white flex-shrink-0" />
@@ -113,12 +118,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <p className="text-gray-500 text-sm">
-            © 2026 Halil Kale Fen Lisesi Mezunlar Derneği. Tüm hakları saklıdır.
-          </p>
+          <p className="text-gray-500 text-sm">{t.footer.rights}</p>
           <div className="flex items-center gap-4 text-gray-500 text-sm">
-            <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors">
-              Gizlilik Politikası
+            <Link href={href('privacy')} className="hover:text-white transition-colors">
+              {t.footer.privacy}
             </Link>
           </div>
         </div>

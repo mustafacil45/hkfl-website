@@ -5,6 +5,9 @@
   --bordo: #0f2342;
   --bordo-dark: #0a172c;
   --bordo-light: #1d3557;
+  --bordo-accent: #1e3a8a;
+  --watermark-opacity: 0.06;
+  --watermark-blur: 1.5px;
   --gold: #ffffff;
   --gold-light: #f8fafc;
   --dark: #070f1a;
@@ -101,7 +104,8 @@ select {
 .font-display { font-family: 'Playfair Display', serif; }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--bordo) 0%, var(--gold) 100%);
+  /* Uç renk beyaz olunca yazının sonu saydamlaşıyordu; açık laciverte gidiyor. */
+  background: linear-gradient(135deg, var(--bordo) 0%, var(--bordo-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -115,6 +119,35 @@ select {
   width: 100%;
   padding-left: clamp(1rem, 4vw, 1.5rem);
   padding-right: clamp(1rem, 4vw, 1.5rem);
+}
+
+/* ── Sabit arka plan filigranı ── */
+.site-watermark {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* içeriğin altında, gövde zemininin üstünde */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.site-watermark span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(3.25rem, 11vw, 10rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--bordo);
+  opacity: var(--watermark-opacity);
+  filter: blur(var(--watermark-blur));
+  transform: translateZ(0);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .site-watermark { display: none; }
 }
 
 /* ── Glass Card ── */
