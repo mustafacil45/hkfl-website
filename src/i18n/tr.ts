@@ -51,7 +51,7 @@ export const tr = {
     items: [
       {
         q: 'Derneğe kimler üye olabilir?',
-        a: 'Halil Kale Fen Lisesi mezunları ile okulumuzda en az bir eğitim-öğretim yılı okumuş olanlar derneğimize üye olabilir. Üyelik koşullarına ilişkin ayrıntılar, başvurular açıldığında bu sayfada paylaşılacaktır.',
+        a: "Halil Kale Fen Lisesi mezunları ile okulumuzda en az bir eğitim-öğretim yılı okumuş olanlar derneğimize üye olabilir. Ayrıca Halil Kale Fen Lisesi'nde görev yapmış öğretmenlerimiz ve emekçilerimiz onursal üye olabilirler. Üyelik koşullarına ilişkin ayrıntılar, başvurular açıldığında bu sayfada paylaşılacaktır.",
       },
       {
         q: 'Üyelik başvurusu nasıl yapılır?',
@@ -140,7 +140,7 @@ export const tr = {
       label: 'Tarihçemiz',
       titlePre: 'Halil Kale ',
       titleHighlight: 'Fen Lisesi',
-      text: 'İlçe bazında ilk Fen Lisesi olma özelliğini taşıyan Halil Kale Fen Lisesi, Fen Liseleri ailesinin 26. halkası olarak, Turgutlulu hayırsever Halil Kale tarafından yaptırılarak Millî Eğitim Bakanlığına bağışlanmış ve 1996–1997 eğitim-öğretim yılında hizmete açılmıştır.',
+      text: 'İlçe bazında ilk Fen Lisesi olma özelliğini taşıyan Halil Kale Fen Lisesi, Turgutlulu hayırsever Halil Kale tarafından yaptırılarak Millî Eğitim Bakanlığına bağışlanmış ve 1996–1997 eğitim-öğretim yılında hizmete açılmıştır.',
     },
     campus: {
       title: 'Okul Kampüsü ve Sosyal Yaşam',
@@ -159,7 +159,7 @@ export const tr = {
       },
       {
         title: 'Samimi Okul Kültürü',
-        text: 'Güçlü idare–öğretmen–öğrenci ilişkileri ve samimi okul kültürü, özellikle yatılı öğrenciler için aile ortamını aratmayan bir atmosfer oluşturmaktadır. Bu okulda öğrencilerden beklenen temel unsur çalışmaktır; çünkü ihtiyaç duydukları eğitim ortamı ve imkânlar kendilerine eksiksiz sunulmuştur.',
+        text: 'Güçlü idare–öğretmen–öğrenci ilişkileri ve samimi okul kültürü, özellikle yatılı öğrenciler için aile ortamını aratmayan bir atmosfer oluşturmaktadır. Bu okulda öğrencilerden beklenen temel unsur çalışmaktır; çünkü ihtiyaç duydukları eğitim ortamı ve imkânlar kendilerine sunulmuştur.',
       },
       {
         title: 'Geleceğe Taşınan Değerler',

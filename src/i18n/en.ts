@@ -38,7 +38,7 @@ export const en: Dict = {
     items: [
       {
         q: 'Who can become a member?',
-        a: 'Graduates of Halil Kale Science High School, as well as anyone who studied at the school for at least one academic year, are eligible to join the association. Full membership terms will be published on this page once applications open.',
+        a: 'Graduates of Halil Kale Science High School, as well as anyone who studied at the school for at least one academic year, are eligible to join the association. Teachers and staff who have served at Halil Kale Science High School may also become honorary members. Full membership terms will be published on this page once applications open.',
       },
       {
         q: 'How do I apply for membership?',
@@ -127,7 +127,7 @@ export const en: Dict = {
       label: 'Our History',
       titlePre: 'Halil Kale ',
       titleHighlight: 'Science High School',
-      text: 'Halil Kale Science High School, the first science high school founded at district level in Türkiye and the 26th member of the science high school family, was built by Turgutlu philanthropist Halil Kale, donated to the Ministry of National Education, and opened its doors in the 1996–1997 academic year.',
+      text: 'Halil Kale Science High School, the first science high school founded at district level in Türkiye, was built by Turgutlu philanthropist Halil Kale, donated to the Ministry of National Education, and opened its doors in the 1996–1997 academic year.',
     },
     campus: {
       title: 'Campus and Social Life',
@@ -146,7 +146,7 @@ export const en: Dict = {
       },
       {
         title: 'A Close-Knit School Culture',
-        text: 'Strong relationships between administration, teachers and students create a warm, family-like atmosphere, especially for boarding students. What is expected of students here is, above all, hard work — because the learning environment and facilities they need are provided in full.',
+        text: 'Strong relationships between administration, teachers and students create a warm, family-like atmosphere, especially for boarding students. What is expected of students here is, above all, hard work — because the learning environment and facilities they need are provided.',
       },
       {
         title: 'Values Carried into the Future',
