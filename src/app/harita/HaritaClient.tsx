@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Search, ShieldAlert, Briefcase, Globe, Compass, ChevronRight, Users } from 'lucide-react';
+import { Search, ShieldAlert, Briefcase, ChevronRight } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 import { CityData, citiesData } from './citiesData';
@@ -43,46 +43,18 @@ export default function HaritaClient() {
     return Array.from(map.entries()).sort((a, b) => b[1].total - a[1].total);
   }, [filtered]);
 
-  const totalStats = useMemo(() => {
-    const total = citiesData.reduce((a, c) => a + c.count, 0);
-    const abroad = citiesData.filter(c => c.country !== 'Türkiye').reduce((a, c) => a + c.count, 0);
-    const countries = new Set(citiesData.map(c => c.country)).size;
-    return { total, abroad, countries, cities: citiesData.length };
-  }, []);
-
   return (
     <>
       {/* Hero */}
       <section className="relative pt-36 sm:pt-44 lg:pt-52 pb-14 sm:pb-16 overflow-hidden" style={{ background:'#0f172a' }}>
         <div className="container-custom relative z-10 w-full">
           <motion.div initial={{ opacity:0, y:30 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7 }} className="text-center">
-            <div className="inline-flex items-center justify-center gap-2 bg-white/5 text-white border border-white/20 px-5 py-2 rounded-md text-xs font-bold uppercase mb-6 backdrop-blur-sm">
-              <Globe size={14} /> {m.hero.label}
-            </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 text-white">
               {m.hero.titlePre}<span className="text-slate-300">{m.hero.titleHighlight}</span>
             </h1>
             <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
               {m.hero.text}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-8 mt-10">
-              {[
-                { label:m.hero.statTotal, value:totalStats.total, icon:Users },
-                { label:m.hero.statAbroad, value:totalStats.abroad, icon:Globe },
-                { label:m.hero.statCountries, value:totalStats.countries, icon:Compass },
-                { label:m.hero.statCities, value:totalStats.cities, icon:MapPin },
-              ].map((s,i) => (
-                <motion.div key={i} initial={{ opacity:0, y:15 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.3+i*0.1 }} className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <s.icon size={18} className="text-white" />
-                  </div>
-                  <div className="text-left">
-                    <div className="text-xl font-bold text-white">{s.value}</div>
-                    <div className="text-[11px] text-slate-500 font-medium">{s.label}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>

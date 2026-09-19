@@ -20,7 +20,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
 };
 
-const featureIcons = [Users, GraduationCap, Briefcase, Heart];
+const featureIcons = [Heart, Users, Briefcase, GraduationCap];
 
 export default function HomeClient() {
   const { t, href, locale } = useLang();
@@ -76,9 +76,7 @@ export default function HomeClient() {
               textAlign: 'center',
             }}
           >
-            {t.home.hero.subtitle1}
-            <br className="hidden md:block" />
-            {' '}{t.home.hero.subtitle2}
+            {t.home.hero.subtitle}
           </motion.p>
 
           <motion.div
@@ -146,9 +144,8 @@ export default function HomeClient() {
                 <Heart size={14} />
                 {t.home.mission.label}
               </div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                {t.home.mission.title1}<br />
-                <span className="text-accent">{t.home.mission.title2}</span>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-accent mb-6 leading-tight">
+                {t.home.mission.title}
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 {t.home.mission.text}

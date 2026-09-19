@@ -69,8 +69,7 @@ export const en: Dict = {
     hero: {
       imageAlt: 'Halil Kale Science High School',
       title: ['Halil Kale', 'Science High School', 'Alumni Association'],
-      subtitle1: 'Building the future together with the strength of our past.',
-      subtitle2: 'A strong community of 1,500+ alumni in 20+ countries.',
+      subtitle: 'Building the future together with the strength of our past.',
       ctaAbout: 'About Us',
       ctaContact: 'Contact Us',
     },
@@ -81,10 +80,9 @@ export const en: Dict = {
     },
     mission: {
       label: 'Our Mission',
-      title1: 'Building a strong',
-      title2: 'alumni network together',
+      title: 'Building our future together.',
       text: 'As the Halil Kale Science High School Alumni Association, our mission is to remind our alumni how large a family they belong to and to build the future of our school together.',
-      features: ['Strong Alumni Network', 'Student Mentoring', 'Career Opportunities', 'Social Responsibility'],
+      features: ['Belonging', 'Strong Alumni Network', 'Career Opportunities', 'Mentoring'],
     },
     cta: {
       soon: 'Coming Soon',
@@ -96,7 +94,6 @@ export const en: Dict = {
     hero: {
       label: 'About Us',
       title: ['Halil Kale Science High School', 'Alumni Association'],
-      text: 'Halil Kale Science High School, the first science high school founded at district level in Türkiye, has been educating successful graduates since 1996. Our association brings those graduates together around the principles of education, solidarity and public benefit.',
       cardLabel: 'Since 1996',
       cardTitle: '30 Years of Success and Connection',
       cardText: "As proud graduates of Manisa's first science high school, we come together to strengthen the bonds between us and to walk into the future side by side.",
@@ -111,18 +108,6 @@ export const en: Dict = {
       title: 'Our Vision',
       text: 'To build a wide, supportive alumni network that contributes to the career and personal development of Halil Kale graduates and creates value for society.',
     },
-    values: {
-      label: 'Our Values',
-      titlePre: 'The Values That ',
-      titleHighlight: 'Define',
-      titlePost: ' Us',
-      items: [
-        { title: 'Excellence', desc: 'As a community carrying the science high school spirit, we aim for the best in everything we do.' },
-        { title: 'Solidarity', desc: 'Our alumni support one another and overcome challenges together.' },
-        { title: 'Career', desc: 'We guide our alumni on their career paths and create opportunities.' },
-        { title: 'Community', desc: 'We keep the name of our school alive by building a strong alumni network.' },
-      ],
-    },
     history: {
       label: 'Our History',
       titlePre: 'Halil Kale ',
@@ -131,27 +116,16 @@ export const en: Dict = {
     },
     campus: {
       title: 'Campus and Social Life',
-      p1: 'Reflecting the educational vision of our school, the campus consists of three buildings: a dormitory, an administration building and a conference hall. The dormitory houses the bedrooms, dining hall, laundry and infirmary.',
+      p1: 'Reflecting the educational vision of our school, the campus consists of three buildings: a dormitory, an administration building and a conference hall.',
       p2: 'Alongside clean, safe and well-kept living spaces, fully equipped physics, chemistry and biology laboratories are among the key facilities supporting the quality of education. A basketball court, a volleyball court and an artificial-turf football pitch in the school grounds let students spend their free time actively and socially.',
     },
     photos: [
       { alt: 'Front façade of the Halil Kale Science High School main building', title: 'Main Building', caption: 'Front façade of our school' },
-      { alt: 'Artificial-turf pitch with the girls’ and boys’ dormitory building behind it', title: 'Student Dormitory', caption: 'Football pitch and dormitory blocks' },
       { alt: 'Close-up view of the main building and school entrance', title: 'Campus Entrance', caption: 'Main building and school entrance' },
-    ],
-    culture: [
-      {
-        title: 'Educational Mission',
-        text: 'Science high schools educate students with exceptional talent in mathematics and the sciences, and are a key source of the highly qualified scientists and researchers our country needs. Guided by this awareness and responsibility, Halil Kale Science High School aims to offer its students the best possible learning environment.',
-      },
-      {
-        title: 'A Close-Knit School Culture',
-        text: 'Strong relationships between administration, teachers and students create a warm, family-like atmosphere, especially for boarding students. What is expected of students here is, above all, hard work — because the learning environment and facilities they need are provided.',
-      },
-      {
-        title: 'Values Carried into the Future',
-        text: 'Our core aim is to raise students as conscious representatives and committed defenders of the good habits and strong traditions that will carry this long-established school into the future. Every graduate carries the pride of being part of this school for life.',
-      },
+      { alt: 'School entrance steps, garden path and flagpole', title: 'School Entrance', caption: 'Entrance steps and garden path' },
+      { alt: 'Boys’ dormitory building behind the artificial-turf pitch', title: 'Student Dormitory', caption: 'Boys’ dormitory' },
+      { alt: 'Artificial-turf football pitch in the school grounds', title: 'Football Pitch', caption: 'Artificial-turf pitch in the school grounds' },
+      { alt: 'School grounds with basketball hoop and flagpole', title: 'School Grounds', caption: 'Basketball court and rest area' },
     ],
     founders: {
       title: 'Founders',
@@ -170,14 +144,9 @@ export const en: Dict = {
 
   map: {
     hero: {
-      label: 'Global Alumni Network',
       titlePre: 'Alumni ',
       titleHighlight: 'Map',
       text: 'City-level distribution of Halil Kale Science High School alumni around the world and the sectors they work in.',
-      statTotal: 'Total Alumni',
-      statAbroad: 'Abroad',
-      statCountries: 'Countries',
-      statCities: 'Cities',
     },
     searchPlaceholder: 'Search a country or city...',
     cityCount: (n: number) => `${n} ${n === 1 ? 'city' : 'cities'}`,

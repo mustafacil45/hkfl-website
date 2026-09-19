@@ -82,8 +82,7 @@ export const tr = {
     hero: {
       imageAlt: 'Halil Kale Fen Lisesi',
       title: ['Halil Kale', 'Fen Lisesi', 'Mezunlar Derneği'],
-      subtitle1: 'Geçmişimizin gücüyle geleceği birlikte inşa ediyoruz.',
-      subtitle2: '20+ ülkede 1500+ mezunuyla güçlü bir topluluk.',
+      subtitle: 'Geçmişimizin gücüyle geleceği birlikte inşa ediyoruz.',
       ctaAbout: 'Hakkımızda',
       ctaContact: 'Bize Ulaşın',
     },
@@ -94,10 +93,9 @@ export const tr = {
     },
     mission: {
       label: 'Misyonumuz',
-      title1: 'Birlikte güçlü bir',
-      title2: 'mezun ağı inşa ediyoruz',
+      title: 'Geleceğimizi hep birlikte inşa ediyoruz.',
       text: 'Halil Kale Fen Lisesi Mezunlar Derneği olarak misyonumuz; mezunlarımıza ne kadar büyük bir ailenin parçası olduklarını hatırlatmak ve kurumumuzun geleceğini hep birlikte inşa etmek.',
-      features: ['Güçlü Mezun Ağı', 'Öğrenci Mentorlüğü', 'Kariyer Fırsatları', 'Toplumsal Sorumluluk'],
+      features: ['Aidiyet', 'Güçlü Mezun Ağı', 'Kariyer Fırsatları', 'Mentörlük'],
     },
     cta: {
       soon: 'Çok Yakında',
@@ -109,7 +107,6 @@ export const tr = {
     hero: {
       label: 'Hakkımızda',
       title: ['Halil Kale Fen Lisesi', 'Mezunlar Derneği'],
-      text: 'İlçe bazında ilk Fen Lisesi olma özelliğini taşıyan Halil Kale Fen Lisesi, 1996 yılından bu yana yetiştirdiği başarılı mezunlarını bir araya getiren derneğimizle, eğitim, dayanışma ve toplumsal fayda ilkeleriyle çalışmalarını sürdürmektedir.',
       cardLabel: "1996'dan Bugüne",
       cardTitle: '30 Yıllık Başarı ve Bağ',
       cardText: "Manisa'nın ilk Fen Lisesi olarak kurulan okulumuzun değerli mezunları olarak, aramızdaki bağı güçlendirmek ve geleceğe birlikte yürümek için bir aradayız.",
@@ -124,18 +121,6 @@ export const tr = {
       title: 'Vizyonumuz',
       text: 'Halil Kale Fen Liselilerin kariyer ve kişisel gelişimine katkı sağlayan, toplum için değer üreten geniş ve dayanışmacı bir mezun ağı oluşturmak.',
     },
-    values: {
-      label: 'Değerlerimiz',
-      titlePre: 'Bizi ',
-      titleHighlight: 'Biz Yapan',
-      titlePost: ' Değerler',
-      items: [
-        { title: 'Mükemmellik', desc: 'Fen lisesi ruhunu taşıyan bir topluluk olarak her şeyde en iyisini hedefliyoruz.' },
-        { title: 'Dayanışma', desc: 'Mezunlarımız birbirini destekler, zorlukları birlikte aşarız.' },
-        { title: 'Kariyer', desc: 'Mezunlarımızın kariyer yolculuklarında rehberlik eder ve fırsatlar yaratırız.' },
-        { title: 'Topluluk', desc: 'Güçlü bir mezun ağı inşa ederek kurumumuzun adını yaşatırız.' },
-      ],
-    },
     history: {
       label: 'Tarihçemiz',
       titlePre: 'Halil Kale ',
@@ -144,27 +129,16 @@ export const tr = {
     },
     campus: {
       title: 'Okul Kampüsü ve Sosyal Yaşam',
-      p1: 'Kurumumuzun eğitim anlayışını yansıtan okul kampüsü; bir pansiyon binası, bir idare binası ve bir konferans salonu binası olmak üzere toplam üç yapıdan oluşmaktadır. Pansiyon binasında yatakhaneler, yemekhane, çamaşırhane ve revir bulunmaktadır.',
+      p1: 'Kurumumuzun eğitim anlayışını yansıtan okul kampüsü; bir pansiyon binası, bir idare binası ve bir konferans salonu binası olmak üzere toplam üç yapıdan oluşmaktadır.',
       p2: 'Temiz, güvenli ve düzenli yaşam alanlarının yanı sıra; fizik, kimya ve biyoloji dersleri için donatılmış laboratuvarlar, okulumuzun eğitim kalitesini destekleyen önemli imkânlar arasında yer almaktadır. Ayrıca okul bahçesinde bulunan bir basketbol, bir voleybol ve bir halı saha, öğrencilerin ders dışı zamanlarını verimli ve sosyal bir şekilde değerlendirebilmelerine olanak sağlamaktadır.',
     },
     photos: [
       { alt: 'Halil Kale Fen Lisesi ana binasının ön cephesi', title: 'Ana Bina', caption: 'Okulumuzun ön cephesi' },
-      { alt: 'Halı saha ve arkasında yer alan kız ve erkek öğrenci pansiyonu binası', title: 'Öğrenci Pansiyonu', caption: 'Halı saha ve kız–erkek pansiyon blokları' },
       { alt: 'Ana bina ve okul girişinin yakın plan görünümü', title: 'Kampüs Girişi', caption: 'Ana bina ve okul girişi' },
-    ],
-    culture: [
-      {
-        title: 'Eğitim Misyonu',
-        text: 'Fen liseleri; matematik ve fen bilimleri alanlarında üstün yeteneklere sahip öğrencilerin yetiştirildiği; ülkemizin ihtiyaç duyduğu yüksek nitelikli bilim insanlarının ve araştırmacıların yetişmesine kaynaklık eden eğitim kurumlarıdır. Halil Kale Fen Lisesi de bu bilinç ve sorumlulukla hareket ederek öğrencilerine en uygun eğitim ortamını sunmayı amaç edinmiştir.',
-      },
-      {
-        title: 'Samimi Okul Kültürü',
-        text: 'Güçlü idare–öğretmen–öğrenci ilişkileri ve samimi okul kültürü, özellikle yatılı öğrenciler için aile ortamını aratmayan bir atmosfer oluşturmaktadır. Bu okulda öğrencilerden beklenen temel unsur çalışmaktır; çünkü ihtiyaç duydukları eğitim ortamı ve imkânlar kendilerine sunulmuştur.',
-      },
-      {
-        title: 'Geleceğe Taşınan Değerler',
-        text: 'Temel amacımız; öğrencileri bu köklü eğitim yuvasını geleceğe taşıyacak iyi alışkanlıkların ve güçlü geleneklerin bilinçli temsilcileri ve kararlı savunucuları olarak yetiştirmektir. Mezun olan her öğrencimiz, bu okulun bir parçası olmanın gururunu hayatı boyunca taşıyacaktır.',
-      },
+      { alt: 'Okul binasının giriş merdivenleri, bahçe yolu ve bayrak direği', title: 'Okul Girişi', caption: 'Giriş merdivenleri ve bahçe yolu' },
+      { alt: 'Halı sahanın arkasında yer alan erkek öğrenci pansiyonu binası', title: 'Öğrenci Pansiyonu', caption: 'Erkek öğrenci pansiyonu' },
+      { alt: 'Okul bahçesindeki halı saha', title: 'Halı Saha', caption: 'Okul bahçesindeki halı saha' },
+      { alt: 'Okul bahçesi, basketbol potası ve bayrak direği', title: 'Okul Bahçesi', caption: 'Basketbol sahası ve dinlenme alanı' },
     ],
     founders: {
       title: 'Kurucular',
@@ -183,14 +157,9 @@ export const tr = {
 
   map: {
     hero: {
-      label: 'Küresel Mezun Ağı',
       titlePre: 'Mezun ',
       titleHighlight: 'Haritası',
       text: 'Halil Kale Fen Lisesi mezunlarının dünya genelindeki şehir bazlı dağılımı ve çalıştıkları sektörler.',
-      statTotal: 'Toplam Mezun',
-      statAbroad: 'Yurt Dışı',
-      statCountries: 'Ülke',
-      statCities: 'Şehir',
     },
     searchPlaceholder: 'Ülke veya şehir ara...',
     cityCount: (n: number) => `${n} şehir`,

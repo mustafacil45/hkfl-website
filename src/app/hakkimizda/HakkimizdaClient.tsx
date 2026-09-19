@@ -2,10 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import {
-  Users, Globe, Target, Eye, Award, Star, Handshake, Briefcase,
-  Landmark, Building2, HeartHandshake, Sparkles,
-} from 'lucide-react';
+import { Users, Globe, Target, Eye, Landmark, Building2 } from 'lucide-react';
 import type { Dict } from '@/i18n';
 import { useLang } from '@/i18n/useLang';
 
@@ -22,14 +19,15 @@ const boardMembers: { name: string; role: RoleKey; year: string }[] = [
   { name: 'Bahadır Yılmaz', role: 'studentRelations', year: "HKFL '24" },
 ];
 
+// Sıra, sözlükteki `about.photos` listesiyle birebir eşleşir.
 const campusPhotoSrcs = [
   '/images/okul-ana-bina.jpeg',
-  '/images/pansiyon-hali-saha.jpeg',
   '/images/okul-cephe.jpeg',
+  '/images/okul-giris.jpeg',
+  '/images/erkek-pansiyonu.jpeg',
+  '/images/hali-saha.jpeg',
+  '/images/okul-bahcesi.jpeg',
 ];
-
-const valueIcons = [Star, Handshake, Briefcase, Users];
-const cultureIcons = [Target, HeartHandshake, Sparkles];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -73,14 +71,11 @@ export default function HakkimizdaClient() {
               <div className="text-slate-300 font-bold text-xs uppercase tracking-wider mb-3">
                 {a.hero.label}
               </div>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="text-white">{a.hero.title[0]}</span>
                 <br />
                 <span className="text-white">{a.hero.title[1]}</span>
               </h1>
-              <p className="text-gray-300 text-base sm:text-lg mb-8 leading-relaxed max-w-xl">
-                {a.hero.text}
-              </p>
             </motion.div>
 
             {/* Right Column */}
@@ -139,59 +134,9 @@ export default function HakkimizdaClient() {
         </div>
       </section>
 
-      {/* ── Değerlerimiz ── */}
-      <section className="bg-gray-50/50 py-20 border-t border-gray-100">
-        <div className="container-custom max-w-7xl mx-auto px-6">
-          {/* Başlık Alanı */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#0f2342]/10 text-[#0f2342] text-xs font-bold tracking-wide uppercase mb-3">
-              <Award size={14} /> {a.values.label}
-            </div>
-            <h2 className="font-display text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
-              {a.values.titlePre}<span className="text-accent">{a.values.titleHighlight}</span>{a.values.titlePost}
-            </h2>
-          </motion.div>
-
-          {/* 4'lü Değerler Grid'i */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
-          >
-            {a.values.items.map((val, i) => {
-              const Icon = valueIcons[i] ?? Star;
-              return (
-                <motion.div
-                  key={val.title}
-                  variants={itemVariants}
-                  className="bg-white border border-gray-100 rounded-2xl p-6 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-md transition-all min-h-[220px]"
-                >
-                  {/* Üst kısım: İkon ve Başlık */}
-                  <div className="flex flex-col items-center flex-grow justify-start w-full">
-                    <div className="w-11 h-11 rounded-xl bg-[#0f2342]/10 flex items-center justify-center mb-4 text-[#0f2342] flex-shrink-0">
-                      <Icon size={20} />
-                    </div>
-                    <h4 className="font-bold text-gray-900 text-lg mb-2">{val.title}</h4>
-                    <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[200px] mx-auto">
-                      {val.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
 
       {/* ── Tarihçe ── */}
-      <section className="py-24 border-t border-gray-100">
+      <section className="py-24 border-t border-b border-gray-100">
         <div className="container-custom max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             {/* Sol Taraf: Tarihçe */}
@@ -273,32 +218,6 @@ export default function HakkimizdaClient() {
         </div>
       </section>
 
-      {/* ── Eğitim Kültürü ve Amacımız ── */}
-      <section className="bg-slate-50/60 py-24 border-t border-b border-slate-100">
-        <div className="container-custom max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {a.culture.map((card, i) => {
-              const Icon = cultureIcons[i] ?? Target;
-              return (
-                <motion.div
-                  key={card.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.15 }}
-                  className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="w-12 h-12 rounded-2xl bg-[#0f2342]/10 text-[#0f2342] flex items-center justify-center mb-4">
-                    <Icon size={22} />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-gray-900 mb-3">{card.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{card.text}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* ── Kurucular ── */}
       <section className="section-padding" style={{ background: '#0f1117' }}>
