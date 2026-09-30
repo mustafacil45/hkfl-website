@@ -25,6 +25,7 @@ export const en: Dict = {
     pages: 'Pages',
     contact: 'Contact',
     faq: 'Frequently Asked Questions',
+    bylaws: 'Association Bylaws',
     privacy: 'Privacy Policy',
     rights: '© 2026 Halil Kale Science High School Alumni Association. All rights reserved.',
     address: ['Subaşı, Seyfi Demirsoy Sk. No:45,', '45400 Turgutlu/Manisa, Türkiye'],

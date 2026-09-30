@@ -30,9 +30,11 @@ const PAGE_KEYS = ['home', 'about', 'map', 'contact'] as const;
 export default function Footer() {
   const { t, href } = useLang();
 
-  const pageLinks = [
+  // `external` olanlar site içi yönlendirme değil, yeni sekmede açılan dosyalardır.
+  const pageLinks: { href: string; label: string; external?: boolean }[] = [
     ...PAGE_KEYS.map((key) => ({ href: href(key), label: t.nav[key] })),
     { href: `${href('contact')}#${t.faq.anchor}`, label: t.footer.faq },
+    { href: '/dernek-tuzugu.pdf', label: t.footer.bylaws, external: true },
   ];
 
   return (
@@ -78,17 +80,26 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-sm mb-5 text-gray-200 uppercase tracking-wider">{t.footer.pages}</h4>
             <ul className="flex flex-col gap-3">
-              {pageLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-[#ffffff] group-hover:w-2 transition-all" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {pageLinks.map((link) => {
+                const className =
+                  'text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2 group';
+                const bullet = <span className="w-1 h-1 rounded-full bg-[#ffffff] group-hover:w-2 transition-all" />;
+                return (
+                  <li key={link.href}>
+                    {link.external ? (
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+                        {bullet}
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link href={link.href} className={className}>
+                        {bullet}
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

@@ -38,6 +38,7 @@ export const tr = {
     pages: 'Sayfalar',
     contact: 'İletişim',
     faq: 'Sıkça Sorulan Sorular',
+    bylaws: 'Dernek Tüzüğü',
     privacy: 'Gizlilik Politikası',
     rights: '© 2026 Halil Kale Fen Lisesi Mezunlar Derneği. Tüm hakları saklıdır.',
     address: ['Subaşı, Seyfi Demirsoy Sk. No:45,', '45400 Turgutlu/Manisa'],
