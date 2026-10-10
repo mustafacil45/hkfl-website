@@ -86,7 +86,7 @@ export const en: Dict = {
       features: ['Belonging', 'Strong Alumni Network', 'Career Opportunities', 'Mentoring'],
     },
     cta: {
-      soon: 'Coming Soon',
+      download: 'Download Membership Form',
       title: 'Membership Application',
     },
   },

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   ArrowRight, MapPin, Mail, Users, Star,
-  Briefcase, GraduationCap, Heart,
+  Briefcase, GraduationCap, Heart, Download,
 } from 'lucide-react';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import { useLang } from '@/i18n/useLang';
@@ -194,13 +194,11 @@ export default function HomeClient() {
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">
               {t.home.cta.title}
             </h2>
-            {/* Başvurular açılana kadar düğme tıklanamaz. */}
-            <span
-              aria-disabled="true"
-              className="inline-flex items-center justify-center px-8 py-3.5 min-h-12 rounded-md border-2 border-white/40 text-white/75 font-semibold text-[0.95rem] cursor-not-allowed select-none"
-            >
-              {t.home.cta.soon}
-            </span>
+            {/* Site içi yönlendirme değil; form PDF olarak indirilir. */}
+            <a href="/uyelik-formu.pdf" download="HKMED-Uyelik-Basvuru-Formu.pdf" className="btn-outline">
+              <Download size={18} />
+              {t.home.cta.download}
+            </a>
           </motion.div>
         </div>
       </section>
