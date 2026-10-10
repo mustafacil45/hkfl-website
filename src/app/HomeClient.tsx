@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   ArrowRight, MapPin, Mail, Users, Star,
-  Briefcase, GraduationCap, Heart, Download,
+  Briefcase, GraduationCap, Heart,
 } from 'lucide-react';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import { useLang } from '@/i18n/useLang';
@@ -196,7 +196,6 @@ export default function HomeClient() {
             </h2>
             {/* Site içi yönlendirme değil; form PDF olarak indirilir. */}
             <a href="/uyelik-formu.pdf" download="HKMED-Uyelik-Basvuru-Formu.pdf" className="btn-outline">
-              <Download size={18} />
               {t.home.cta.join}
             </a>
           </motion.div>
