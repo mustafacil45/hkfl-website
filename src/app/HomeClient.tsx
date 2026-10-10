@@ -197,7 +197,7 @@ export default function HomeClient() {
             {/* Site içi yönlendirme değil; form PDF olarak indirilir. */}
             <a href="/uyelik-formu.pdf" download="HKMED-Uyelik-Basvuru-Formu.pdf" className="btn-outline">
               <Download size={18} />
-              {t.home.cta.download}
+              {t.home.cta.join}
             </a>
           </motion.div>
         </div>

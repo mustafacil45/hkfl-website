@@ -99,7 +99,7 @@ export const tr = {
       features: ['Aidiyet', 'Güçlü Mezun Ağı', 'Kariyer Fırsatları', 'Mentörlük'],
     },
     cta: {
-      download: 'Üyelik Formunu İndir',
+      join: 'Üye Ol',
       title: 'Dernek Üyelik Başvurusu',
     },
   },
