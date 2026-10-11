@@ -87,6 +87,11 @@ export const en: Dict = {
       text: 'As the Halil Kale Science High School Alumni Association, our mission is to remind our alumni how large a family they belong to and to build the future of our school together.',
       features: ['Belonging', 'Strong Alumni Network', 'Career Opportunities', 'Mentoring'],
     },
+    cta: {
+      title: 'Join Us',
+      text: "Let's build our future together.",
+      button: 'Become a Member',
+    },
   },
 
   about: {

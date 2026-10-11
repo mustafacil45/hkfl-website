@@ -182,6 +182,27 @@ export default function HomeClient() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════ CTA ═══════════════════════════════════════ */}
+      <section className="section-padding relative overflow-hidden" style={{ background: '#0f2342' }}>
+        <div className="container-custom relative z-10 text-center text-white">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+              {t.home.cta.title}
+            </h2>
+            <p className="text-white/80 text-lg md:text-xl mb-8">
+              {t.home.cta.text}
+            </p>
+            <Link href={href('membership')} className="btn-outline">
+              {t.home.cta.button}
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 }

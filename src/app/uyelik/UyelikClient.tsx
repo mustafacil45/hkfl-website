@@ -50,18 +50,18 @@ export default function UyelikClient() {
             <a href="/uyelik-formu.pdf" download="HKMED-Uyelik-Basvuru-Formu.pdf" className="btn-primary">
               {m.download}
             </a>
-            <p className="mt-8 text-gray-800 text-base md:text-lg leading-relaxed">
-              {m.sendPre}
-              <a href={`mailto:${EMAIL}`} className="font-semibold text-[#0f2342] hover:underline">
-                {EMAIL}
-              </a>
-              {m.sendPost}
-            </p>
-            {m.notes.map((note) => (
-              <p key={note} className="mt-4 text-gray-600 text-sm md:text-base leading-relaxed">
-                {note}
+            <div className="mt-8 space-y-4 text-left text-gray-700 text-base leading-relaxed">
+              <p>
+                {m.sendPre}
+                <a href={`mailto:${EMAIL}`} className="underline underline-offset-2 hover:text-[#0f2342]">
+                  {EMAIL}
+                </a>
+                {m.sendPost}
               </p>
-            ))}
+              {m.notes.map((note) => (
+                <p key={note}>{note}</p>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>

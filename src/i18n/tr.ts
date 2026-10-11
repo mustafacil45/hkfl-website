@@ -100,6 +100,11 @@ export const tr = {
       text: 'Halil Kale Fen Lisesi Mezunlar Derneği olarak misyonumuz; mezunlarımıza ne kadar büyük bir ailenin parçası olduklarını hatırlatmak ve kurumumuzun geleceğini hep birlikte inşa etmek.',
       features: ['Aidiyet', 'Güçlü Mezun Ağı', 'Kariyer Fırsatları', 'Mentörlük'],
     },
+    cta: {
+      title: 'Bize Katıl',
+      text: 'Geleceğimizi hep birlikte inşa edelim.',
+      button: 'Üye Ol',
+    },
   },
 
   about: {
