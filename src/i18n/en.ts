@@ -16,6 +16,7 @@ export const en: Dict = {
     map: 'Alumni Map',
     contact: 'Contact',
     faq: 'FAQ',
+    join: 'Join',
     menuToggle: 'Toggle menu',
     language: 'Language',
   },
@@ -43,7 +44,8 @@ export const en: Dict = {
       },
       {
         q: 'How do I apply for membership?',
-        a: 'Membership applications will open on our website very soon. Follow our social media accounts to be notified.',
+        a: 'Download the application form from our membership page, fill it in and sign it, then send it to iletisim@hkmed.org.',
+        link: { label: 'Membership Page', route: 'membership' },
       },
       {
         q: 'How can I appear on the Alumni Map?',
@@ -84,10 +86,6 @@ export const en: Dict = {
       title: 'Building our future together.',
       text: 'As the Halil Kale Science High School Alumni Association, our mission is to remind our alumni how large a family they belong to and to build the future of our school together.',
       features: ['Belonging', 'Strong Alumni Network', 'Career Opportunities', 'Mentoring'],
-    },
-    cta: {
-      join: 'Become a Member',
-      title: 'Membership Application',
     },
   },
 
@@ -222,6 +220,21 @@ export const en: Dict = {
       successTitle: 'Message Sent!',
       successText: 'We will get back to you as soon as possible.',
     },
+  },
+
+  membership: {
+    hero: {
+      label: 'Membership',
+      title: 'Become a Member',
+      text: 'Follow the steps below to join our association.',
+    },
+    download: 'Download Membership Form',
+    sendPre: 'After filling in and signing the membership form, you can send it to ',
+    sendPost: '.',
+    notes: [
+      'You do not need to send the attached privacy notice; the wet-signed membership form is sufficient.',
+      'Please keep the original of the signed document.',
+    ],
   },
 
   privacy: {

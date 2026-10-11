@@ -23,6 +23,7 @@ export default function Navbar() {
   }, []);
 
   const isActive = (key: NavKey) => pathname === href(key);
+  const joinActive = pathname === href('membership');
 
   // Sayfa bağlantıları + İletişim sayfasındaki SSS bölümüne giden çapa (İletişim'den önce).
   const navItems: { key: string; label: string; href: string; active: boolean }[] = NAV_KEYS.map((key) => ({
@@ -54,13 +55,13 @@ export default function Navbar() {
             <img src="/logo.jpg" alt="" className="w-full h-full object-cover" />
           </span>
           <span className="min-w-0 leading-tight">
-            <span className="block font-bold text-sm tracking-wider text-[#0f2342]">{t.brand.short}</span>
+            <span className="block font-bold text-sm tracking-wider text-[#0f2342] whitespace-nowrap">{t.brand.short}</span>
             <span className="hidden sm:block text-[11px] text-gray-500 truncate">{t.brand.full}</span>
           </span>
         </Link>
 
         {/* Masaüstü menü */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-9" aria-label="Ana menü">
+        <nav className="hidden md:flex items-center gap-5 lg:gap-9" aria-label="Ana menü">
           {navItems.map(({ key, label, href: to, active }) => {
             return (
               <Link
@@ -84,8 +85,16 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Sağ: dil + mobil menü düğmesi */}
+        {/* Sağ: üye ol + dil + mobil menü düğmesi */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Çok dar ekranlarda sığmaz; orada mobil menünün içinde gösterilir. */}
+          <Link
+            href={href('membership')}
+            aria-current={joinActive ? 'page' : undefined}
+            className="hidden min-[350px]:inline-flex items-center justify-center rounded-md bg-[#0f2342] px-3 py-1.5 text-xs lg:px-4 lg:py-2 lg:text-sm font-semibold text-white whitespace-nowrap transition-colors hover:bg-[#1d3557]"
+          >
+            {t.nav.join}
+          </Link>
           <LangSwitch />
           <button
             id="mobile-menu-btn"
@@ -129,6 +138,14 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+              <Link
+                href={href('membership')}
+                onClick={() => setMobileOpen(false)}
+                aria-current={joinActive ? 'page' : undefined}
+                className="min-[350px]:hidden mt-3 mb-1 inline-flex items-center justify-center rounded-md bg-[#0f2342] px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-[#1d3557]"
+              >
+                {t.nav.join}
+              </Link>
             </div>
           </motion.nav>
         )}

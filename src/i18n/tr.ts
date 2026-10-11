@@ -29,6 +29,7 @@ export const tr = {
     map: 'Mezun Haritası',
     contact: 'İletişim',
     faq: 'SSS',
+    join: 'Üye Ol',
     menuToggle: 'Menüyü aç/kapat',
     language: 'Dil',
   },
@@ -56,7 +57,8 @@ export const tr = {
       },
       {
         q: 'Üyelik başvurusu nasıl yapılır?',
-        a: 'Dernek üyelik başvuruları çok yakında web sitemiz üzerinden alınmaya başlanacak. Gelişmelerden haberdar olmak için sosyal medya hesaplarımızı takip edebilirsiniz.',
+        a: 'Üyelik sayfamızdan başvuru formunu indirip doldurduktan ve imzaladıktan sonra iletisim@hkmed.org adresine gönderebilirsiniz.',
+        link: { label: 'Üyelik Sayfası', route: 'membership' },
       },
       {
         q: "Mezun Haritası'nda nasıl yer alabilirim?",
@@ -97,10 +99,6 @@ export const tr = {
       title: 'Geleceğimizi hep birlikte inşa ediyoruz.',
       text: 'Halil Kale Fen Lisesi Mezunlar Derneği olarak misyonumuz; mezunlarımıza ne kadar büyük bir ailenin parçası olduklarını hatırlatmak ve kurumumuzun geleceğini hep birlikte inşa etmek.',
       features: ['Aidiyet', 'Güçlü Mezun Ağı', 'Kariyer Fırsatları', 'Mentörlük'],
-    },
-    cta: {
-      join: 'Üye Ol',
-      title: 'Dernek Üyelik Başvurusu',
     },
   },
 
@@ -209,6 +207,22 @@ export const tr = {
       successTitle: 'Mesajınız İletildi!',
       successText: 'En kısa sürede sizinle iletişime geçeceğiz.',
     },
+  },
+
+  membership: {
+    hero: {
+      label: 'Üyelik',
+      title: 'Üye Ol',
+      text: 'Derneğimize üye olmak için aşağıdaki adımları izleyin.',
+    },
+    download: 'Üyelik Formunu İndir',
+    // E-posta adresi iki parçanın arasına bağlantı olarak yerleştirilir.
+    sendPre: 'Üyelik formunu doldurup imzaladıktan sonra ',
+    sendPost: ' adresine gönderebilirsiniz.',
+    notes: [
+      'Ekteki aydınlatma metnini göndermenize gerek yok, ıslak imzalı üyelik formu yeterli olacaktır.',
+      'İmzalı belgenin aslını saklamanızı rica ederiz.',
+    ],
   },
 
   privacy: {

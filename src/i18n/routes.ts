@@ -13,6 +13,7 @@ export const routes = {
   about: { tr: '/hakkimizda', en: '/en/about' },
   map: { tr: '/harita', en: '/en/alumni-map' },
   contact: { tr: '/iletisim', en: '/en/contact' },
+  membership: { tr: '/uyelik', en: '/en/membership' },
   privacy: { tr: '/gizlilik-politikasi', en: '/en/privacy-policy' },
 } as const satisfies Record<string, Record<Lang, string>>;
 
