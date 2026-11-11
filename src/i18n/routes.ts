@@ -11,6 +11,7 @@ export const DEFAULT_LANG: Lang = 'tr';
 export const routes = {
   home: { tr: '/', en: '/en' },
   about: { tr: '/hakkimizda', en: '/en/about' },
+  announcements: { tr: '/duyurular', en: '/en/announcements' },
   map: { tr: '/harita', en: '/en/alumni-map' },
   contact: { tr: '/iletisim', en: '/en/contact' },
   membership: { tr: '/uyelik', en: '/en/membership' },

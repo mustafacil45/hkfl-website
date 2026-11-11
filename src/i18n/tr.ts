@@ -13,6 +13,27 @@ export interface FaqItem {
   link?: { label: string; href?: string; route?: RouteKey };
 }
 
+/** Duyurular sayfasındaki tek bir duyuru. Yalnızca dolu alanlar gösterilir. */
+export interface Announcement {
+  /** Bağlantı çapası (/duyurular#id); iki dilde aynı kalmalı. */
+  id: string;
+  /**
+   * Yayın tarihi, YYYY-AA-GG. Sayfada yeniden eskiye sıralanır; aynı tarihte
+   * listeye en son eklenen üstte görünür. Yeni duyuruyu listenin sonuna ekleyin.
+   */
+  published: string;
+  tag: string;
+  title: string;
+  /** Toplantı/etkinlik bilgileri (tarih, saat, adres). */
+  details?: { date: string; time: string; venue?: string; address: string; mapQuery?: string };
+  note?: string;
+  agenda?: string[];
+  paragraphs?: string[];
+  /** Kapanış satırları: davet cümlesi, "Saygılarımızla," ve imza. */
+  closing?: string[];
+  poster?: { src: string; alt: string; width: number; height: number };
+}
+
 const GOOGLE_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSdUXscqyML17OXnwAQktTBO6M0wHADs3okxPQWW-Wm9P602YA/viewform';
 
@@ -26,6 +47,7 @@ export const tr = {
   nav: {
     home: 'Ana Sayfa',
     about: 'Hakkımızda',
+    announcements: 'Duyurular',
     map: 'Mezun Haritası',
     contact: 'İletişim',
     faq: 'SSS',
@@ -76,7 +98,8 @@ export const tr = {
       },
       {
         q: 'Etkinlik ve duyurulardan nasıl haberdar olabilirim?',
-        a: 'Instagram ve LinkedIn hesaplarımızı takip ederek etkinlik ve duyurularımızı ilk siz öğrenebilirsiniz.',
+        a: 'Resmî duyurularımızı Duyurular sayfamızda yayımlıyoruz. Instagram ve LinkedIn hesaplarımızı takip ederek etkinlik ve duyurularımızı ilk siz öğrenebilirsiniz.',
+        link: { label: 'Duyurular', route: 'announcements' },
       },
     ] as FaqItem[],
   },
@@ -212,6 +235,75 @@ export const tr = {
       successTitle: 'Mesajınız İletildi!',
       successText: 'En kısa sürede sizinle iletişime geçeceğiz.',
     },
+  },
+
+  announcements: {
+    hero: {
+      title: 'Duyurular',
+      text: 'Derneğimize ilişkin güncel duyurular, toplantı çağrıları ve etkinlikler.',
+    },
+    labels: {
+      date: 'Tarih',
+      time: 'Saat',
+      address: 'Adres',
+      agenda: 'Gündem',
+      published: 'Yayın tarihi',
+      directions: 'Yol tarifi',
+      posterOpen: 'Afişi tam boyutta aç',
+    },
+    empty: 'Şu anda yayımlanmış bir duyuru bulunmuyor.',
+    items: [
+      {
+        id: 'genel-kurul-2026',
+        published: '2026-11-11',
+        tag: 'Genel Kurul',
+        title: '1. Olağan Genel Kurul Toplantısı',
+        details: {
+          date: '28.11.2026 Cumartesi',
+          time: '17.00',
+          address: 'Cihannüma, Barbaros Bulvarı No.55A Beşiktaş/İstanbul',
+          mapQuery: 'Cihannüma, Barbaros Bulvarı No:55A, Beşiktaş, İstanbul',
+        },
+        note: '*Çoğunluk sağlanamaması halinde ikinci toplantı 05.12.2026 tarihinde aynı yer, saat ve gündemle toplanacaktır.',
+        agenda: [
+          'Açılış ve Yoklama',
+          'Divan Başkanlığı Seçimi',
+          'Dernek Organlarının Seçimi',
+          'Dilek ve Temenniler',
+          'Kapanış',
+        ],
+        closing: ['Tüm üyelerimiz davetlidir.', 'Saygılarımızla,', 'Halil Kale Fen Lisesi Mezunlar Derneği'],
+        poster: {
+          src: '/images/duyurular/genel-kurul-2026.jpg',
+          alt: '1. Olağan Genel Kurul afişi: 28 Kasım 2026 Cumartesi, saat 17.00, Beşiktaş/İstanbul',
+          width: 1122,
+          height: 1402,
+        },
+      },
+      {
+        id: 'istanbul-bulusma-2026',
+        published: '2026-11-11',
+        tag: 'Buluşma',
+        title: "İstanbul'da Buluşuyoruz",
+        details: {
+          date: '28.11.2026 Cumartesi',
+          time: '19.00',
+          venue: 'MissisiPi Pub Beşiktaş',
+          address: 'Cihannüma, Barbaros Bulvarı No.55A Beşiktaş/İstanbul',
+          mapQuery: 'MissisiPi Pub, Barbaros Bulvarı No:55A, Beşiktaş, İstanbul',
+        },
+        paragraphs: [
+          "28 Kasım'da MissisiPi Pub'da buluşuyoruz.",
+          'Müsait olan bütün mezunlarımızı buluşmamıza bekliyoruz.',
+        ],
+        poster: {
+          src: '/images/duyurular/istanbul-bulusma-2026.jpg',
+          alt: "İstanbul'da Buluşuyoruz afişi: 28 Kasım 2026 Cumartesi, saat 19.00, MissisiPi Pub Beşiktaş",
+          width: 1280,
+          height: 1600,
+        },
+      },
+    ] as Announcement[],
   },
 
   membership: {

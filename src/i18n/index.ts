@@ -1,8 +1,8 @@
-import { tr, type Dict, type FaqItem } from './tr';
+import { tr, type Announcement, type Dict, type FaqItem } from './tr';
 import { en } from './en';
 import type { Lang } from './routes';
 
-export type { Dict, FaqItem };
+export type { Announcement, Dict, FaqItem };
 export * from './routes';
 
 export const dictionaries: Record<Lang, Dict> = { tr, en };

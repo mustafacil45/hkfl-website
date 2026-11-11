@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLang } from '@/i18n/useLang';
 import LangSwitch from './LangSwitch';
 
-const NAV_KEYS = ['home', 'about', 'map', 'contact'] as const;
+const NAV_KEYS = ['home', 'about', 'announcements', 'map', 'contact'] as const;
 type NavKey = (typeof NAV_KEYS)[number];
 
 export default function Navbar() {
@@ -32,7 +32,7 @@ export default function Navbar() {
     href: href(key),
     active: isActive(key),
   }));
-  navItems.splice(3, 0, {
+  navItems.splice(navItems.length - 1, 0, {
     key: 'faq',
     label: t.nav.faq,
     href: `${href('contact')}#${t.faq.anchor}`,
@@ -61,7 +61,7 @@ export default function Navbar() {
         </Link>
 
         {/* Masaüstü menü */}
-        <nav className="hidden md:flex items-center gap-5 lg:gap-9" aria-label="Ana menü">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-9" aria-label="Ana menü">
           {navItems.map(({ key, label, href: to, active }) => {
             return (
               <Link
@@ -99,7 +99,7 @@ export default function Navbar() {
           <button
             id="mobile-menu-btn"
             type="button"
-            className="md:hidden p-2 -mr-2 text-gray-700 hover:text-[#0f2342] transition-colors"
+            className="lg:hidden p-2 -mr-2 text-gray-700 hover:text-[#0f2342] transition-colors"
             onClick={() => setMobileOpen((open) => !open)}
             aria-label={t.nav.menuToggle}
             aria-expanded={mobileOpen}
@@ -119,7 +119,7 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden border-t border-gray-100"
+            className="lg:hidden overflow-hidden border-t border-gray-100"
             aria-label="Mobil menü"
           >
             <div className="container-custom py-3 flex flex-col">

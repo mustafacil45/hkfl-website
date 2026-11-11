@@ -25,7 +25,7 @@ const SocialLinks = [
   },
 ];
 
-const PAGE_KEYS = ['home', 'about', 'map', 'contact'] as const;
+const PAGE_KEYS = ['home', 'about', 'announcements', 'map', 'contact'] as const;
 
 export default function Footer() {
   const { t, href } = useLang();

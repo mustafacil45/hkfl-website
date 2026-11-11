@@ -13,6 +13,7 @@ export const en: Dict = {
   nav: {
     home: 'Home',
     about: 'About Us',
+    announcements: 'Announcements',
     map: 'Alumni Map',
     contact: 'Contact',
     faq: 'FAQ',
@@ -63,7 +64,8 @@ export const en: Dict = {
       },
       {
         q: 'How can I keep up with events and announcements?',
-        a: 'Follow us on Instagram and LinkedIn to be the first to hear about our events and announcements.',
+        a: 'Official notices are published on our Announcements page. Follow us on Instagram and LinkedIn to be the first to hear about our events and announcements.',
+        link: { label: 'Announcements', route: 'announcements' },
       },
     ],
   },
@@ -225,6 +227,75 @@ export const en: Dict = {
       successTitle: 'Message Sent!',
       successText: 'We will get back to you as soon as possible.',
     },
+  },
+
+  announcements: {
+    hero: {
+      title: 'Announcements',
+      text: 'The latest news, meeting notices and events from our association.',
+    },
+    labels: {
+      date: 'Date',
+      time: 'Time',
+      address: 'Address',
+      agenda: 'Agenda',
+      published: 'Published',
+      directions: 'Get directions',
+      posterOpen: 'Open poster in full size',
+    },
+    empty: 'There are no announcements at the moment.',
+    items: [
+      {
+        id: 'genel-kurul-2026',
+        published: '2026-11-11',
+        tag: 'General Assembly',
+        title: '1st Ordinary General Assembly Meeting',
+        details: {
+          date: 'Saturday, 28 November 2026',
+          time: '17:00',
+          address: 'Cihannüma, Barbaros Bulvarı No.55A Beşiktaş/İstanbul',
+          mapQuery: 'Cihannüma, Barbaros Bulvarı No:55A, Beşiktaş, İstanbul',
+        },
+        note: '*If a quorum is not reached, the second meeting will be held on 5 December 2026 at the same venue and time, with the same agenda.',
+        agenda: [
+          'Opening and Roll Call',
+          'Election of the Presiding Committee',
+          'Election of the Association Bodies',
+          'Wishes and Requests',
+          'Closing',
+        ],
+        closing: ['All our members are invited.', 'Kind regards,', 'Halil Kale Science High School Alumni Association'],
+        poster: {
+          src: '/images/duyurular/genel-kurul-2026.jpg',
+          alt: '1st Ordinary General Assembly poster (in Turkish): Saturday 28 November 2026, 17:00, Beşiktaş/İstanbul',
+          width: 1122,
+          height: 1402,
+        },
+      },
+      {
+        id: 'istanbul-bulusma-2026',
+        published: '2026-11-11',
+        tag: 'Meet-up',
+        title: "Let's Meet in Istanbul",
+        details: {
+          date: 'Saturday, 28 November 2026',
+          time: '19:00',
+          venue: 'MissisiPi Pub Beşiktaş',
+          address: 'Cihannüma, Barbaros Bulvarı No.55A Beşiktaş/İstanbul',
+          mapQuery: 'MissisiPi Pub, Barbaros Bulvarı No:55A, Beşiktaş, İstanbul',
+        },
+        paragraphs: [
+          "We're meeting at MissisiPi Pub on 28 November.",
+          'All alumni who are available are warmly invited to join us.',
+        ],
+        poster: {
+          src: '/images/duyurular/istanbul-bulusma-2026.jpg',
+          alt: "Let's Meet in Istanbul poster (in Turkish): Saturday 28 November 2026, 19:00, MissisiPi Pub Beşiktaş",
+          width: 1280,
+          height: 1600,
+        },
+      },
+    ],
   },
 
   membership: {
