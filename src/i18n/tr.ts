@@ -160,12 +160,12 @@ export const tr = {
       p2: 'Temiz, güvenli ve düzenli yaşam alanlarının yanı sıra; fizik, kimya ve biyoloji dersleri için donatılmış laboratuvarlar, okulumuzun eğitim kalitesini destekleyen önemli imkânlar arasında yer almaktadır. Ayrıca okul bahçesinde bulunan bir basketbol, bir voleybol ve bir halı saha, öğrencilerin ders dışı zamanlarını verimli ve sosyal bir şekilde değerlendirebilmelerine olanak sağlamaktadır.',
     },
     photos: [
-      { alt: 'Halil Kale Fen Lisesi ana binasının ön cephesi', title: 'Ana Bina', caption: 'Okulumuzun ön cephesi' },
-      { alt: 'Ana bina ve okul girişinin yakın plan görünümü', title: 'Kampüs Girişi', caption: 'Ana bina ve okul girişi' },
-      { alt: 'Okul binasının giriş merdivenleri, bahçe yolu ve bayrak direği', title: 'Okul Girişi', caption: 'Giriş merdivenleri ve bahçe yolu' },
-      { alt: 'Halı sahanın arkasında yer alan erkek öğrenci pansiyonu binası', title: 'Öğrenci Pansiyonu', caption: 'Erkek öğrenci pansiyonu' },
-      { alt: 'Okul bahçesindeki halı saha', title: 'Halı Saha', caption: 'Okul bahçesindeki halı saha' },
-      { alt: 'Okul bahçesi, basketbol potası ve bayrak direği', title: 'Okul Bahçesi', caption: 'Basketbol sahası ve dinlenme alanı' },
+      { alt: 'Halil Kale Fen Lisesi ana binasının ön cephesi' },
+      { alt: 'Ana bina ve okul girişinin yakın plan görünümü' },
+      { alt: 'Okul binasının giriş merdivenleri, bahçe yolu ve bayrak direği' },
+      { alt: 'Halı sahanın arkasında yer alan erkek öğrenci pansiyonu binası' },
+      { alt: 'Okul bahçesindeki halı saha' },
+      { alt: 'Okul bahçesi, basketbol potası ve bayrak direği' },
     ],
     founders: {
       title: 'Kurucular',

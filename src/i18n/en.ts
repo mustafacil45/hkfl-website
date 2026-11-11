@@ -126,12 +126,12 @@ export const en: Dict = {
       p2: 'Alongside clean, safe and well-kept living spaces, fully equipped physics, chemistry and biology laboratories are among the key facilities supporting the quality of education. A basketball court, a volleyball court and an artificial-turf football pitch in the school grounds let students spend their free time actively and socially.',
     },
     photos: [
-      { alt: 'Front façade of the Halil Kale Science High School main building', title: 'Main Building', caption: 'Front façade of our school' },
-      { alt: 'Close-up view of the main building and school entrance', title: 'Campus Entrance', caption: 'Main building and school entrance' },
-      { alt: 'School entrance steps, garden path and flagpole', title: 'School Entrance', caption: 'Entrance steps and garden path' },
-      { alt: 'Boys’ dormitory building behind the artificial-turf pitch', title: 'Student Dormitory', caption: 'Boys’ dormitory' },
-      { alt: 'Artificial-turf football pitch in the school grounds', title: 'Football Pitch', caption: 'Artificial-turf pitch in the school grounds' },
-      { alt: 'School grounds with basketball hoop and flagpole', title: 'School Grounds', caption: 'Basketball court and rest area' },
+      { alt: 'Front façade of the Halil Kale Science High School main building' },
+      { alt: 'Close-up view of the main building and school entrance' },
+      { alt: 'School entrance steps, garden path and flagpole' },
+      { alt: 'Boys’ dormitory building behind the artificial-turf pitch' },
+      { alt: 'Artificial-turf football pitch in the school grounds' },
+      { alt: 'School grounds with basketball hoop and flagpole' },
     ],
     founders: {
       title: 'Founders',

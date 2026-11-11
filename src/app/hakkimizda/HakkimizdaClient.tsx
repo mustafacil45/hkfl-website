@@ -207,10 +207,6 @@ export default function HakkimizdaClient() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <figcaption className="absolute inset-x-0 bottom-0 p-5" style={{ background: 'rgba(15, 23, 42, 0.78)' }}>
-                    <div className="font-display text-base font-bold text-white">{photo.title}</div>
-                    <div className="mt-0.5 text-xs text-white/75">{photo.caption}</div>
-                  </figcaption>
                 </motion.figure>
               );
             })}
